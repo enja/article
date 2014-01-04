@@ -1,0 +1,14 @@
+articles = []
+for article, slug in public.articles._data
+  if article.date
+    - article.slug = slug
+    - articles.push(public.articles._data[slug])
+
+article.post-article
+  .section-inner
+    != partial('_header')
+    != partial('_metadata')
+    != partial('_credit')
+    != yield
+    .backtohome
+      a.icon.icon-home(href="/" title="Back to #{ site_title }")

@@ -1,0 +1,58 @@
+{
+  "name": "enja-article",
+  "version": "0.0.1",
+  "description": "en.ja Article is a blog to publish translated articles.",
+  "scripts": {
+    "build-js": "browserify browser/script/main.js | uglifyjs -mc > public/static/script/bundle.js",
+    "build-css": "borschik -i browser/style/main.css -o public/static/style/bundle.css",
+    "build-dev-js": "browserify browser/script/main.js -dv",
+    "build-dev-css": "borschik -i ./browser/style/main.css -o ./public/static/style/bundle.css -m false",
+    "build": "bin/build.sh",
+    "watch-js": "watchify browser/script/main.js -o static/script/bundle.js -dv",
+    "watch-css": "watchy -w browser/style -- npm run build-dev-css",
+    "start": "harp server .",
+    "sync": "browser-sync",
+    "pagekite": "pagekite.py 9000 true.pagekite.me",
+    "test": "tape test/*.js",
+    "delpoy": "aws s3 sync www s3://article.enja.io --acl public-read"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:enja/article.git"
+  },
+  "keywords": [
+    "template",
+    "harp",
+    "blog"
+  ],
+  "author": "Yuya Saito",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/enja/article/issues"
+  },
+  "homepage": "http://article.enja.io",
+  "dependencies": {
+    "browserify": "~3.16.x",
+    "harp": "~0.11.x",
+    "uglifyjs": "~2.3.6",
+    "borschik": "~0.4.2"
+  },
+  "devDependencies": {
+    "browser-sync": "~0.4.x",
+    "tape": "~2.3.x",
+    "watchify": "~0.5.0",
+    "watchy": "~0.4.2",
+    "browserify-shim": "~3.1.4"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "./browser/script/lib/prism.js": "Prism"
+  },
+  "optionalDependencies": {
+    "hacker-deps": "~0.1.1"
+  }
+}

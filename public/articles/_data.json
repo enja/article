@@ -1,0 +1,85 @@
+{
+  "index": {
+    "layout": "../_layout"
+  },
+  "the-dribbblisation-of-design": {
+    "title": "The Dribbblisation of Design",
+    "date": "January 5, 2013",
+    "translator": "Yuya Saito",
+    "original": {
+      "author": "Paul Adams",
+      "site_url": "http://insideintercom.io/",
+      "article_url": "http://insideintercom.io/the-dribbblisation-of-design/"
+    }
+  },
+  "give-png-a-chance": {
+    "title": "Give PNG a chance",
+    "date": "October 4, 2013",
+    "translator": "1000ch",
+    "original": {
+      "author": "Stoyan Stefanov",
+      "site_url": "http://calendar.perfplanet.com",
+      "article_url": "http://calendar.perfplanet.com/2009/give-png-a-chance/"
+    }
+  },
+  "css-architecture": {
+    "title": "CSS Architecture",
+    "date": "July 6, 2013",
+    "translator": "Hiroki Tani",
+    "original": {
+      "author": "Philip Walton",
+      "site_url": "http://philipwalton.com/",
+      "article_url": "http://philipwalton.com/articles/css-architecture/"
+    }
+  },
+  "oh-i-am-not-a": {
+    "title": "Oh, I’m not a…",
+    "date": "April 22, 2013",
+    "translator": "Koji Ishimoto",
+    "original": {
+      "author": "Ben Howdle",
+      "site_url": "https://medium.com/",
+      "article_url": "https://medium.com/career-pathing/349656f95dab/"
+    }
+  },
+  "code-smells-in-css": {
+    "title": "Code smells in CSS",
+    "date": "March 23, 2013",
+    "translator": "Yuya Saito",
+    "original": {
+      "author": "Rebecca Murphey",
+      "site_url": "http://csswizardry.com/",
+      "article_url": "http://csswizardry.com/2012/11/code-smells-in-css/"
+    }
+  },
+  "a-baseline-for-front-end-developers": {
+    "title": "A Baseline for Front-End Developers",
+    "date": "December 1, 2012",
+    "translator": "Yuya Saito",
+    "original": {
+      "author": "Rebecca Murphey",
+      "site_url": "http://rmurphey.com/",
+      "article_url": "http://rmurphey.com/blog/2012/04/12/a-baseline-for-front-end-developers/"
+    }
+  },
+  "solidcss": {
+    "title": "SOLID CSS",
+    "date": "September 17, 2012",
+    "translator": "Yuya Saito",
+    "original": {
+      "author": "Miller H. Borges Medeiros",
+      "site_url": "http://blog.millermedeiros.com/",
+      "article_url": "http://blog.millermedeiros.com/solid-css/"
+    }
+  },
+  "about-html-semantics-and-front-end-architecture": {
+    "title": "About HTML semantics and front-end architecture",
+    "date": "March 20, 2012",
+    "translator": "Yuya Saito",
+    "original": {
+      "author": "Nicolas Gallagher",
+      "site_url": "http://nicolasgallagher.com/",
+      "article_url": "http://nicolasgallagher.com/about-html-semantics-front-end-architecture"
+    }
+  }
+}

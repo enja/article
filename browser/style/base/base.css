@@ -1,0 +1,12 @@
+/* ==========================================================================
+   The Base
+   ========================================================================== */
+body {
+  background: url('/static/assets/textures/debut_light.png') repeat 0 0 #ffffff;
+}
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dppx) {
+  body {
+    background:url('/static/assets/textures/debut_light_@2X.png') repeat 0 0;
+  }
+}

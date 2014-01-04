@@ -1,0 +1,12 @@
+/* http://www.colorzilla.com/gradient-editor/#ffdc00+0,ffdc00+60,c6d92f+60,3bbed9+60,3bbed9+60,3bbed9+70,fe3239+70,fe3239+100;Custom */
+.stripe {
+  height: .25em;
+  background: #ffdc00;
+  background: -moz-linear-gradient(left,  #ffdc00 0%, #ffdc00 60%, #c6d92f 60%, #3bbed9 60%, #3bbed9 60%, #3bbed9 70%, #fe3239 70%, #fe3239 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffdc00), color-stop(60%,#ffdc00), color-stop(60%,#c6d92f), color-stop(60%,#3bbed9), color-stop(60%,#3bbed9), color-stop(70%,#3bbed9), color-stop(70%,#fe3239), color-stop(100%,#fe3239));
+  background: -webkit-linear-gradient(left,  #ffdc00 0%,#ffdc00 60%,#c6d92f 60%,#3bbed9 60%,#3bbed9 60%,#3bbed9 70%,#fe3239 70%,#fe3239 100%);
+  background: -o-linear-gradient(left,  #ffdc00 0%,#ffdc00 60%,#c6d92f 60%,#3bbed9 60%,#3bbed9 60%,#3bbed9 70%,#fe3239 70%,#fe3239 100%);
+  background: -ms-linear-gradient(left,  #ffdc00 0%,#ffdc00 60%,#c6d92f 60%,#3bbed9 60%,#3bbed9 60%,#3bbed9 70%,#fe3239 70%,#fe3239 100%);
+  background: linear-gradient(to right,  #ffdc00 0%,#ffdc00 60%,#c6d92f 60%,#3bbed9 60%,#3bbed9 60%,#3bbed9 70%,#fe3239 70%,#fe3239 100%);
+  border-bottom: 1px solid #dededc;
+}

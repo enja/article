@@ -1,0 +1,17 @@
+{
+  "globals": {
+    "site_title": "en.ja Article",
+    "description": "en.ja Articleではハイクオリティな海外のフロントエンドにまつわる記事の翻訳を掲載しています。",
+    "site_url": "http://article.enja.io",
+    "feed_url": "http://article.enja.io/articles/feed.xml",
+    "owner": {
+      "name": "Yuya Saito",
+      "bio": "Front-end Develper by day, translator by night.",
+      "twitter": "cssradar",
+      "github": "studiomohawk",
+      "googleplus": "YuyaSaito",
+      "pinboard": "studiomohawk"
+    },
+    "issue": "https://github.com/enja/article/issues/new"
+  }
+}

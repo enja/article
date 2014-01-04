@@ -1,0 +1,8 @@
+meta(name='twitter:card', content='summary')
+meta(name='twitter:site', content="@" + owner.twitter)
+if current.path[0] === "articles"
+  if owner.twitter
+    meta(name='twitter:creator', content="@" + owner.twitter)
+    meta(name='twitter:title', content=title + " | " + site_title)
+    meta(name='twitter:description', content=description)
+    // meta(name='twitter:image', content=site_url + logo)

@@ -1,0 +1,2 @@
+--ignore=important,adjoining-classes,shorthand,regex-selectors,import
+--exclude-list=browser/lib

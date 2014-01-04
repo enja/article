@@ -1,0 +1,20 @@
+articles = []
+for article, slug in public.articles._data
+  if article.date
+    - article.slug = slug
+    - articles.push(public.articles._data[slug])
+
+for article in articles.slice(0, postlimit)
+  article.post-article.list-article
+    .section-inner
+      a(class='permalink' href='/articles/#{ article.slug }.html' title='Permalink to #{ article.title }')
+        h2.h3.title= article.title
+      .metadata
+        .original
+          span.author= article.original.author
+        span.translator= article.translator
+        time.pub-date(datetime='#{ new Date(article.date) }')
+          != article.date
+        if article.edit
+          time.edit-date(datetime='#{ new Date(article.edit) }')
+            != article.edit

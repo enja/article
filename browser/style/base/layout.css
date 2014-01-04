@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Base Layout
+   ========================================================================== */
+.post-article .section-inner {
+  padding-top: 2em;
+}
+.page-index .post-article:first-of-type .section-inner {
+  padding-top: 0;
+}
+
+.section-inner {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+@media screen and (min-width: 48em) {
+  .section-inner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 31em;
+  }
+}
+
+@media screen and (min-width: 66em) {
+  .section-inner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 44.2em;
+  }
+}
+
+@media screen and (min-width: 80em) {
+  .section-inner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 39.7em;
+  }
+}

@@ -1,0 +1,12 @@
+meta(property='og:title', content=locals.title ? title + " | " + site_title : site_title)
+if current.path[0] === "index"
+  meta(property='og:type', content='website')
+  meta(property='og:description', content=description)
+  meta(property='og:url', content=site_url)
+else
+  if current.path[0] === "articles"
+    meta(property='og:type', content='article')
+    meta(property='og:description', content=description)
+    meta(property='og:url', content=site_url + "/articles/" + current.path[1])
+// meta(property='og:image', content=site_url + logo)
+meta(property='og:site_name', content=site_title)

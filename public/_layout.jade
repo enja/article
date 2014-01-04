@@ -1,0 +1,15 @@
+!!!
+html
+  head
+    != partial('_shared/system/header/index')
+  body
+    if published !== false || environment === 'development'
+      div.stripe
+      div(class="page page-#{ current.path[0] } page-#{ current.path.join('-') }")
+        != partial('_shared/modules/header/masthead')
+        != yield
+        != partial('_shared/modules/footer/index')
+      != partial('_shared/system/footer/script')
+    if environment === 'development'
+      != partial('_shared/system/footer/sync')
+      != partial('_shared/_debug')

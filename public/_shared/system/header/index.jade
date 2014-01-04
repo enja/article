@@ -1,0 +1,8 @@
+meta(charset='utf-8')
+meta(name='viewport', content='width=device-width')
+title= locals.title ? title + " | " + site_title : site_title
+meta(name='description', content=locals.excerpt ? excerpt : description)
+!= partial('social/index')
+link(rel='author' href='/humans.txt')
+// link(rel='alternate', type='application/rss+xml', title=site_title + "RSS Feed", href='/articles/rss.xml')
+link(rel='stylesheet', href='/static/style/bundle.css')
