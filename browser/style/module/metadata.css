@@ -2,29 +2,25 @@
   margin: auto auto 1.5em;
 }
 .metadata .author:before {
-  content: "Written By";
+  content: "Written By ";
   display: inline;
-  margin-right: 8px;
 }
 .metadata .translator {
   display: block;
 }
 .metadata .translator:before {
-  content: "Translated By";
+  content: "Translated By ";
   display: inline;
-  margin-right: 8px;
 }
 .metadata .pub-date,
 .metadata .pub-date {
   display: block;
 }
 .metadata .pub-date:before {
-  content: "Published @";
+  content: "Published @ ";
   display: inline;
-  margin-right: 8px;
 }
 .metadata .edit-date:before {
-  content: "Updated @";
+  content: "Updated @ ";
   display: inline;
-  margin-right: 8px;
 }
