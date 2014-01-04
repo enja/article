@@ -3,6 +3,7 @@
    ========================================================================== */
 @import url("lib/normalize.css");
 @import url("base/base.css");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:800");
 @import url("base/typography.css");
 @import url("base/layout.css");
 
@@ -23,5 +24,5 @@
 @import url("presentation/stripe.css");
 @import url("presentation/link.css");
 @import url("presentation/article-image.css");
-@import url("presentation/article-list.css");
 @import url("presentation/code.css");
+@import url("presentation/fontface.css");
