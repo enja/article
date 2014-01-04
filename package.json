@@ -14,7 +14,7 @@
     "sync": "browser-sync",
     "pagekite": "pagekite.py 9000 true.pagekite.me",
     "test": "tape test/*.js",
-    "delpoy": "aws s3 sync www s3://article.enja.io --acl public-read"
+    "deploy": "aws s3 sync www s3://article.enja.io --acl public-read"
   },
   "repository": {
     "type": "git",
