@@ -32,17 +32,17 @@
   },
   "homepage": "http://article.enja.io",
   "dependencies": {
-    "browserify": "~3.16.x",
+    "browserify": "~3.30.x",
     "harp": "~0.11.x",
-    "uglifyjs": "~2.3.6",
-    "borschik": "~0.4.2"
+    "uglify-js": "~2.4.x",
+    "borschik": "~0.4.x"
   },
   "devDependencies": {
     "browser-sync": "~0.4.x",
-    "tape": "~2.3.x",
-    "watchify": "~0.5.0",
-    "watchy": "~0.4.2",
-    "browserify-shim": "~3.1.4"
+    "tape": "~2.5.x",
+    "watchify": "~0.6.x",
+    "watchy": "~0.4.x",
+    "browserify-shim": "~3.2.x"
   },
   "browserify": {
     "transform": [
