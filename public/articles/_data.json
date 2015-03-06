@@ -2,6 +2,16 @@
   "index": {
     "layout": "../_layout"
   },
+  "http2-for-front-end-web-developers": {
+    "title": "HTTP2 for front-end web developers",
+    "date": "March 6, 2015",
+    "translator": "Shogo Sensui",
+    "original": {
+      "author": "Matt Wilcox",
+      "site_url": "https://mattwilcox.net/",
+      "article_url": "https://mattwilcox.net/web-development/http2-for-front-end-web-developers"
+    }
+  },
   "the-dribbblisation-of-design": {
     "title": "The Dribbblisation of Design",
     "date": "January 5, 2013",
