@@ -29,3 +29,13 @@ Session.vim
 
 ### harp ###
 www
+node_modules/borschik
+node_modules/browser-sync
+node_modules/browserify
+node_modules/browserify-shim
+node_modules/hacker-deps
+node_modules/tape
+node_modules/uglify-js
+node_modules/uglifyjs
+node_modules/watchify
+node_modules/watchy

@@ -32,10 +32,10 @@
   },
   "homepage": "http://article.enja.io",
   "dependencies": {
+    "borschik": "^0.4.2",
     "browserify": "~3.30.x",
     "harp": "~0.11.x",
-    "uglify-js": "~2.4.x",
-    "borschik": "~0.4.x"
+    "uglify-js": "~2.4.x"
   },
   "devDependencies": {
     "browser-sync": "~0.4.x",
