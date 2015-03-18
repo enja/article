@@ -84,42 +84,33 @@ h6,
   h1,
   .h1,
   .alpha {
-    font-size: 60px;
-    /* 60 / 18 = 3.3333 */
-    font-size: 3.33333rem;
-    margin-bottom: 0.495em;
-  }
-
-  h2,
-  .h2,
-  .beta {
     font-size: 48px;
     /* 48 / 18 = 2.6667 */
     font-size: 2.6667rem;
     margin-bottom: 0.71875rem;
   }
 
-  h3,
-  .h3,
-  .gamma {
+  h2,
+  .h2,
+  .beta {
     font-size: 36px;
     /* 36 / 18 = 2 */
     font-size: 2rem;
     margin-bottom: 0.825em;
   }
 
-  h4,
-  .h4,
-  .delta {
+  h3,
+  .h3,
+  .gamma {
     font-size: 24px;
     /* 24 / 18 = 1.3333 */
     font-size: 1.3333333333333333rem;
     margin-bottom: 1.2375em;
   }
 
-  h5,
-  .h5,
-  .epsilon {
+  h4,
+  .h4,
+  .delta {
     font-size: 21px;
     /* 21 / 18 = 1.1667 */
     font-size: 1.16667rem;
@@ -128,6 +119,9 @@ h6,
     margin-bottom: 1.4142857142857141em;
   }
 
+  h5,
+  .h5,
+  .epsilon,
   h6,
   .h6,
   .zeta {
