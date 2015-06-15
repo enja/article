@@ -7,4 +7,5 @@ deploy:
   steps:
     - lukevivier/gh-pages@0.2.1:
         token: $GITHUB_TOKEN
+        domain: article.enja.io
         basedir: _public
