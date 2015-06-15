@@ -4,7 +4,7 @@ contentdir: "content"
 layoutdir:  "layouts"
 staticdir:  "static"
 publishdir: "_public"
-uglyUrls:   false
+uglyUrls:   true
 metaDataFormat: "yaml"
 params:
   description: "en.ja Articleではハイクオリティな海外のフロントエンドにまつわる記事の翻訳を掲載しています。"
