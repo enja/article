@@ -1,0 +1,12 @@
+baseurl:    "http://article.enja.io/"
+title:      "en.ja Article"
+contentdir: "content"
+layoutdir:  "layouts"
+staticdir:  "static"
+publishdir: "_public"
+uglyUrls:   false
+metaDataFormat: "yaml"
+params:
+  description: "en.ja Articleではハイクオリティな海外のフロントエンドにまつわる記事の翻訳を掲載しています。"
+permalinks:
+  post: /:title/

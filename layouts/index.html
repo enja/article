@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    {{ partial "meta.html" . }}
+  </head>
+  <body>
+    {{ partial "header.html" . }}
+    <header class="masthead p">
+      <div class="section-inner">
+        <a class="logo" href="/"><span class="h1">{{ .Title }}</span></a>
+      </div>
+    </header>
+    {{ range .Data.Pages }}
+      <article class="post-article list-article">
+        <div class="section-inner">
+          <a class="permalink" href="{{ .RelPermalink }}">
+            <h2 class="h3">{{ .Title }}</h2>
+          </a>
+          {{ partial "metadata.html" . }}
+        </div>
+      </article>
+    {{ end }}
+    {{ partial "footer.html" . }}
+    {{ partial "script.html" . }}
+  </body>
+</html>

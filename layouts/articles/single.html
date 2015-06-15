@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    {{ partial "meta.html" . }}
+  </head>
+  <body>
+    {{ partial "header.html" . }}
+    <article class="post-article list-article">
+      <div class="section-inner">
+        <h1>{{ .Title }}</h1>
+        {{ partial "metadata.html" . }}
+        {{ partial "credit.html" . }}
+        {{ .Content }}
+        <div class="backtohome">
+          <a class="icon icon-home" href="/" title="Back to"></a>
+        </div>
+      </div>
+    </article>
+    {{ partial "footer.html" . }}
+    {{ partial "script.html" . }}
+  </body>
+</html>

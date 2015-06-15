@@ -1,32 +1,6 @@
-### Node ###
-lib-cov
-*.seed
-*.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
-
-pids
-logs
-results
-
 npm-debug.log
-
-### vim ###
-.*.s[a-w][a-z]
-*.un~
-Session.vim
-.netrwhist
-*~
-
-### IntelliJ ###
-*.iml
-*.ipr
-*.iws
 .idea/
 
-### harp ###
-www
-node_modules/*
+node_modules
+_public
+.DS_Store
