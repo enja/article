@@ -29,11 +29,11 @@ IE6には欠陥があって、PNG8で半透明に表現している場所がIE6�
 このサンプルを見て欲しい。[こちらの素晴らしい記事](http://www.sitepoint.com/png8-the-clear-winner/)からお借りしたものだ。
 モダンブラウザで見ると、電球は輝きを放っている。
 
-![](http://calendar.perfplanet.com/wp-content/uploads/2009/12/ie7.png)
+![](/images/give-png-a-chance/ie7.png)
 
 IE6以下で見た場合には適切に機能を制限し、輝きの部分は表現されない。
 
-![](http://calendar.perfplanet.com/wp-content/uploads/2009/12/ie6.png)
+![](/images/give-png-a-chance/ie6.png)
 
 Photoshopがアルファチャネルを持ったPNG8を出力することができないのも辛いポイントだ。
 (彼らがPNG8という名前を思いついてくれたおかげでパレットPNGやインデックスPNGと呼ばずに済んだが)
@@ -115,21 +115,21 @@ $ optipng *.gif
 
 画像は、「baby」「background」「bkg」「flower」「graph」「graphic」「icon」「illustration」「kittens」（もちろん！）、「logo」「monkeys」「png」「transparency」などそれぞれ1000マッチした画像から、4xxエラーや5xxエラー、他のミスなどを除きながら10000個収集した。それらに対し、以下のツールを実行した。  
 
-+ pngcrush – pngcrush -rem alla -reduce before.png after.png
-+ pngcrush-none – チャンクを維持するpngcrush -rem none -reduce before.png after.png
-+ pngcrush-brute – 更に多くのフィルタを試すpngcrush -rem alla -brute -reduce before.png after.png
-+ pngout – pngout /q /y /force before.png after.png. PNGOutのデフォルトの圧縮レベルは“extreme”なので、2段階下げて試した。
-+ pngout-match – pngout /s2 /q /y /force before.png after.png
-+ pngout-intense – pngout /s1 /q /y /force before.png after.png
-+ pngrewrite – pngrewrite before.png after.png PNGRewriteはPNG8に対してのみ働き、truecolorからPNG8へコンバートする。
-+ optipng – optipng before.png -force -out after.png. OptiPNG’sのデフォルトは2 (7が最大)なのでその前後で実行した。
-+ optipng1 – optipng before.png -o1 -force -out after.png
-+ optipng3 – optipng before.png -o3 -force -out after.png
-+ optipng7 – optipng before.png -o7 -force -out after.png
-+ advpng – cp before.png after.png; advpng -z -f -q after.png
-+ advpng-insane – “insane”というレベル4の圧縮 cp before.png after.png; advpng -z4 -f -q after.png
-+ deflopt – cp before.png after.png; deflopt -s -f after.png
-+ pngoptimizercl -cp before.png after.png; pngoptimizercl -file:"after.png"
++ pngcrush – `pngcrush -rem alla -reduce before.png after.png`
++ pngcrush-none – チャンクを維持する `pngcrush -rem none -reduce before.png after.png`
++ pngcrush-brute – 更に多くのフィルタを試す `pngcrush -rem alla -brute -reduce before.png` after.png
++ pngout – `pngout /q /y /force before.png after.png`. PNGOutのデフォルトの圧縮レベルは“extreme”なので、2段階下げて試した。
++ pngout-match – `pngout /s2 /q /y /force before.png after.png`
++ pngout-intense – `pngout /s1 /q /y /force before.png after.png`
++ pngrewrite – `pngrewrite before.png after.png` PNGRewriteはPNG8に対してのみ働き、truecolorからPNG8へコンバートする。
++ optipng – `optipng before.png -force -out after.png`. OptiPNG’sのデフォルトは2 (7が最大)なのでその前後で実行した。
++ optipng1 – `optipng before.png -o1 -force -out after.png`
++ optipng3 – `optipng before.png -o3 -force -out after.png`
++ optipng7 – `optipng before.png -o7 -force -out after.png`
++ advpng – `cp before.png after.png; advpng -z -f -q after.png`
++ advpng-insane – “insane”というレベル4の圧縮 `cp before.png after.png; advpng -z4 -f -q after.png`
++ deflopt – `cp before.png after.png; deflopt -s -f after.png`
++ pngoptimizercl – `cp before.png after.png; pngoptimizercl -file:"after.png"`
 
 以下が結果になる。
 
