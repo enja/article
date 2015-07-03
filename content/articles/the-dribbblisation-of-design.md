@@ -99,17 +99,17 @@ Dribbbleはそのものは素晴らしいプロダクトであり、記事は本
 
 ヘッダのDribbbleデザインは: [bwaddington][20]&nbsp;[kolage][21]&nbsp;[claudioguglieri][22]&nbsp;[alden][23]&nbsp;[BillSKenney][24]&nbsp;[dash][25]&nbsp;から、または[umbrellaアプリはこちらから][26] :)
 
-   [1]: /static/images/the-dribbblisation-of-design/DribbblePostHeader.png
+   [1]: /images/the-dribbblisation-of-design/DribbblePostHeader.png
    [2]: http://feltpresence.com/
    [3]: https://medium.com/the-year-of-the-looking-glass
    [4]: http://www.dribbble.com
-   [5]: /static/images/the-dribbblisation-of-design/DribbblePostImage1.png (DribbblePostImage1)
-   [6]: /static/images/the-dribbblisation-of-design/DribbblePostImage4.png (DribbblePostImage4)
+   [5]: /images/the-dribbblisation-of-design/DribbblePostImage1.png (DribbblePostImage1)
+   [6]: /images/the-dribbblisation-of-design/DribbblePostImage4.png (DribbblePostImage4)
    [7]: http://www.youtube.com/watch?v=R2kkaDMAJmA
-   [8]: /static/images/the-dribbblisation-of-design/Screen-Shot-2013-09-18-at-17.23.431.png (Screen Shot 2013-09-18 at 17.23.43)
-   [9]: /static/images/the-dribbblisation-of-design/Screen-Shot-2013-09-18-at-17.36.04.png (Screen Shot 2013-09-18 at 17.36.04)
+   [8]: /images/the-dribbblisation-of-design/Screen-Shot-2013-09-18-at-17.23.431.png (Screen Shot 2013-09-18 at 17.23.43)
+   [9]: /images/the-dribbblisation-of-design/Screen-Shot-2013-09-18-at-17.36.04.png (Screen Shot 2013-09-18 at 17.36.04)
    [10]: https://twitter.com/JZ/status/364882720914026496
-   [11]: /static/images/the-dribbblisation-of-design/DribbblePostImage7.png (DribbblePostImage7)
+   [11]: /images/the-dribbblisation-of-design/DribbblePostImage7.png (DribbblePostImage7)
    [12]: http://af-design.com/blog/wp-content/uploads/2011/09/eventually_everything_connects-507x640.jpg
    [13]: http://www.youtube.com/watch?v=f84LymEs67Y
    [14]: https://twitter.com/destraynor
