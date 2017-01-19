@@ -1,7 +1,7 @@
 ---
 title: Signs You May Be A Designer, Not Just A Coder
-date: 2017-01-14
-author: Heydon
+date: 2017-01-19
+author: Heydon Pickering
 translator: Shogo Sensui
 site_url: https://www.heydonworks.com/
 article_url: https://www.heydonworks.com/article/signs-you-may-be-a-designer-not-just-a-coder
