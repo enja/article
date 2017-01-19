@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.css">
+<link rel="stylesheet" href="/style/main.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:800">
+<title>A Baseline for Front-End Developers</title>
+<meta name="description" content="en.ja Articleではハイクオリティな海外のフロントエンドにまつわる記事の翻訳を掲載しています。">
+<meta property="og:title" content="A Baseline for Front-End Developers">
+<meta property="og:type" content="website">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://article.enja.io/articles/a-baseline-for-front-end-developers.html">
+<meta property="og:site_name" content="en.ja Article">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@cssradar">
+<link rel="author" href="https://plus.google.com/+YuyaSaito">
+<link rel="author" href="/humans.txt">
+
+  </head>
+  <body>
+    <div class="stripe"></div>
+
+    <article class="post-article list-article">
+      <div class="section-inner">
+        <h1>A Baseline for Front-End Developers</h1>
+        <div class="metadata">
+  <div class="original">
+    <span class="author">Rebecca Murphey</span>
+  </div>
+  <span class="translator">Yuya Saito</span>
+  <time class="pub-date">Dec 1, 2012</time>
+</div>
+
+        <div class="credit">
+  <strong>Credit</strong>
+  <p>
+    This article is translated with permission of <a href="http://rmurphey.com/">Rebecca Murphey</a>.<br>
+    You can find original article at <a href="http://rmurphey.com/blog/2012/04/12/a-baseline-for-front-end-developers/">A Baseline for Front-End Developers</a>
+  </p>
+  <p>
+    本記事は<a href="http://rmurphey.com/">Rebecca Murphey</a>氏の了承を得て翻訳された記事です。<br>
+    原文は<a href="http://rmurphey.com/blog/2012/04/12/a-baseline-for-front-end-developers/">A Baseline for Front-End Developers</a>にて掲載されています。
+  </p>
+</div>
+
+        
+
+<h2 id="a-baseline-for-front-end-developers:298b6eb8db33c32012e76ab710bf1362">A Baseline for Front-End Developers</h2>
+
+<p>先日、ほかのデベロッパ達に見て、学んで欲しいと思っていたプロジェクト用にREADMEを書いている際、あることに気がついた。それは書いてあることが数年前の私にとっては驚異でしかないはずのNode, npm、Homebrew、git、テスト、開発用とプロダクション用のビルドについて、いかにもカジュアルに触れているということだ。</p>
+
+<p>その昔、フロントエンド開発者にとって必須のワークフローと言えば、ファイルを編集し、ローカル環境でテスト(可能な限り)し、サーバにFTPでそれらをアップロードする、というものだった。私たちは自らの能力を、IE6を説き伏せて従わせることかあるいは、クロスブラウザでピクセルパーフェクトさを達成することで計っていた。私自身を含め、コミュニティの多くの人はきちんとしたプログラミングの経験がなかった。HTML、CSS、そしてJavaScript、普通はjQueryという形で、などは独習して得た技術だった。</p>
+
+<p>この数年で何かが変わった。おそらくそれは人々がフロントエンド開発に対してまじめに取り組み始めた結果か、ブラウザベンダが彼らがやるべきことの多くをやり切り始めた結果なのか、あるいは私自身を含めたフロントエンド開発者達がいくらかは安定したソフトウェア開発のプロセスについて学び始めた結果かもしれない。</p>
+
+<p>それがなんであれ、我々はトリビアに価値を見いだすことよりも、ツールに価値を見いだすことに重点をおき始めているのだと思う。フロントエンド開発者として成功するための新しいベースラインとなるスキルセットが現れはじめていて、そのベースラインを満たすことができない開発者達は、特定の事柄についていちいち触れなくてもすでに知っている人達から置き去りにされていると感じ始めているだろう。</p>
+
+<p>ここでは*私*が考える、開発者達が慣れておくべきと考える事柄と、もしそれらについて素早く覚えたい場合に利用できるリソースについて触れていこう。(Paul Irish、Mike Taylor、Angus Croll、そしてVlad Filippovの助言に感謝したい。)</p>
+
+<h3 id="javascript:298b6eb8db33c32012e76ab710bf1362">JavaScript</h3>
+
+<p>もはや言わずもがなかも知れないが、単にJavaScriptのライブラリについて知っている、というだけでは十分とは言えない。それらライブラリにある機能をすべて素のJavaScriptで実装する方法を知っていなければならない、という意味ではなく、実際にいつライブラリが必要となるのか、そして必要としないと判断した場合に素のJavaScriptだけでも実装できるようになっておくべきだ。</p>
+
+<p>つまり<a href="http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742">JavaScipt: The Good Parts</a>をできれば1回以上は読んだことがあるということになるだろう。オブジェクトや配列のようなデータ構造について理解し、関数、<code>call</code>や<code>apply</code>をどうして、そしてどのように使うかを理解し、プロトタイプ継承を利用し、そして非同期性をどのように管理するかを理解しているということになる。</p>
+
+<p>素のJavaScript力が弱いと感じたら、以下のリソースは理解の手助けとなるだろう:</p>
+
+<ul>
+<li><a href="http://eloquentjavascript.net/">Eloquent JavaScript</a>: JavaScriptの基本についての素晴らしい本(紙の本としても読める)</li>
+<li><a href="https://github.com/rmurphey/js-assessment">A Test-Driven JS Assessment</a>: JavaScriptの様々なトピックに触れる失敗しているテストのセット。テストをパスできるコードを書くことができるかやってみて欲しい</li>
+<li><a href="http://paulirish.com/2010/10-things-i-learned-from-the-jquery-source/">10 things I learned from the jQuery Source</a>: Paul Irish氏による少し古いが素晴らしいリソース。他者が書いたコードから何を学び取れるかについて触れている</li>
+</ul>
+
+<h3 id="git-とgithubのアカウント:298b6eb8db33c32012e76ab710bf1362">Git(とgithubのアカウント)</h3>
+
+<p>もしGithubを利用していないということは基本的にフロントエンド開発に関する技術周りで立ち上がり始めたリッチなオープンソースコミュニティに参加できないことと同じことだ。レポジトリをクローンし、試してみる、は習性となっているべきで、<a href="http://nvie.com/posts/a-successful-git-branching-model/">プロジェクトにおけるブランチを使ったコラボレーションの方法</a>についても知っておくべきだ。</p>
+
+<p>gitのスキルを高めたい？</p>
+
+<ul>
+<li><a href="https://help.github.com/">help.github.com</a></li>
+<li><a href="http://cheat.errtheblog.com/s/git">Github git cheat sheet</a> &#8251;訳注: リンク先は現在利用できません。代わりに<a href="https://github.com/AlexZeitler/gitcheatsheet/blob/master/gitcheatsheet.pdf?raw=true">こちら</a>が比較的近しいリソースとなります。</li>
+<li><a href="http://cheat.errtheblog.com/s/git">More cheat sheet</a> &#8251;訳注: リンク先は現在利用できません。</li>
+<li><a href="http://pinboard.in/u:rmurphey/t:git/">More git links</a></li>
+</ul>
+
+<h3 id="モジュール方式-依存関係の管理-そしてプロダクションビルド:298b6eb8db33c32012e76ab710bf1362">モジュール方式、依存関係の管理、そしてプロダクションビルド</h3>
+
+<p>依存関係の管理をページに対してスクリプトやスタイルタグを追加していく方法で行う時代は終わった。もし<a href="http://requirejs.org/">RequireJS</a>のような素晴らしいツールを会社内のワークフローとして組み込めないとしても、得られる利益は非常に大きいため、個人プロジェクト内や<a href="https://github.com/tbranyen/backbone-boilerplate">Backbone Boilerplate</a>の様なプロジェクトで、詳しく調査する時間を作るべきだ。特にRequireJSは小さなモジュール方式を使ってJSとCSSを開発でき、RequireJSの最適化ツールを使って、プロダクション用にファイルを結合し、ミニファイも行ってくれる。</p>
+
+<p>AMDについて懐疑的? 何もしないことへの言い訳にはならない。最低でも<a href="https://github.com/mishoo/UglifyJS">UglifyJS</a>や<a href="https://developers.google.com/closure/compiler/">Closure Compiler</a>のような効率的にミニファイを行ってくれるツールについて知っておくべきだ。そしてミニファイされたファイルをプロダクション前に結合しておこう。</p>
+
+<p>もし素のCSSを書いている場合でも、つまりSassやStylusのようなCSSプリプロセッサを使っていない場合でも、RequireJSはCSSファイルをモジュール方式にすることを手助けしてくれる。<code>@import</code>宣言をベースファイル内で使って、開発中は依存するファイルを読み込み、RequireJSの<a href="http://requirejs.org/docs/optimization.html#onecss">最適化ツール</a>を使ってプロダクション用のファイルを生成することができる。</p>
+
+<h3 id="インブラウザ開発ツール:298b6eb8db33c32012e76ab710bf1362">インブラウザ開発ツール</h3>
+
+<p>ブラウザベースの開発ツールはこの数年で驚異的な改良がなされてきている。そしてそれらの使い方をを知っていれば、開発に対する体験を驚くほど改善することができるだろう。(ヒント: もし<code>alert</code>を使ってコードのデバッグを行っているなら、多くの時間を無駄にしている。)</p>
+
+<p>自分が主に利用するブラウザに搭載されている開発ツールを使うべきだが、私は最近では<a href="https://developers.google.com/chrome-developer-tools/">Google Chromeの開発ツール</a>を偏愛しているが、ユーザからのフィードバックを元に定期的に便利な機能を追加しているため、ほかのブラウザに搭載されている開発ツールを無視するのもよくない。例えばOperaの<a href="http://my.opera.com/dragonfly/blog/">Dragonfly</a>には、特筆するべきいくつかの機能が搭載されている。例えば、(実験的な)CSSのプロファイラ、カスタマイズ可能なキーボードショートカット、USB接続を必要としないリモートデバッグ、そしてカスタムカラーパレットを保存し利用できる機能などだ。</p>
+
+<p>もしブラウザ開発ツールに対する理解が浅い場合は<a href="http://fixingthesejquery.com/#slide1">Fixing these jQuery</a>は<a href="https://developers.google.com/chrome-developer-tools/docs/scripts-breakpoints">ステップデバッグ</a>を含むデバッグ手法について素晴らしい(そして特にjQuery中心というわけでもない)まとめとなっている。もし既知でなければ、これまでの人生を変えるようなことを学ぶことになるだろう。</p>
+
+<h3 id="コマンドライン:298b6eb8db33c32012e76ab710bf1362">コマンドライン</h3>
+
+<p>コマンドラインに関して言うと、使うことに不快ではないというだけではもはや十分ではない。もしターミナルウィンドウに向かって手を動かしていないようでは、多くのことを見逃しすぎていると言える。ターミナルを使って何から何までやらなければならないとは言ってはいない。gitのGUIツールを奪いとりたいのではなく(そのうち利用しない方がよいとは思うが)、どんなプロジェクトをしていようと、いつでもターミナルウィンドウを開いた状態であるべきだ。いくつかのコマンドラインのタスクは考える必要もなくできるようになっているべきだ:</p>
+
+<ul>
+<li><code>ssh</code>を使ってほかのマシンやサーバにログインする</li>
+<li><code>scp</code>でほかのマシンやサーバにファイルをコピーする</li>
+<li><code>ack</code>や<code>grep</code>でプロジェクト内のファイルを文字列やパターンを使って検索する</li>
+<li><code>find</code>でパターンにあったファイルを取得する</li>
+<li><code>git</code>で<code>add</code>、<code>commit</code>、<code>status</code>や<code>pull</code>などの基本的なことをする</li>
+<li><code>brew</code>でHomebrewを使ってパッケージをインストールする</li>
+<li><code>npm</code>でNodeのパッケージをインストールする</li>
+<li><code>gem</code>でRubyのパッケージをインストールする</li>
+</ul>
+
+<p>もし何度も使うコマンドがあるなら、<code>.bashrc</code>か<code>.profile</code>か、<code>.zshrc</code>か何でもいいので、<a href="http://tldp.org/LDP/abs/html/aliases.html">エイリアス</a>を作って、コマンドのタイピングを省略できるようにしておこう。<code>~/.gitconfig</code>に対してもエイリアスを追加することもできる。Gianni Chiappettaの<a href="https://github.com/gf3/dotfiles">dotfiles</a>は何が可能なのかについて素晴らしいインスピレーションになるだろう。</p>
+
+<p>注意: もしWindows環境の場合は、<a href="http://www.cygwin.com/">Cygwin</a>を推薦する以外、私にはどうしていいかもわからない。いいか悪いかはさておき、Windows環境でオープンソースのフロントエンド開発者のコミュニティに参加することは実質的に難しくなりつつある。よい点はMacBook Airは非常に安価で、強力で、馬鹿げているくらいポータブルで、もちろんいつだってUbuntuやほかのLinux達も存在している。</p>
+
+<h3 id="クライアントサイドテンプレート:298b6eb8db33c32012e76ab710bf1362">クライアントサイドテンプレート</h3>
+
+<p>サーバがXHRに対してHTMLのスニペットを返すことが当たり前だったことはそれほど前のことではない。しかし、この12ヶ月から18ヶ月の間に、フロントエンド開発者コミュニティはサーバから純粋にデータを返すように要求しはじめた。それらのデータをDOMに挿入できるHTMLに変換するのはコード内で直接行うと乱雑でメンテナンスが難しいプロセスだ。<br />
+そこで<a href="http://www.slideshare.net/garann/using-templates-to-achieve-awesomer-architecture">クライアントサイドテンプレートライブラリ</a>が登場する。テンプレートライブラリ達はデータと結合してテンプレートをHTML文字列にしてくれる。どのテンプレートツールがいいかわからない? Garann Meansの<a href="http://garann.github.com/template-chooser/">Template Chooser</a>は正しい方向に導いてくれることだろう。</p>
+
+<h3 id="cssプリプロセッサ:298b6eb8db33c32012e76ab710bf1362">CSSプリプロセッサ</h3>
+
+<p>Paul Irishが以前<a href="https://twitter.com/paul_irish/status/188329390822801409">述べたように</a>、フロントエンド開発者達が書いたコードがプロダクション時には全く異なっているというような状況が見られるようになってきた。CSSプリプロセッサで書いたコードこそそれらの例と言える。まだピュアなCSSを書くことが唯一の方法だとする人達もいるが、<a href="http://www.stuffandnonsense.co.uk/blog/about/less">彼らも変わり始めている</a>。これらのツールはCSSのデフォルトとしてすでにあるべき変数や、計算、ロジック、ミックスインなどの機能を提供している。そしてCSSのプロパティにつけるベンダープリフィックス達をきれいにすることもできる。</p>
+
+<h3 id="テスト:298b6eb8db33c32012e76ab710bf1362">テスト</h3>
+
+<p>モジュール方式で、疎結合なコードを書くことの楽しみの1つが、書いたコードがテストするのに簡単なコードとなることだ。そして<a href="https://github.com/cowboy/grunt">Grunt</a>のようなツールを使えば、テストを含んだプロジェクトを設定するのは簡単にできる。GruntはQUnit連携をデフォルトとしているが、テストフレームワークの中から(<a href="https://github.com/pivotal/jasmine/wiki">Jasmine</a>や<a href="http://visionmedia.github.com/mocha/">Mocha</a>が私の今のお気に入りだ)自分の好みにあうスタイルから選ぶことができるし、ほかの連携するツールも多く提供されている。</p>
+
+<p>コードがモジュール方式で疎結合であればテストは楽しいものだが、そうでもないコードに対してテストを行うことは難しいか不可能の間のどこかにある状態となる。裏を返すと、テストを書くことを強制することで(もしかしたらコードを書き始める前から)、考え方とコード自体を体系化する手助けとなるということになる。将来コードをリファクタする際に自信を持ってできるようにもしてくれる。</p>
+
+<ul>
+<li>私がjQueryで書いたコードをJasmineを使ってテストすることについて説明している短い<a href="http://vimeo.com/20457625">スクリーンキャスト</a></li>
+<li>jquery-bbqプラグインの<a href="https://github.com/cowboy/jquery-bbq/blob/master/unit/unit.js">ユニットテスト</a>例</li>
+</ul>
+
+<h3 id="自動化プロセス-rake-make-gruntなど:298b6eb8db33c32012e76ab710bf1362">自動化プロセス(rake/make/gruntなど)</h3>
+
+<p>Gruntが持つユニットテストをセットアップするビルトインのサポートが自動化プロセスの例だ。非常に多くの繰り返しの作業が存在するのがフロントエンド開発の実情だ。しかし以前私の友人が言ったとおり、よい開発者はめんどくさがりな開発者だ。大まかなルールとして、もし3回同じことを繰り返すようであれば、自動化するべきだ。</p>
+
+<p><code>make</code>のようなツールは長い間自動化プロセスの手助けをするために存在しきた。ほかにも<code>rake</code>や<code>grunt</code>などもそうだ。ファイルシステムに関連するようなタスクを自動化する場合はJavaScript以外の言語を学ぶことは非常に役に立つ。Nodeの非同期性はファイルを操作するのに重荷になるからだ。ほかにもタスク中心の自動化ツール、例えば、デプロイのためのツール、ビルド生成のツール、コードクオリティチェックなど、はたくさん存在している。</p>
+
+<h3 id="コードのクオリティ:298b6eb8db33c32012e76ab710bf1362">コードのクオリティ</h3>
+
+<p>もしこれまでセミコロンの抜け漏れや余計なカンマで嫌な思いをしたことがあるなら、コード内の小さなミスによる時間の無駄がどれほどのものかわかるだろう。だからこそ、<a href="http://www.jshint.com/">JSHint</a>のようなツールを使っているわけだ。JSHintは<a href="http://www.jshint.com/options/">設定</a>を変更でき、<a href="http://www.jshint.com/platforms/">エディタやビルドプロセスに連携する</a>ための多くの手段も提供している。</p>
+
+<h3 id="よいマニュアル:298b6eb8db33c32012e76ab710bf1362">よいマニュアル</h3>
+
+<p>そう、フロントエンド開発にマニュアルは存在しないが、<a href="https://developer.mozilla.org/en-US/">MDN</a>は非常に近い存在だ。よいフロントエンド開発者は<code>mdn</code>のプリフィックスを付けて検索エンジンで検索を行う。例えば、<code>mdn javascript arrays</code>のようにしてw3schoolsの利益重視の厄災から身を守るのだ。</p>
+
+<h3 id="最後に:298b6eb8db33c32012e76ab710bf1362">最後に</h3>
+
+<p>どんなものでもそうであるように、ただ読むだけではエキスパートにはなれないし、中級者にもなれない。物事において唯一上達する方法は<a href="http://rmurphey.com/blog/2011/05/20/getting-better-at-javascript/">とにかく実行すること</a>だけだ。グッドラック。</p>
+
+        <div class="backtohome">
+          <a class="icon icon-home" href="/" title="Back to"></a>
+        </div>
+      </div>
+    </article>
+    <footer class="the-footer">
+  <div class="section-inner">
+    <h3 class="h5 uppercase">Ask Me Questions</h3>
+    <p>Ask me anything at <a href="https://github.com/enja/article/issues/new">GitHub</a></p>
+    <h3 class="h5 uppercase">Elsewhere</h3>
+    <p>
+      <a href="http://twitter.com/cssradar">Twitter</a>
+      <span class="space">/</span>
+      <a href="http://github.com/studiomohawk">GitHub</a>
+      <span class="space">/</span>
+      <a href="http://google.com/+YuyaSaito">Google+</a>
+      <span class="space">/</span>
+      <a href="https://pinboard.in/u:studiomohawk">Pinboard</a>
+    </p>
+    <p class="bio madeintokyo">
+      Build by Yuya Saito - Front-end Develper by day, translator by night.<br>
+      Made Proudly in Tokyo.
+    </p>
+  </div>
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
+
+  </body>
+</html>

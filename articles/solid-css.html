@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.css">
+<link rel="stylesheet" href="/style/main.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:800">
+<title>SOLID CSS</title>
+<meta name="description" content="en.ja Articleではハイクオリティな海外のフロントエンドにまつわる記事の翻訳を掲載しています。">
+<meta property="og:title" content="SOLID CSS">
+<meta property="og:type" content="website">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://article.enja.io/articles/solid-css.html">
+<meta property="og:site_name" content="en.ja Article">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@cssradar">
+<link rel="author" href="https://plus.google.com/+YuyaSaito">
+<link rel="author" href="/humans.txt">
+
+  </head>
+  <body>
+    <div class="stripe"></div>
+
+    <article class="post-article list-article">
+      <div class="section-inner">
+        <h1>SOLID CSS</h1>
+        <div class="metadata">
+  <div class="original">
+    <span class="author">Miller H. Borges Medeiros</span>
+  </div>
+  <span class="translator">Yuya Saito</span>
+  <time class="pub-date">Sep 17, 2012</time>
+</div>
+
+        <div class="credit">
+  <strong>Credit</strong>
+  <p>
+    This article is translated with permission of <a href="http://blog.millermedeiros.com/">Miller H. Borges Medeiros</a>.<br>
+    You can find original article at <a href="http://blog.millermedeiros.com/solid-css/">SOLID CSS</a>
+  </p>
+  <p>
+    本記事は<a href="http://blog.millermedeiros.com/">Miller H. Borges Medeiros</a>氏の了承を得て翻訳された記事です。<br>
+    原文は<a href="http://blog.millermedeiros.com/solid-css/">SOLID CSS</a>にて掲載されています。
+  </p>
+</div>
+
+        
+
+<h2 id="solid-css:49fcbce1f4686866c4b5c8b0fbb880ae">SOLID CSS</h2>
+
+<p>CSSはそもそもアカデミック文書やシンプル、カスケードや子孫セレクタの存在が納得いくようなサイト(例: wikiやブログ)をスタイルするために作られた。しかし我々が今現在作るサイトはより複雑で、シンプルなサイトでうまくいっていた実装が通用しなくなっている。CSSを実装するにあたってよくある問題を解決するよりよい実装方法を見つけ出す必要があるし、これまでの実装とは異なるアプローチを生み出す必要がある。ほかの分野での経験、例えば、関心の分離、モジュラー、カプセル化、DRYなどは大規模なCSSプロジェクトにも適応することができる。主な問題はCSSが得意な人がコンピュータサイエンスのバックグランドを持っているわけではないこと、多くの場合デザイナーとしてキャリアをスタートし、CSSを独学で覚えてきた(少なくとも私の場合はそうだ)。この記事を書いた理由がそこにある。</p>
+
+<p>ここでは詳細や例について多くは書かず、それぞれのコンセプトについて可能な限り簡潔に説明していく。いくつかのSOLID原則はCSSにおいて複数の解釈があるため(コンセプトを無理矢理詰め込んでいるので)、詳細の例は書かないことにした。それに加え、固定の実装方法に捕われずにアイデアを理解する方が重要だと考えているからだ。</p>
+
+<h3 id="大規模なcssプロジェクトとは何か:49fcbce1f4686866c4b5c8b0fbb880ae">大規模なCSSプロジェクトとは何か？</h3>
+
+<p>大規模プロジェクトに対するイメージは人それぞれだろう、一時期には2,000行以上のになるプロジェクトは大きいと思っていたが、今では4,000行以上のCSSがほとんどで、私はそれでもそれほど大きいとは思っていない。プロジェクトの構造や組織によってアプリケーションの“認識上のサイズ”は大きく異なるだろうが、4,000行以上の無駄のないCSSが必要なアプリケーションやサイトは些細なサイズだとしないこととする。プロジェクトが1,000〜2,000行以下であればどれだけカオスな状態であろうと、なんとかなる。しかしどうにもならない状態に陥るのは往々にして始めは小さな規模だ。始めからしっかりとした構造を作っておくことは、書き直すよりははるかにましだろう。</p>
+
+<p>これから紹介するテクニックの利点に気がつくのはアプリが一定のサイズに達してからになるだろう。そしてプロジェクトが大きくなるにつれ飛躍的に利点を感じやすくなる。プロジェクトによって利点は異なるので、実利的に考えてほしい。まずは理由を理解し、自分のプロジェクトに適応できるかを判断してほしい。(私自身もすべてのプロジェクトにこれらのルールを当てはめていはいない。)</p>
+
+<h3 id="solid:49fcbce1f4686866c4b5c8b0fbb880ae">SOLID</h3>
+
+<p>SOLIDとは5つのオブジェクト指向プログラミングの原則とデザインパターンの短縮系のことを指す。その5つを適応させることでシステムのメンテナンス性を向上し、長期で拡張していくことを簡単にすることができる。<br />
+この言葉はUncle Bob(訳注: Robert Cecil Martin氏のこと)が生み出したもので、彼がこの原則がCSSにも当てはまると考えているとは思えない(彼に聞いたわけではないが)。</p>
+
+<ul>
+<li><strong>S</strong>ingle Responsibility Principle / 単一責任の原則</li>
+<li><strong>O</strong>pen/Closed Principle / オープン・クローズドの原則</li>
+<li><strong>L</strong>iskov Substitution Principle / リスコフの置換原則</li>
+<li><strong>I</strong>nterface Segregation Principle / 依存関係逆転の原則</li>
+<li><strong>D</strong>ependency Inversion Principle / インターフェイス分離の原則</li>
+</ul>
+
+<h4 id="single-responsibility-principle-単一責任の原則:49fcbce1f4686866c4b5c8b0fbb880ae">Single Responsibility Principle / 単一責任の原則</h4>
+
+<p>この原則ではオブジェクトは1つの責任のみを負うべきで、その責任はそのオブジェクトで完全にカプセル化されるべきであるとしている。CSSに当てはめて考えると、構造とプレゼンテーションを分離する、例えば、その両方を行う1つのクラスや要素を作るのではなく、それぞれを分離し、構造に影響を与えることなくコンポーネントのスキン(訳注: 見た目)を変更できるようにする、という意味になる。</p>
+
+<p>グリッドシステム(複数クラスを要素に追加するか、プリプロセッサを使ってベースクラスを拡張するか)に要素のサイズの指定を委譲するか、親要素にサイズを指定する方法が考えられる。</p>
+
+<p>CSSのルールは高い凝集度(訳注: <a href="https://ja.wikipedia.org/wiki/%E5%87%9D%E9%9B%86%E5%BA%A6">コヒージョン</a>)を持つべきで、多種多様なルールをグループ化したものであってはならない。テキストスタイル、ボーダー、カラーなどをサイズやポジション、フロートを同じグループにするべきではない。</p>
+
+<p>こうすることで同じモジュールを別のコンテイナ内で再利用でき、再利用の可能性を高めることができる。さらに構造に影響を与えることなくスキンを変更できることによりメンテナンス性は向上し、ヴィジュアルをコンテキストに応じて変更しやすくもなる(例: 同じ構造の要素で別の色など)。</p>
+
+<p>更なるコツとしてコードを別のファイルに分割し(それぞれのファイルが単一責任を持つ)、そうすることでチームで開発するのを簡単にし(衝突が少ない)、コンテキストによってグループ化することでより理解しやすくなる。</p>
+
+<h4 id="open-closed-principle-オープン-クローズドの原則:49fcbce1f4686866c4b5c8b0fbb880ae">Open/Closed Principle / オープン・クローズドの原則</h4>
+
+<blockquote>
+<p>ソストウェアのエンティティ(クラス、モジュール、関数など)は拡張に対してオープンであるべきで、変更に対して閉鎖的であるべき。</p>
+</blockquote>
+
+<p>どういう意味かというと、ベースとなるルールは上書き/拡張しやすく記述し、可能な限り変更するべきではないということだ。</p>
+
+<p>ベースクラスを修正するのはエラーを修正する場合のみとし、新しい振る舞いを追加しない。そうでなければ衝突が生まれる可能性が高くなる。具体的にはプロジェクトが安定期となったら<code>reset.css</code>や複数要素に影響を与えるルールを変更するべきではない。その代わりに新しいクラスを使って拡張するべきだ。</p>
+
+<p>多くのプロジェクトで私はベースとなるスタイルをタグそのものに設定することを可能な限り避けている。デザインが明確なセマンティック構造に沿わない場合は特にだ。20以上のフォントスタイルが必要で、コンテキストに応じて同じ要素で異なるスペース、色、ウェイトを持っている場合などが例となる。もしグローバルな要素に影響を及ぼすルールを減らすことができれば、オープン・クローズドの原則を破る機会を減らすことができる。</p>
+
+<p>ベーススタイルを持たないほかの理由としてはデフォルトを上書きする機会が減ることがあげられる(しかしより多くのスタイルを設定する必要があるかもしれない)。</p>
+
+<h4 id="liskov-substitution-principle-リスコフの置換原則:49fcbce1f4686866c4b5c8b0fbb880ae">Liskov Substitution Principle / リスコフの置換原則</h4>
+
+<blockquote>
+<p>プログラムにおけるオブジェクトはそのサブタイプと置換してもプログラムの正当性を変更するべきではない。</p>
+</blockquote>
+
+<p>ほかのクラスを<code>@extend</code>するクラスはベースクラスと異なる振る舞いをしてはならない。それぞれのクラスを入れ替えてもアプリの正当性に影響を与えてはならない。</p>
+
+<p>システムをより簡単に、より柔軟にするために、親クラスと子クラスを置き換えても求めていない副作用を起こさないようにするべきである、というのがこの原則の存在意義だ。プロジェクトの開始時の未来を予測できない場合にもコードの再利用のチャンスを増やすことができる。</p>
+
+<p>モディファイヤは出来る限りレイアウトを壊さないように設定するべきで、ベースクラスが固定の高さを持たないのであれば、子クラスも高さを指定するべきではなく、表示や位置も変更するべきではない。</p>
+
+<p>一般的に<strong>組成は継承よりも優先されるべき</strong>であると覚えておこう。</p>
+
+<p>PS: この原則について私は盲目的に守ることはしない。特に私はモディファイヤを子クラスというよりはデコレータとして利用することが多いからだ。しかし大きなプロジェクトでプリプロセッサを利用している場合に、<code>@extend</code>の機能を利用し(使い過ぎ)ている場合はこの原則についてよく考えるべきだろう。</p>
+
+<h4 id="interface-segregation-principle-依存関係逆転の原則:49fcbce1f4686866c4b5c8b0fbb880ae">Interface Segregation Principle / 依存関係逆転の原則</h4>
+
+<blockquote>
+<p>たくさんのクライアント専用インターフェイスは1つの一般目的のインターフェイスより優れている。</p>
+</blockquote>
+
+<p>複数の特別なベースのモジュールを作るほうが、1つの一般的なものを作るよりもよいと解釈できる。モジュールの凝集度を向上させることができるし、コードのリファクタ、変更、メンテナンスを簡単にできる(密接な結合を減らすから)。</p>
+
+<p>コードの再利用性を高めるために複数の状況でも利用出来るベースモジュールを作りたい衝動に駆られることもあるだろう。正直に言って、最近では私はコードの再利用の全てがよいことだと考えていない。もし再利用性のためだけにそうしているのであれば(特にCSSでは)、モジュール間の関係性を必要性がないのにも関わらず高めてしまうことになる。こうなると変更の必要のないモジュールにまで変更が及んでしまうため将来的に実装が難しくなる(例: ホームページにある記事の周りのマージンの変更が、下層ページのブログ記事のマージンを変更してしまう)。</p>
+
+<p>この問題は見つけ出すのが難しく、プロジェクトに対して変更がされない(もちろん変更のないプロジェクトはない)と再現しづらい。特定のクラスの拡張を行う場合に多くのプロパティを再定義しているのであれば、ベーススタイルは一般的過ぎると言えるだろう。</p>
+
+<h4 id="dependency-inversion-principle-インターフェイス分離の原則:49fcbce1f4686866c4b5c8b0fbb880ae">Dependency Inversion Principle / インターフェイス分離の原則</h4>
+
+<blockquote>
+<ol>
+<li>ハイレベルのモジュルはローレベルのモジュールに依存するべきではなく、両者は抽象概念に依存するべき。</li>
+<li>抽象概念はディテールに依存するべきではなく、ディテールが抽象概念に依存するべき。</li>
+</ol>
+</blockquote>
+
+<p>CSSの分野におけるこのルールは、コンテイナは期待する振る舞いをする限り、子要素の存在やビジュアル要素に対して無関心であるべきだと捉えることができる。<code>.article</code>コンポーネントにとってはレイアウトを壊さない限り<code>.title</code>がどうスタイルされているかを知る必要がない。子コンポーネントのスタイルはそれぞれのモジュールに委譲するべきで、それらのモジュールの小要素同士は交換しても親要素に影響を与えないように設計されているべきである。これがOOCSSの基礎だ。</p>
+
+<p>入れ子のセレクタの存在がこのルールを破っているという目印になるだろう。<code>#sidebar .group &gt; h3</code>というような入れ子セレクタの代わりに<code>.group-title</code>という新しいクラスを作るべきだろう。こうすることで<code>&lt;h3&gt;</code>、<code>&lt;div&gt;</code>でもほかの要素でも利用することが可能になる。若干のスタイル、振振る舞いが異なる新しいモジュールは依存(子要素)を交換するだけで作ることができるようになり、継承よりも組成を優先することにもつながる。</p>
+
+<h3 id="最後に:49fcbce1f4686866c4b5c8b0fbb880ae">最後に</h3>
+
+<p>ほとんどのコンセプトは複数の分野に当てはめることができるだろう。これらが解決しようとしている問題を理解することで、正しく適応することができるようになる。</p>
+
+<blockquote>
+<p>賢い人は自分の失敗から学ぶ。しかし本当に優れた人はほかの人の失敗からも学ぶ。- Brandon Mull</p>
+</blockquote>
+
+<p>自分のコードをよく整理することで勢いを失わずに済む。きちんとモジュールが緩やかな関係性を保って、それぞれが邪魔をし合わなければ、つまり、メンテナンスが簡単になっていれば、CSSに対する変更を恐れる必要はない。</p>
+
+<h3 id="おすすめのリソース:49fcbce1f4686866c4b5c8b0fbb880ae">おすすめのリソース</h3>
+
+<p>コードサンプルを見たい場合、あるいはこれらのコンセプトを適応したい場合には以下のリンクが参考になるだろう。問題とそれらに対する解決に対してより詳しく記述している。</p>
+
+<ul>
+<li><a href="https://github.com/necolas/idiomatic-css">Idiomatic CSS</a></li>
+<li><a href="http://www.stubbornella.org/content/2011/04/28/our-best-practices-are-killing-us/">Our (CSS) Best Practices Are Killing US</a></li>
+<li><a href="http://smacss.com/">Scalable and Modular Architecture for CSS</a></li>
+<li><a href="http://csswizardry.com/2012/05/keep-your-css-selectors-short/">Keep your CSS selectors short</a></li>
+<li><a href="http://snook.ca/archives/html_and_css/one-module-or-two">One Module or Two</a></li>
+<li><a href="http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/">The single responsibility principle applied to CSS</a></li>
+<li><a href="http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/">The open/closed principle applied to CSS</a></li>
+<li><a href="http://oli.jp/2011/ids/">Don’t use IDs in CSS selectors?</a></li>
+</ul>
+
+        <div class="backtohome">
+          <a class="icon icon-home" href="/" title="Back to"></a>
+        </div>
+      </div>
+    </article>
+    <footer class="the-footer">
+  <div class="section-inner">
+    <h3 class="h5 uppercase">Ask Me Questions</h3>
+    <p>Ask me anything at <a href="https://github.com/enja/article/issues/new">GitHub</a></p>
+    <h3 class="h5 uppercase">Elsewhere</h3>
+    <p>
+      <a href="http://twitter.com/cssradar">Twitter</a>
+      <span class="space">/</span>
+      <a href="http://github.com/studiomohawk">GitHub</a>
+      <span class="space">/</span>
+      <a href="http://google.com/+YuyaSaito">Google+</a>
+      <span class="space">/</span>
+      <a href="https://pinboard.in/u:studiomohawk">Pinboard</a>
+    </p>
+    <p class="bio madeintokyo">
+      Build by Yuya Saito - Front-end Develper by day, translator by night.<br>
+      Made Proudly in Tokyo.
+    </p>
+  </div>
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
+
+  </body>
+</html>

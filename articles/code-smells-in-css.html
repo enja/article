@@ -1,0 +1,433 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.css">
+<link rel="stylesheet" href="/style/main.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:800">
+<title>Code smells in CSS</title>
+<meta name="description" content="en.ja Articleではハイクオリティな海外のフロントエンドにまつわる記事の翻訳を掲載しています。">
+<meta property="og:title" content="Code smells in CSS">
+<meta property="og:type" content="website">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://article.enja.io/articles/code-smells-in-css.html">
+<meta property="og:site_name" content="en.ja Article">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@cssradar">
+<link rel="author" href="https://plus.google.com/+YuyaSaito">
+<link rel="author" href="/humans.txt">
+
+  </head>
+  <body>
+    <div class="stripe"></div>
+
+    <article class="post-article list-article">
+      <div class="section-inner">
+        <h1>Code smells in CSS</h1>
+        <div class="metadata">
+  <div class="original">
+    <span class="author">Harry Roberts</span>
+  </div>
+  <span class="translator">Yuya Saito</span>
+  <time class="pub-date">Mar 23, 2013</time>
+</div>
+
+        <div class="credit">
+  <strong>Credit</strong>
+  <p>
+    This article is translated with permission of <a href="http://csswizardry.com/">Harry Roberts</a>.<br>
+    You can find original article at <a href="http://csswizardry.com/2012/11/code-smells-in-css/">Code smells in CSS</a>
+  </p>
+  <p>
+    本記事は<a href="http://csswizardry.com/">Harry Roberts</a>氏の了承を得て翻訳された記事です。<br>
+    原文は<a href="http://csswizardry.com/2012/11/code-smells-in-css/">Code smells in CSS</a>にて掲載されています。
+  </p>
+</div>
+
+        
+
+<h2 id="code-smells-in-css:11444bab6ebdfda57f8551ef40f46bc7">Code smells in CSS</h2>
+
+<p>Chris Coyierが<a href="http://coding.smashingmagazine.com/2012/07/13/coding-qa-with-chris-coyier-code-smell-type-grid/">回答した</a>とある問いがある:</p>
+
+<blockquote>
+<p>CSSコードが「臭い」かどうかをどう知ることができるのか？コードがいまいち、あるいはデベロッパがいまいちかどうかの兆候はどんなものか？コードの中でどんな部分を見て、善し悪しを決定づけるのか？</p>
+</blockquote>
+
+<p>Chrisの素晴らしい回答にいくつか追加して私なりに回答してみようと思う。</p>
+
+<p>私はBSkyBでインハウスデベロッパとして働く毎日を送っている。私は最近のサイトではフロントエンドに1年以上もかけ(まだ作業中)て制作が必要なほどの大きなウェブサイトに携わっている。その私にとって、悪いCSSとはとても具体的で厄介な代物だ。1つのサイトの制作に数ヶ月にも渡ってかかるような場合、CSSであろうとそうでなかろうと、質の悪いコードの存在が許される余裕はなく、悪いコードは改善する必要性がある。</p>
+
+<p>私がCSSのクオリティ、メンテナンス性、そして品位のようなものに対して注意していることを少しだけ(もちろん疑いの余地もなく言及していないこともある)共有しよう。</p>
+
+<h2 id="スタイルの取り消し:11444bab6ebdfda57f8551ef40f46bc7">スタイルの取り消し</h2>
+
+<p>スタイルを取り消すスタイル(リセット以外で)はすぐに注意が必要であるとわかる。CSSの本質からしてスタイルは、もちろん、カスケードするし、以前に定義したものから継承される。ルールセットは常に継承のみを行うべきで、以前のものに追加するべきであり、取り消しをするべきではない。</p>
+
+<p>以下のようなCSSの宣言は:</p>
+
+<pre><code class="language-css">    border-bottom:none;
+    padding:0;
+    float:none;
+    margin-left:0;
+</code></pre>
+
+<p>…は <em>往々にして</em> 悪い知らせだ。もしボーダーを削除しなければならないとしたら、それを適用するのが少し早すぎたのだ。非常に説明するのが難しいので簡単な例を見ていこう:</p>
+
+<pre><code class="language-css">    h2{
+        font-size:2em;
+        margin-bottom:0.5em;
+        padding-bottom:0.5em;
+        border-bottom:1px solid #ccc;
+    }
+</code></pre>
+
+<p>ここですべての<code>h2</code>にいつものように<code>font-size</code>やスペースのための<code>margin</code>、ほんの少しの<code>padding</code>、そしてページ上で次の要素と見た目上の区別を付けやすくするため、ラインを下部に追加した。しかし、場合によってはこのラインが <strong>必要なくなる</strong> ことも考えられるかも知れない。あるいは<code>h2</code>に<code>border</code>も<code>padding</code>を追加しない場面もあるかも知れない。そうなると以下のようなことになりがちだ:</p>
+
+<pre><code class="language-css">    h2{
+        font-size:2em;
+        margin-bottom:0.5em;
+        padding-bottom:0.5em;
+        border-bottom:1px solid #ccc;
+    }
+    .no-border{
+        padding-bottom:0;
+        border-bottom:none;
+    }
+</code></pre>
+
+<p>10行のCSSに1つの醜いクラス名がある。より良い方法としては:</p>
+
+<pre><code class="language-css">    h2{
+        font-size:2em;
+        margin-bottom:0.5em;
+    }
+    .headline{
+        padding-bottom:0.5em;
+        border-bottom:1px solid #ccc;
+    }
+</code></pre>
+
+<p>8行のCSS、取り消しはなく、すばらしく合理的なクラス名となった。</p>
+
+<p><strong>スタイルシートを書き進めるに従って、スタイルを追加するのみにし、削除しないこと。</strong> もしもスタイルの取り消しをしている自分に出会ってしまったら、多くの場合、多くのスタイルをすこし早めに追加しすぎているということになる。</p>
+
+<p>この例は非常に遠慮がちな例ではあるが、私が伝えたいことを完璧に表現したよい例だ。こんなCSSが数万行に及ぶことを想像してみて欲しい。とてつもない無駄だし、とてつもなく必要のない取り消しだ。スタイルするものの前にあるシンプルなものを見破ること。複雑すぎる部分から初めて、あとで取り消し作業をするリスクを冒すべきではない。最終的に <strong>多くのCSSを書くはめになるのに、少ないスタイルになってしまうことになる</strong>。</p>
+
+<p>以前のスタイルを取り消しをしているCSSを見ればすぐに何かしらが質の悪い設計がなされたことと、その何かは修正されるべきであることもわかる。</p>
+
+<h2 id="マジックナンバー:11444bab6ebdfda57f8551ef40f46bc7">マジックナンバー</h2>
+
+<p>これらは私にとっての特に悩みの種である。私はマジックナンバーが大嫌いだ。</p>
+
+<p>マジックナンバーとは(理由もなく)「動作するから」というだけで使われている値を指す。以下の例を見てほしい:</p>
+
+<pre><code class="language-css">    .site-nav{
+        [styles]
+    }
+        .site-nav &gt; li:hover .dropdown{
+            position:absolute;
+            top:37px;
+            left:0;
+        }
+</code></pre>
+
+<p><code>top:37px;</code> これがマジックナンバーだ。この値が正しい振る舞い(らしい)をするたった1つの理由は<code>li</code>内の<code>.site-nav</code>が <em>運良く</em> 37pxの高さを持っているからで、<code>.dropdown</code>のフライアウトメニューはその下に出現する必要があるからだ。</p>
+
+<p>ここで問題にしているのは37pxが <em>完璧に</em> 状況に依存している点であり、だからこそ、その数字を信用することができない。もし誰かが<code>.site-nav</code>の<code>font-size</code>を変更し、29pxの高さになったとしたらどうなるか？この数字からは妥当性は失われ、他のデベロッパもこの数字をアップデートすることを知っておく必要がある。</p>
+
+<p>もしChromeは <em>確かに</em> <code>li</code>を37pxとして描画したとして、IEが36pxだったらどうなるのか？この数字はある1つの条件でしか動作しないのだ。</p>
+
+<p>絶対に、 <em>絶対にだ</em> 、なんとなく動作するからという理由で数字を使ってはいけない。このシチュエーションでは、<code>top:37px;</code>を<code>top:100%;</code>、これは基本的にはトップからすべてという意味になる、に差し替えたほうがはるかにいい。</p>
+
+<p>マジックナンバーにはそれらにまつわるいくつかの問題がある。上に挙げた通り、依存できるものではないということに加えて、それらの「なんとなく動いたから」という性質から、他のデベロッパにその数字がどこからやってきたのかという情報を伝達しづらい。もしも、より複雑なマジックナンバーを使った例があったとして、そのマジックナンバーが無効になった場合、以下の1つ以上の問題に出くわすことだろう:</p>
+
+<ul>
+<li><p>次にアサインされたデベロッパがそのマジックナンバーがどこからやってきたか分からずに削除、そして最初からやり直し。</p></li>
+
+<li><p>次にアサインされたデベロッパは注意深い人で、マジックナンバーがどこからやってきたかわからないので、その番号に触れずに問題を修正しようとする。古くて、期限切れの、ハックっぽいマジックナンバーはコードに残ったままとなり、その次のデベロッパもその上からハックをし、あなた自身がその上からハックする羽目になる。</p></li>
+</ul>
+
+<p>マジックナンバーは悪い知らせだ。すぐに期限切れになるし、他のデベロッパを混乱させる上、説明もすることもできず、信用もできない。</p>
+
+<p>他人のコードで説明なしの番号に出会うことほど酷いものはない。一体その番号が何をするのか、何のために必要なのか、それに触れるべきなのか否か悩むことになる。</p>
+
+<p>CSSにマジックナンバーを見かけたら私はすぐに質問をしはじめる。どうしてここにあるのか、何をするものなのか、どうやってこの番号は動作するのか、マジックナンバーを使わずに同じ結果を得ることは可能なのか？</p>
+
+<p><strong>厄災から逃れるつもりでマジックナンバーは避けるべき。</strong></p>
+
+<h2 id="制限されたセレクタ:11444bab6ebdfda57f8551ef40f46bc7">制限されたセレクタ</h2>
+
+<p>制限されたセレクタとは以下のようなセレクタだ:</p>
+
+<pre><code class="language-css">    ul.nav{}
+    a.button{}
+    div.header{}
+</code></pre>
+
+<p>基本は例のように不必要に要素が追加されたセレクタだ。<br />
+これらが悪い知らせである理由は:</p>
+
+<ul>
+<li>他の要素への再利用性を完璧に阻害してしまう。</li>
+<li>詳細度を上げてしまう。</li>
+<li>ブラウザの作業負荷を上げてしまう(パフォーマンスは低下する)。</li>
+</ul>
+
+<p>これらはすべて悪い特徴である。このセレクタは以下の様にできるし、そうするべきだ:</p>
+
+<pre><code class="language-css">    .nav{}
+    .button{}
+    .header{}
+</code></pre>
+
+<p>こうすることで、<code>.nav</code>を<code>ol</code>に適用することができるし、<code>.button</code>を<code>input</code>に適用することもできる。そしてサイトがHTML5に対応できるようになったら、ヘッダの<code>div</code>を<code>header</code>要素に変更してもスタイルが無効になる心配をしなくても済む。</p>
+
+<p>パフォーマンスに関しては小さな問題にしかならないが、それでもやはり問題ではある。どうしてブラウザに対して、クラス<code>.button</code>が<code>a</code>にあるかどうかを探して貰う必要があるのか、<code>.button</code>を探して貰えば済む場合は特にだ。セレクタを制限することでブラウザの作業負荷を上げてしまうことになるわけだ。</p>
+
+<p>より過剰な例としては:</p>
+
+<pre><code class="language-css">    ul.nav li.active a{}
+    div.header a.logo img{}
+    .content ul.features a.button{}
+</code></pre>
+
+<p>これらセレクタは以下のように大規模に削減するか、完全に書き直すことができる:</p>
+
+<pre><code class="language-css">    .nav .active a{}
+    .logo &gt; img {}
+    .features-button{}
+</code></pre>
+
+<p>こうすることで:</p>
+
+<ul>
+<li>コードそのものの量を抑え、</li>
+<li>パフォーマンスを向上し、</li>
+<li>可搬性を向上させ、</li>
+<li>詳細度をへらすこと</li>
+</ul>
+
+<p>ができる。</p>
+
+<p>スタイルシートを見ている際、制限しすぎたセレクタを見かけ次第、どうしてそんな冗長に書く必要があったのかを知りたくなるし、どうやったら最も短くなるように削減できるかを考える。</p>
+
+<h2 id="ハードコード-絶対値:11444bab6ebdfda57f8551ef40f46bc7">ハードコード/絶対値</h2>
+
+<p>マジックナンバーと同じように、ハードコード値も悪い知らせだ。ハードコード値とは以下の様なものを指す:</p>
+
+<pre><code class="language-css">    h1{
+        font-size:24px;
+        line-height:32px;
+    }
+</code></pre>
+
+<p><code>line-height:32px;</code> ここがよろしくない。<code>line-height:1.333</code>とするべきだろう。</p>
+
+<p>行間はより寛大で、柔軟になるように常に相対値で設定するべきだ。<code>h1</code>の<code>font-size</code>を変更する際に、<code>line-height</code>にもその変更を追従させたいはずだ。相対値の<code>line-height</code>がないと、<code>h1</code>を変更する場合に以下のようになってしまう:</p>
+
+<pre><code class="language-css">    h1{
+        font-size:24px;
+        line-height:32px;
+    }
+    
+    /**
+     * Main site `h1`
+     */
+    .site-title{
+        font-size:36px;
+        line-height:48px;
+    }
+</code></pre>
+
+<p>この例のように初期値が柔軟でないため、固定の<code>line-height</code>を無制限に追加しつづけることになってしまう。単位なし、そして相対の<code>line-height</code>があれば、単純に以下のようにするだけで済む:</p>
+
+<pre><code class="language-css">    h1{
+        font-size:24px;
+        line-height:1.333;
+    }
+    
+    /**
+     * Main site `h1`
+     */
+    .site-title{
+        font-size:36px;
+    }
+</code></pre>
+
+<p>大きな違いのように思えないかもしれないが、大規模プロジェクトのテキスト要素を考えてみれば非常に大きなインパクトになる。</p>
+
+<p>注意: <code>line-height</code>以外にも <em>多くの</em> 場面に当てはめられる。基本的には、<em>どんな</em> スタイルシート内のハードコード値には注意と嫌疑が必要である。</p>
+
+<p>ハードコード値には将来性がなく、柔軟でもなく、寛大でもないため避けるべきである。ハードコード値が <em>本当に</em> 必要になる場面はスプライトくらいで、スプライトはどんな場合でも <em>常に</em> 特定のサイズである必要がある。</p>
+
+<p>ハードコード値をスタイルシートで見かけたら、なぜそれが必要なのか、どう回避できるかを知りたいと私なら思う。</p>
+
+<h2 id="力ずくでやる:11444bab6ebdfda57f8551ef40f46bc7">力ずくでやる</h2>
+
+<p>ハードコード値と似た流れではあるが、もう少しだけ詳細だ。CSSを力ずくで書くということはハードコードされたマジックナンバーや様々な手段を用いて、力ずくでレイアウトをすることを意味する。例を見てほしい:</p>
+
+<pre><code class="language-css">    .foo{
+        margin-left:-3px;
+        position:relative;
+        z-index:99999;
+        height:59px;
+        float:left;
+    }
+</code></pre>
+
+<p>この例は <em>酷い</em> CSSだ。すべての宣言はハードコード値で、力ずくで、レイアウトに影響する宣言となっていて、 <em>明確に</em> 強制的に何かを描画させたいところに描画させるためだけに利用されている。</p>
+
+<p>この手のCSSが示しているのは、このような操作が必要な貧弱にコーディングがされているか、ボックスモデルへの理解が足りないか、またはその両方だ。</p>
+
+<p>上手にコーディングされたレイアウトは力ずくで行う必要は一切なく、 <em>きちんと</em> ボックスモデル、レイアウトを理解し、算出済みのスタイルをより頻繁に見るということでこのような状況になることは稀なはずだ。</p>
+
+<p>力ずくのCSSを発見しだい、どうしてそれが発生したのか、どれくらい前の段階に戻ればレイアウトをより合理的に行うことができるかを知りたくなる。</p>
+
+<h2 id="危険なセレクタ:11444bab6ebdfda57f8551ef40f46bc7">危険なセレクタ</h2>
+
+<p>「危険なセレクタ」とは影響が広範囲にわたるセレクタを意味する。非常にわかりやすく単純な危険なセレクタの例は:</p>
+
+<pre><code class="language-css">    div{
+       background-color:#ffc;
+       padding:1em;
+    }
+</code></pre>
+
+<p>この例はどんなデベロッパに対してでもすぐにその叫びが聞こえるだろう。一体どうしてサイト上のすべての<code>div</code>に対して絨毯攻撃をしかけたいのか？これはいい質問だ。だとしたら、なぜ<code>aside{}</code>や<code>header{}</code>または<code>ul{}</code>というようなセレクタを使うのだろうか？このようなセレクタは、それはもう、 <em>とてつもなく</em> 影響範囲が広く、最終的には前段で書いたようにCSSの取り消しを行うはめになる。</p>
+
+<p><code>header{}</code>の例を詳しく見ていこう…</p>
+
+<p>多くの人が<code>header</code>要素を使ってサイトのメインとなるヘッダをマークアップする、それ自体はなんら問題はないが、もしサイト全体のヘッダを以下のようにスタイルしたとしたら:</p>
+
+<pre><code class="language-css">    header{
+        padding:1em;
+        background-color:#BADA55;
+        color:#fff;
+        margin-bottom:20px;
+    }
+</code></pre>
+
+<p>…この場合は問題がないとは言えない。<code>header</code>要素は「あなたのサイトのメインヘッダ」という意味には <strong>ならない</strong>。仕様によれば<code>header</code>要素は複数のコンテキスト内で複数回利用することができる。この場合は<code>.site-header{}</code>のようなセレクタでターゲットするべきだ。</p>
+
+<p>このように具体的なスタイルを一般的なセレクタにあてるのは危険だ。そのスタイルはその要素を再度利用する場合に、適用するべきではないエリアにスタイルが漏れてしまい、結果スタイルを取り除く作業(スタイルを取り除くのに
+コードを追加する)で対抗するしかなくなってしまう。</p>
+
+<p>セレクタはよい<a href="http://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/">セレクタの目的</a>をもたせるようにすること。</p>
+
+<p>以下を見てほしい:</p>
+
+<pre><code class="language-css">    ul{
+        font-weight:bold;
+    }
+    header .media{
+        float:left;
+    }
+</code></pre>
+
+<p>セレクタがタイプセレクタか、上記のような非常にベーシックな抽象化をされたセレクタを見かけると、私はパニックになる。これらのセレクタは影響力が大きすぎるし、すぐに問題に直面することになるからだ。これらの要素を再利用したらすぐに必要のないスタイルを継承しているのを見ることになる。なぜなら、どこかで大きな影響力を持つセレクタがその要素にも影響を与えてしまっているからだ。</p>
+
+<h2 id="受動的な-important:11444bab6ebdfda57f8551ef40f46bc7">受動的な<code>!important</code></h2>
+
+<p><code>!important</code>には問題はない。なんの問題もないし、当然、<em>重要な</em> ツールである。しかし、<code>!important</code>は特定の状況下で利用するべきである。</p>
+
+<p><strong><code>!important</code>は能動的にのみ利用するべきで、受動的に使ってはならない。</strong></p>
+
+<p>どういう意味かというと、絶対に <em>常に</em> スタイルを優先させたいということがあり、かつそのことが初めからわかっているというタイミングがあるということだ。</p>
+
+<p>例えば、 <em>常に</em> エラー状態は赤くなる場合に以下のように記述することにはまったく問題がない:</p>
+
+<pre><code class="language-css">    .error-text{
+        color:#c00!important;
+    }
+</code></pre>
+
+<p>もしエラーが常にテキストが青くなる<code>div</code>で発生したとして、エラー時にそのルールを変更することに対して自信を持てる。エラーは <em>常に</em> 赤で表現される、なぜならそれはエラーだからで、ユーザに対するメッセージは常に一定に表現するべきだからだ。常にエラーが赤であるべきだから、ここでは能動的に<code>!important</code>を追加している。</p>
+
+<p><code>!important</code>が悪さをし始めるのは、それらを受動的に使う場合だ。誰かを詳細度の問題から逃がしたい時に使われた場合とも言える。またはちょっとした苦境にいて、<code>!important</code>を使って強制的に動作させるような場合だ。これらのケースは<code>!important</code>を受動的に利用している場合で、これは悪い知らせとなる。</p>
+
+<p><code>!important</code>を受動的に利用するということは、よろしくないCSSにより発生した問題を回避するためだけに利用したということになる。根源的な問題は一切解決できず、症状を抑えたにすぎない。問題そのものは存在しつづける上に、強力な詳細度を携えたレイヤを追加し、また1つ余計な詳細度問題を追加したにすぎない。</p>
+
+<p>私は能動的に使っている限りでは、<code>!important</code>に気がとがめることはない。受動的に<code>!important</code>が使われていれば、すぐに質の悪い構造のCSSのせいだとわかるし、問題の解決にはリファクタが必要であり、性急な詳細度の追加などではないこともわかる。</p>
+
+<h2 id="id:11444bab6ebdfda57f8551ef40f46bc7">ID</h2>
+
+<p>これは私の場合と、大きなチームの場合に特化している。<a href="http://csswizardry.com/2011/09/when-using-ids-can-be-a-pain-in-the-class/">以前にどうしてIDが悪いアイデアであることについて</a>は書いたとおり、IDは詳細度を引き上げ、誰も利用しないし、<strong>CSSで利用するべきではない</strong>。IDはHTML上のフラグメント識別子とJSのフックとして利用し、CSSでは利用しない。</p>
+
+<p>利用は単純だ:</p>
+
+<ul>
+<li>IDはページ内で1度 <em>しか</em> 利用できない。</li>
+<li>クラスはページ内で1度しか使わなくても、100万回使うこともできる。</li>
+<li>IDは多くの場合、再利用できるクラスに抽象化できる特徴を持っている。</li>
+<li><a href="http://codepen.io/chriscoyier/pen/lzjqh">IDは クラスの <strong>255倍</strong> 詳細度が高い</a>。</li>
+<li>つまり、<strong>256の連結クラスを使ってやっと1つのIDを上書きできる</strong>。</li>
+</ul>
+
+<p>もし最後のポイントを読んでもIDを使うことを辞めないとしたら、私にはどうしていいかもはやわからない…</p>
+
+<p>IDがスタイルシートにあれば、クラスと差し替えたくなる。詳細度こそが、プロジェクトが悪循環を始めるきっかけだ。だからこそ、小さく止めることが大切だ。</p>
+
+<p>楽しいエクササイズ: <a href="http://jsfiddle.net/csswizardry/9wGac/">この問題</a>を <em>華麗に</em> 解決してほしい。ヒント: <a href="http://jsfiddle.net/csswizardry/9wGac/1/">これは華麗とはいえない</a>、または<a href="http://jsfiddle.net/csswizardry/9wGac/2/">こちらも</a></p>
+
+<p>&#8251;訳注: IDがクラスの255倍詳細度が高い〜という記述、およびクラスを256個連結してIDを上書きできる〜という記述について、現時点では特定のブラウザ上のバグであり、仕様としてそのように定義されているわけではありません。<br />
+それくらい詳細度が高いのがIDである、という風に思ってください。</p>
+
+<h2 id="ルーズなクラス名:11444bab6ebdfda57f8551ef40f46bc7">ルーズなクラス名</h2>
+
+<p>「ルーズな」クラス名とはその目的を表現するのに十分な説明ができていないクラス名のことを指す。例えば<code>.card</code>というクラスを想像してほしい。一体このクラスは何をするものだろうか？</p>
+
+<p>このクラス名は非常にルーズだ、ルーズなクラス名は以下の主要な2つの理由で非常に悪いものだと言える:</p>
+
+<ul>
+<li>クラス名のみだけでその目的を探り出すことができない。</li>
+<li>あまりにも漠然としているため、他のデベロッパが過失により再定義してしまうのが簡単にできてしまう。</li>
+</ul>
+
+<p>初めのポイントはすごく単純だ。<code>.card</code>は何を意味するのか？なにをスタイルしているのか、Trelloっぽいコンセプトでカードがコンポーネントになっているのか？ポーカーのウェブサイトでトランプに追加したクラスなのか？クレジットカードの画像を指しているのか？ルーズすぎるため、知るよしもない。クレジットカードを意味するものだとしよう、そうするとクラスは<code>.credit-card-image{}</code>であればよりわかりやすい。長くなった？ そうだ。がより良くもなった？ もちろん！</p>
+
+<p>ルーズなクラス名における2つ目の問題が(過失により)簡単に再配置/再定義されてしまうことだ。ショッピングサイトで<code>.card</code>を使ったとして、ユーザアカウントに紐づくユーザのクレジットカードのことを示しているとしよう。そして、他のデベロッパがやってきて、他人にメッセージカードを贈るオプションが付いたプレゼントが買える機能を追加するのを想像してほしい。きっとどこかで<code>.card</code>を使いたくなるはずだ、(それは <em>間違い</em> だが) そうなったらまず間違いなく(そんな状況がそもそも考えにくいが)、<code>.card</code>クラスは再定義され、上書きされてしまう。</p>
+
+<p>これらすべてはより厳密なクラス名を用いることで回避できる。<code>.card</code>や<code>.user</code>などのようなクラス名はルーズすぎて、理解するのが難しく、過失による再利用/上書きが発生しやすい。</p>
+
+<p>ルーズなクラスを見かけたら、私ならいったい何を意味するのかを探し出し、名前を変更できるか聞くことだろう。<br />
+クラス名は十分に明細なものにするべきだ。</p>
+
+<h2 id="最後に:11444bab6ebdfda57f8551ef40f46bc7">最後に</h2>
+
+<p>そういうわけで、これらが私がCSSにおけるコードが「臭い」と感じる、<em>多くの</em> 条件のうちの少しだ。これらは私が毎日のようにどんな犠牲を払ってでもさける努力をしている事柄だ。何ヶ月におよぶ(最終的には何年も)大きなプロジェクトの場合、統制をとることは <em>必要不可欠</em> であり、上にあげたような事柄、もちろん他の事柄も、に注意しておくことは最優先されるべきだ。(これらがどれほど小さなサブセットであるかについていくら強調しても足りない。<em>もっと</em> もっと多くの事柄について注意している。)</p>
+
+<p>もちろんどんなルールにでもかならず例外は <em>ある</em> 。しかしそれらはケースバイケースで評価する必要がある。多くの場合、これらは私が苦労して避けている事柄であり、遠くからでもCSSに見つけることができるものばかりだ。</p>
+
+        <div class="backtohome">
+          <a class="icon icon-home" href="/" title="Back to"></a>
+        </div>
+      </div>
+    </article>
+    <footer class="the-footer">
+  <div class="section-inner">
+    <h3 class="h5 uppercase">Ask Me Questions</h3>
+    <p>Ask me anything at <a href="https://github.com/enja/article/issues/new">GitHub</a></p>
+    <h3 class="h5 uppercase">Elsewhere</h3>
+    <p>
+      <a href="http://twitter.com/cssradar">Twitter</a>
+      <span class="space">/</span>
+      <a href="http://github.com/studiomohawk">GitHub</a>
+      <span class="space">/</span>
+      <a href="http://google.com/+YuyaSaito">Google+</a>
+      <span class="space">/</span>
+      <a href="https://pinboard.in/u:studiomohawk">Pinboard</a>
+    </p>
+    <p class="bio madeintokyo">
+      Build by Yuya Saito - Front-end Develper by day, translator by night.<br>
+      Made Proudly in Tokyo.
+    </p>
+  </div>
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
+
+  </body>
+</html>

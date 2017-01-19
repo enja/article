@@ -1,0 +1,4 @@
+.list-article h2:after {
+  content: '&raquo;'
+  display: inline-block;
+}

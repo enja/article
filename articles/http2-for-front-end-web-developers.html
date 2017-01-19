@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.css">
+<link rel="stylesheet" href="/style/main.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:800">
+<title>HTTP2 for front-end web developers</title>
+<meta name="description" content="en.ja Articleではハイクオリティな海外のフロントエンドにまつわる記事の翻訳を掲載しています。">
+<meta property="og:title" content="HTTP2 for front-end web developers">
+<meta property="og:type" content="website">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://article.enja.io/articles/http2-for-front-end-web-developers.html">
+<meta property="og:site_name" content="en.ja Article">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@cssradar">
+<link rel="author" href="https://plus.google.com/+YuyaSaito">
+<link rel="author" href="/humans.txt">
+
+  </head>
+  <body>
+    <div class="stripe"></div>
+
+    <article class="post-article list-article">
+      <div class="section-inner">
+        <h1>HTTP2 for front-end web developers</h1>
+        <div class="metadata">
+  <div class="original">
+    <span class="author">Matt Wilcox</span>
+  </div>
+  <span class="translator">Shogo Sensui</span>
+  <time class="pub-date">Mar 6, 2015</time>
+</div>
+
+        <div class="credit">
+  <strong>Credit</strong>
+  <p>
+    This article is translated with permission of <a href="https://mattwilcox.net/">Matt Wilcox</a>.<br>
+    You can find original article at <a href="https://mattwilcox.net/web-development/http2-for-front-end-web-developers">HTTP2 for front-end web developers</a>
+  </p>
+  <p>
+    本記事は<a href="https://mattwilcox.net/">Matt Wilcox</a>氏の了承を得て翻訳された記事です。<br>
+    原文は<a href="https://mattwilcox.net/web-development/http2-for-front-end-web-developers">HTTP2 for front-end web developers</a>にて掲載されています。
+  </p>
+</div>
+
+        
+
+<p>HTTP2は我々開発者のWebサイト作成の常識を変えるだろう。HTTP1におけるベストプラクティスはHTTP2の世界では害になってしまう。</p>
+
+<h3 id="http1は今日におけるwebの大半において遅く非効率である:bdc571fae74cba78e39d70701b558a74">HTTP1は今日におけるWebの大半において遅く非効率である</h3>
+
+<p>HTTP1.xは私達が最も慣れ親しんでいるHTTPのバージョンだ。HTTP1.xは、ワールドワイドウェブがどのようになるか予想できなかったときに設計された古いプロトコルである。そして、設計以上に複雑なことを我々が求めている以上、その振る舞いは現在のWebにとってももはや充分なものではない。</p>
+
+<p>HTTP1において、Webを閲覧者が許容できるロード時間で提供するために、この古いプロトコルに対しいくつかのハックとも言えるテクニックをパフォーマンスのために施してきた。</p>
+
+<ul>
+<li>Spriting: 複数の画像を扱う場合はそれらを1つに結合し、CSSによって画像の特定の位置を表示する</li>
+<li>Concatenating: 複数のCSSやJSファイルは、結合して1つの大きなファイルにする</li>
+<li>クッキーを利用しないドメインからアセットを配信する</li>
+<li>Sharding: 画像のようなアセットを複数のドメイン・サブドメインでホストする</li>
+</ul>
+
+<p>はじめの2つのテクニックはHTTPリクエストを削減するためのものだ。HTTP1において、リクエストは高価である上に時間を要する。それぞれのリクエストは、リクエストの一部にクッキーが付与され、圧縮もされない。そのため、リクエストを1つにまとめてしまうほうが、異なるリソースを要求する上でより高速になる。</p>
+
+<p>3つ目のテクニックは要求されたアセットを取得するための時間を短縮するためのものだ。クッキーが設定されていると、そのドメインへのリクエスト全てに付与されるので、貴重とも言えるネットワーク経路において無駄なスペースを占めてしまう。もしクッキーが使われないドメインでアセットを配信すれば、それらへのリクエストへクッキーが付与されず、少し高速になるということだ。</p>
+
+<p>最後のシャーディングは、ブラウザがひとつのドメインに対しHTTPリクエストを2つしか実行できないという制限に対するテクニックだ。もし新しくドメインを作ってそこからも配信すれば、ブラウザがアセットを取得するときのコネクションは倍になる。そのため、コンテンツをより早く送り届けることが可能になるのだ。実際には、ブラウザがドメインにつき2コネクションという制限を捨てたため、ここ2年間でシャーディングは、さほど有用でなくなった。</p>
+
+<h3 id="http2で配信されるwebサイトに-http1におけるベストプラクティスは使ってはならない:bdc571fae74cba78e39d70701b558a74">HTTP2で配信されるWebサイトに、HTTP1におけるベストプラクティスは使ってはならない</h3>
+
+<p>HTTP2はもうすぐそこだ。HTTP2はSPDYがベースとなっていて、全てがより効率的になったプロトコルである。また、これはHTTP1において有効であったパフォーマンスのためのテクニックが害になることも意味している。それらのテクニックはHTTP2向けのWebサイトを遅くすることはあっても、速くすることにはならない。だから、HTTP2においては使わないことだ。</p>
+
+<p>HTTP2は複数リクエストをプロトコルレベルで最適化し、発生するコストを小さなものにする。</p>
+
+<ul>
+<li>HTTP2では開いたコネクションを再利用のために長い期間維持することが出来るため、HTTP1においてリクエストの度に必要だったハンドシェイクはなくなる</li>
+<li>HTTP1とは異なり圧縮を使うので、リクエストのサイズがかなり小さくなる。結果、高速になる</li>
+<li>HTTP2の多重送信では1つのコネクションで複数の送受信を行う</li>
+</ul>
+
+<p>これらの意味するところはHTTP1におけるテクニックは必要なくなるということであり、むしろ遅くしてしまうということだ。（ファイルの結合やスプライトによって）閲覧中のページには不要なアセットをロードし、シャーディングはDNSルックアップを引き起こす（シャーディングもHTTP2ならその必要がないのにも関わらず、だ）。</p>
+
+<p>これからWebサイトを構築する際にはHTTP2で配信していくことも検討しよう。そしてその時は、HTTP2においては害となってしまうHTTP1のパフォーマンスのテクニックは使わないようにしなければならない。</p>
+
+        <div class="backtohome">
+          <a class="icon icon-home" href="/" title="Back to"></a>
+        </div>
+      </div>
+    </article>
+    <footer class="the-footer">
+  <div class="section-inner">
+    <h3 class="h5 uppercase">Ask Me Questions</h3>
+    <p>Ask me anything at <a href="https://github.com/enja/article/issues/new">GitHub</a></p>
+    <h3 class="h5 uppercase">Elsewhere</h3>
+    <p>
+      <a href="http://twitter.com/cssradar">Twitter</a>
+      <span class="space">/</span>
+      <a href="http://github.com/studiomohawk">GitHub</a>
+      <span class="space">/</span>
+      <a href="http://google.com/+YuyaSaito">Google+</a>
+      <span class="space">/</span>
+      <a href="https://pinboard.in/u:studiomohawk">Pinboard</a>
+    </p>
+    <p class="bio madeintokyo">
+      Build by Yuya Saito - Front-end Develper by day, translator by night.<br>
+      Made Proudly in Tokyo.
+    </p>
+  </div>
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
+
+  </body>
+</html>

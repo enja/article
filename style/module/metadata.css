@@ -1,0 +1,26 @@
+.metadata {
+  margin: auto auto 1.5em;
+}
+.metadata .author:before {
+  content: "Written By ";
+  display: inline;
+}
+.metadata .translator {
+  display: block;
+}
+.metadata .translator:before {
+  content: "Translated By ";
+  display: inline;
+}
+.metadata .pub-date,
+.metadata .pub-date {
+  display: block;
+}
+.metadata .pub-date:before {
+  content: "Published @ ";
+  display: inline;
+}
+.metadata .edit-date:before {
+  content: "Updated @ ";
+  display: inline;
+}

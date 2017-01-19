@@ -1,0 +1,358 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.css">
+<link rel="stylesheet" href="/style/main.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:800">
+<title>Give PNG a chance</title>
+<meta name="description" content="en.ja Articleではハイクオリティな海外のフロントエンドにまつわる記事の翻訳を掲載しています。">
+<meta property="og:title" content="Give PNG a chance">
+<meta property="og:type" content="website">
+<meta property="og:description" content="">
+<meta property="og:url" content="http://article.enja.io/articles/give-png-a-chance.html">
+<meta property="og:site_name" content="en.ja Article">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@cssradar">
+<link rel="author" href="https://plus.google.com/+YuyaSaito">
+<link rel="author" href="/humans.txt">
+
+  </head>
+  <body>
+    <div class="stripe"></div>
+
+    <article class="post-article list-article">
+      <div class="section-inner">
+        <h1>Give PNG a chance</h1>
+        <div class="metadata">
+  <div class="original">
+    <span class="author">Stoyan Stefanov</span>
+  </div>
+  <span class="translator">Shogo Sensui</span>
+  <time class="pub-date">Oct 4, 2013</time>
+</div>
+
+        <div class="credit">
+  <strong>Credit</strong>
+  <p>
+    This article is translated with permission of <a href="http://calendar.perfplanet.com/">Stoyan Stefanov</a>.<br>
+    You can find original article at <a href="http://calendar.perfplanet.com/2009/give-png-a-chance/">Give PNG a chance</a>
+  </p>
+  <p>
+    本記事は<a href="http://calendar.perfplanet.com/">Stoyan Stefanov</a>氏の了承を得て翻訳された記事です。<br>
+    原文は<a href="http://calendar.perfplanet.com/2009/give-png-a-chance/">Give PNG a chance</a>にて掲載されています。
+  </p>
+</div>
+
+        
+
+<p>みんな、「色んなブラウザで動かないから…」だとか「GIFよりファイルサイズが大きい」などと言ってPNGを選ばない。
+確かに多少の真実はそこにはあるけど、ほとんどが誤解なんだ。誤解に目を向ける前に、PNG8とは何なのか、どんなにクールなのか知ってほしい。</p>
+
+<h2 id="png8:d8f086ef2a3da505845123fc0b94d9bd">PNG8</h2>
+
+<p>PNGにもいくつか種類があり、次のどれかに分類できる。</p>
+
+<ul>
+<li>アルファチャネルを持つことが可能なTrueColorのPNG。これらはPNG24、アルファチャネルのあるものはPNG32として知られている。</li>
+<li>アルファチャネルを持つ、または持たないグレイスケールのPNG。</li>
+<li>インデックスPNG、またはパレットPNG、あるいはPNG8</li>
+</ul>
+
+<p>PNG8はGIFのようなものだ。256色のパレットを保持し、透過もサポートしている。
+しかし、GIFが1ピクセルに透明か不透明かを表現できるのに対し、PNG8は段階的な透過度もサポートしている。
+つまりGIFで出来ることはPNG8でもできるし、それ以上の表現をすることが可能だ。</p>
+
+<p>IE6には欠陥があって、PNG8で半透明に表現している場所がIE6では完全に透明になってしまう。そう、GIFのように。
+だから、プログレッシブ・エンハンスメントとしてのオプションがある。
+同じ画像を利用していても、モダンブラウザでは完全に表現し、IE6ではGIFと同じように利用できるわけだ。</p>
+
+<p>このサンプルを見て欲しい。<a href="http://www.sitepoint.com/png8-the-clear-winner/">こちらの素晴らしい記事</a>からお借りしたものだ。
+モダンブラウザで見ると、電球は輝きを放っている。</p>
+
+<p><img src="/images/give-png-a-chance/ie7.png" alt="" /></p>
+
+<p>IE6以下で見た場合には適切に機能を制限し、輝きの部分は表現されない。</p>
+
+<p><img src="/images/give-png-a-chance/ie6.png" alt="" /></p>
+
+<p>Photoshopがアルファチャネルを持ったPNG8を出力することができないのも辛いポイントだ。
+(彼らがPNG8という名前を思いついてくれたおかげでパレットPNGやインデックスPNGと呼ばずに済んだが)
+アルファチャネルを持つPNG8を出力できるのがFireworksだけ、というのもこの問題を少々難しくしてはいる。
+そして、このPNG8を取り巻く状況を理解し、モダンブラウザでも、そうでなくても画像がきちんと表示できるようにする、という問題に対して取り組むデザイナーも必要になる。</p>
+
+<p>方法の1つとして、まずGIFのみを利用すると想定しておき、モダンブラウザの場合にのみ、
+きちんと分離した半透明のピクセル部分を表示するとアプローチもある。
+こうすることで、GIFのような挙動をするレイヤーと半透明の部分を表示するレイヤーとを分離することができるため、
+IE6でどんな見た目になるのかを簡単にプレビューすることができる。常に心に留めておくべきことは、最悪の状況(IE6)でもPNG8はGIFと同じ表現が可能であることだ。</p>
+
+<h2 id="png-doesn-t-work-in-browsers:d8f086ef2a3da505845123fc0b94d9bd">PNG doesn’t work in browsers?</h2>
+
+<p>2つのエッジケースを除いて、PNGはブラウザで正常に動作しつづけている。</p>
+
+<ul>
+<li>PNG8の半透明をIE6で(上記を参照)表現できないケース。しかし、GIFでもそれはできない。</li>
+<li>IE6でtruecolorのPNGにおける透明部分がベタ一色(大抵はグレー)で表現されてしまうケース。GIFはそもそもアルファチャネルをサポートしていないので、ここでもGIFを代わりに利用することはできない。
+多くの人がこれらの問題を回避するのにGIFを利用しようとする(GIFを利用するということは減色する可能性があることを意味する)が、GIFを利用することで解決できる問題であれば、PNG8を利用する方がよりよい解決だ(ファイルサイズも小さくなる)。</li>
+</ul>
+
+<p>二番目の問題については、IEのAlphaImageLoader CSS Filter（と、これを自動で実行してくれるたくさんのスクリプト）を使うことだが、このフィルタは描画パフォーマンスに深刻な影響が出るため、最後の手段とするべきだろう。このAlphaImageLoaderを使う前に次の3つのことを検討して欲しい。</p>
+
+<ol>
+<li>プログレッシブ・エンハンスメントとしてPNG8を試してみよう</li>
+<li>透過を使わないことを検討しよう - もし背景色がソリッドカラーなら画像をソリッドカラーに変換しよう。もしImageMagickが使えるなら、<code>-flatten</code>オプションを付けることで可能だ。</li>
+<li>IE6なんて忘れてしまおう :)</li>
+</ol>
+
+<p>それでもAlphaImageLoaderを使わざるを得ないのであれば、
+是非アンダースコアハックを使ってIE6ユーザーだけに適用されるようにして欲しい。</p>
+
+<pre><code class="language-css">#some-element {
+    background: url(image.png);
+    _background: none;
+    _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image.png', sizingMethod='crop');
+}
+</code></pre>
+
+<h2 id="pngs-are-bigger-than-gifs:d8f086ef2a3da505845123fc0b94d9bd">PNGs are bigger than GIFs?</h2>
+
+<p>この誤解は、数千色を保持するPNG24に対して256色のGIFというフェアではない比較から生まれている。
+Photoshopや他のソフトで画像を作る人はみんな、Web用にエクスポートするときに、
+まずPNG24で保存しようとして、サイズが大きくなるからという理由でGIFに切り替えるみたいだ。
+しかしGIFで保存する段階で多くの色を失っているわけで、それでもいいのなら、PNG8なら同等の表現を小さいファイルサイズで表現可能だ。
+（PhotoshopはPNG8で適切にエクスポートできないから、もし出力されたPNG8がおかしなことになっていてGIFで大丈夫であればそのときはGIFで出力し、<code>optipng</code>のようなツールでPNGにコンバートして欲しい。）
+もう一度言おう。PNG8はGIFと同等の表現が可能であり、大抵の場合においてGIFよりファイルサイズの小さいフォーマットだ。</p>
+
+<h2 id="comparing-gif-vs-png-filesizes:d8f086ef2a3da505845123fc0b94d9bd">Comparing GIF vs. PNG filesizes</h2>
+
+<p>(次の実験は1年以上前に私が海のど真ん中に浮かぶカーニバルクルーズの船の中で退屈を極めていた際に行ったものだ。
+以来データを見返して来なかった。ここでようやく古いデータを捨て、20Gに及ぶ&rdquo;もしかしたら、また使うかも知れない&rdquo;テスト画像を整理するチャンスが来たわけだ :) )
+Yahoo!の画像検索でいくつかGIFを(「ロゴ」や「グラフ」にマッチしたもの)、1700枚程ダウンロードした。そして<code>optipng</code>を使って全てpngに変換し結果を見た。オプションは特に指定していない。</p>
+
+<pre><code class="language-bash">$ optipng *.gif
+</code></pre>
+
+<p>次の実験から<code>optipng</code>と<code>pngout</code>を利用することはよりよい結果となることだ。これらの結果から(画像をPNGに変換することで)、最低でもGIFを小さなファイルサイズにできることについて考えてみて欲しい。</p>
+
+<p>実験から得た統計データから:</p>
+
+<ul>
+<li>平均して、実際には中央値だが、Web上のGIF画像(昨年の、この小さなサンプルからの判断だが)は 525x388の縦横サイズで、139色を使っている (半分役立たずのデータは大好きだ ;) )</li>
+<li>ファイルサイズの中央値は24Kだった。</li>
+<li>PNGに変換したあとの中央値は18Kだった。</li>
+<li>全てのGIFをPNGに変換することで、約23%を削減できた。</li>
+</ul>
+
+<p>興味深いことに、画像の4%程はGIFと同程度のサイズになってしまった。これは非常に残念な結果だ（どうか誰にも言わないで欲しい）。なので、もう少し頑張らなければならなくなったわけだが、<code>OptiPNG</code>を最高品質（<code>-o7</code>オプション）で実行する代わりに<code>PNGOut</code>を実行することにした。
+結果、1706枚中4枚を除いてGIFよりファイルサイズが小さくなった。もう少し頑張ってみたら(<code>PNGSlim</code>を利用したら。昨日の記事を見て欲しい)、解決できるかもしれないが、1700枚のうちの4枚であれば、気にならない程度だ。
+ところで、<code>OptiPNG</code>で小さなPNGを生成できなかった画像たちは、<code>PNGOut</code>を使って中央値で21%ほどファイルサイズを縮小できた。ごくわずかなじゃじゃ馬GIFたちをならすのには悪くない手法だろう。</p>
+
+<p>それに、100K以上無駄があったファイルもあったし、最大で600K程もセーブできたファイルがあった。そんなの見たことないでしょ？
+もし詳しい数字が見たかったら、<code>OptiPNG</code>と<code>PNGOut</code>を実行した結果の<a href="http://www.phpied.com/files/pngchance/everything.csv">CSV</a>があるからそれを見て欲しい。
+今日覚えておいて欲しいのは「GIFをPNGにすることで、少なくとも20%はネットワーク上のデータを削減できる」ということだ。</p>
+
+<h2 id="comparing-png-optimizers:d8f086ef2a3da505845123fc0b94d9bd">Comparing PNG optimizers</h2>
+
+<p>この検証のために12000以上の画像をダウンロードして（もう一度言うけど、Yahoo!の検索APIを使ったよ）、
+それらにオプティマイザをまとめて実行したけど、いくつかはオプションを変えてある。
+これは想像だけど、有用な結果とはいえない。オプティマイザには、圧縮・圧縮前のフィルタリング、チャンクの除去など、それぞれの特性があるから、
+それらのツールを組み合わせてケースに応じて使うのが一番良いと思う。でも少なくとも、指標のひとつには違いない。</p>
+
+<p>画像は、「baby」「background」「bkg」「flower」「graph」「graphic」「icon」「illustration」「kittens」（もちろん！）、「logo」「monkeys」「png」「transparency」などそれぞれ1000マッチした画像から、4xxエラーや5xxエラー、他のミスなどを除きながら10000個収集した。それらに対し、以下のツールを実行した。</p>
+
+<ul>
+<li>pngcrush – <code>pngcrush -rem alla -reduce before.png after.png</code></li>
+<li>pngcrush-none – チャンクを維持する <code>pngcrush -rem none -reduce before.png after.png</code></li>
+<li>pngcrush-brute – 更に多くのフィルタを試す <code>pngcrush -rem alla -brute -reduce before.png</code> after.png</li>
+<li>pngout – <code>pngout /q /y /force before.png after.png</code>. PNGOutのデフォルトの圧縮レベルは“extreme”なので、2段階下げて試した。</li>
+<li>pngout-match – <code>pngout /s2 /q /y /force before.png after.png</code></li>
+<li>pngout-intense – <code>pngout /s1 /q /y /force before.png after.png</code></li>
+<li>pngrewrite – <code>pngrewrite before.png after.png</code> PNGRewriteはPNG8に対してのみ働き、truecolorからPNG8へコンバートする。</li>
+<li>optipng – <code>optipng before.png -force -out after.png</code>. OptiPNG’sのデフォルトは2 (7が最大)なのでその前後で実行した。</li>
+<li>optipng1 – <code>optipng before.png -o1 -force -out after.png</code></li>
+<li>optipng3 – <code>optipng before.png -o3 -force -out after.png</code></li>
+<li>optipng7 – <code>optipng before.png -o7 -force -out after.png</code></li>
+<li>advpng – <code>cp before.png after.png; advpng -z -f -q after.png</code></li>
+<li>advpng-insane – “insane”というレベル4の圧縮 <code>cp before.png after.png; advpng -z4 -f -q after.png</code></li>
+<li>deflopt – <code>cp before.png after.png; deflopt -s -f after.png</code></li>
+<li>pngoptimizercl – <code>cp before.png after.png; pngoptimizercl -file:&quot;after.png&quot;</code></li>
+</ul>
+
+<p>以下が結果になる。</p>
+
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Median time to run</th>
+<th>Median savings</th>
+<th>Success rate</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>pngcrush</td>
+<td>0.25s</td>
+<td>6.06%</td>
+<td>93.85%</td>
+</tr>
+
+<tr>
+<td>pngcrush-none</td>
+<td>0.23s</td>
+<td>5.58%</td>
+<td>90.22%</td>
+</tr>
+
+<tr>
+<td>pngcrush-brute</td>
+<td>3.08s</td>
+<td>8.10%</td>
+<td>96.31%</td>
+</tr>
+
+<tr>
+<td>pngout</td>
+<td>1.89s</td>
+<td>12.21%</td>
+<td>94.35%</td>
+</tr>
+
+<tr>
+<td>pngout-match</td>
+<td>0.22s</td>
+<td>13.89%</td>
+<td>44.57%</td>
+</tr>
+
+<tr>
+<td>pngout-intense</td>
+<td>1.63s</td>
+<td>12.10%</td>
+<td>94.22%</td>
+</tr>
+
+<tr>
+<td>pngrewrite</td>
+<td>0.07s</td>
+<td>29.84%</td>
+<td>22.37%</td>
+</tr>
+
+<tr>
+<td>optipng</td>
+<td>0.23s</td>
+<td>7.32%</td>
+<td>93.21%</td>
+</tr>
+
+<tr>
+<td>optipng1</td>
+<td>0.10s</td>
+<td>4.24%</td>
+<td>85.16%</td>
+</tr>
+
+<tr>
+<td>optipng3</td>
+<td>0.66s</td>
+<td>7.10%</td>
+<td>94.26%</td>
+</tr>
+
+<tr>
+<td>optipng7</td>
+<td>4.13s</td>
+<td>7.57%</td>
+<td>94.81%</td>
+</tr>
+
+<tr>
+<td>advpng</td>
+<td>0.34s</td>
+<td>11.55%</td>
+<td>52.47%</td>
+</tr>
+
+<tr>
+<td>advpng-insane</td>
+<td>0.76s 15.64%</td>
+<td>56.09%</td>
+<td></td>
+</tr>
+
+<tr>
+<td>deflopt</td>
+<td>0.34s</td>
+<td>0.44%</td>
+<td>96.94%</td>
+</tr>
+
+<tr>
+<td>pngoptimizercl</td>
+<td>0.48s</td>
+<td>9.71%</td>
+<td>97.99%</td>
+</tr>
+</tbody>
+</table>
+
+<p>Success rateは、ツールを使って、オリジナルよりどれだけ小さい結果を出せたかだ。
+例えば、PNGRewriteのSuccess rateはとても少ない。なぜならば256色までしか実行しないからだ。
+Median time to runは1つの画像を最適化するのにツールがかかった時間だ。</p>
+
+<p>それでは皆さん、お待ちかねの&hellip;</p>
+
+<h2 id="give-png-a-chance-com:d8f086ef2a3da505845123fc0b94d9bd">Give PNG a chance (.com)</h2>
+
+<p>もしこの結果を面白いと思ってくれたら私は嬉しい。少なくとも私は面白い結果だったと思っている。</p>
+
+<p>私の隠れたゴールは、みんなが聞いたりビデオを見たりして、よく考えて、次回Photoshopを使うときにWebの為にセーブを実行してくれることだ。</p>
+
+<ul>
+<li><a href="http://www.youtube.com/watch?v=bPdkWJe9XH0">Link to Youtube Movie</a></li>
+</ul>
+
+<p>音楽：ガレージバンドを使ったドラムと、私は2本のギターとベース（ギターにエフェクトをかけてある）とヴォーカルをやった。女の人の声が聴こえるかもしれないけど、ヘリウム効果をかけた私の声だ。MP3は<a href="http://www.phpied.com/files/pngchance/give-png-a-chance.mp3">ここ</a>にある。もしこの曲を自分で試したかったらそれぞれ<a href="http://www.phpied.com/files/pngchance/givePNGaChance.zip">zipにしてある</a>。</p>
+
+<p>映像：気に食わないかもしれないけど、全部Webでの開発だ。 :) 全部JavaScriptとCSSでできてる。ビデオはSafariのウィンドウをキャプチャしたものだ。画像は一切使っていなくて、HTMLで構成されている。<code>-webkit-</code>のアニメーション・トランジションを多用している。実際のソースのバージョンは<a href="http://www.phpied.com/files/pngchance/vid.html">ここ</a>にあるからSafariでみてくれ。スターウォーズのようなエフェクトは<a href="http://esquevin.com/starwars.html">ここ</a>からお借りした。</p>
+
+<p><code>http://givepngachance.com</code>というURLに、今は何もないけど、PNGについての記事などを載せていきたいと思う。</p>
+
+<h2 id="thanks:d8f086ef2a3da505845123fc0b94d9bd">Thanks!</h2>
+
+<p>読んでくれてありがとう。そして「PNGにチャンスを」 :)</p>
+
+        <div class="backtohome">
+          <a class="icon icon-home" href="/" title="Back to"></a>
+        </div>
+      </div>
+    </article>
+    <footer class="the-footer">
+  <div class="section-inner">
+    <h3 class="h5 uppercase">Ask Me Questions</h3>
+    <p>Ask me anything at <a href="https://github.com/enja/article/issues/new">GitHub</a></p>
+    <h3 class="h5 uppercase">Elsewhere</h3>
+    <p>
+      <a href="http://twitter.com/cssradar">Twitter</a>
+      <span class="space">/</span>
+      <a href="http://github.com/studiomohawk">GitHub</a>
+      <span class="space">/</span>
+      <a href="http://google.com/+YuyaSaito">Google+</a>
+      <span class="space">/</span>
+      <a href="https://pinboard.in/u:studiomohawk">Pinboard</a>
+    </p>
+    <p class="bio madeintokyo">
+      Build by Yuya Saito - Front-end Develper by day, translator by night.<br>
+      Made Proudly in Tokyo.
+    </p>
+  </div>
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
+
+  </body>
+</html>

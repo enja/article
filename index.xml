@@ -1,0 +1,1777 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>en.ja Article</title>
+    <link>http://article.enja.io/</link>
+    <description>Recent content on en.ja Article</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 19 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://article.enja.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Signs You May Be A Designer, Not Just A Coder</title>
+      <link>http://article.enja.io/articles/signs-you-may-be-a-designer-not-just-a-coder.html</link>
+      <pubDate>Thu, 19 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://article.enja.io/articles/signs-you-may-be-a-designer-not-just-a-coder.html</guid>
+      <description>
+
+&lt;h2 id=&#34;signs-you-may-be-a-designer-not-just-a-coder:af4c95d1e873a71545e85c4507ec223b&#34;&gt;Signs You May Be A Designer, Not Just A Coder&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;コードを書くことよりも、それについてじっくり考えたり議論することに時間を費やしている。&lt;/li&gt;
+&lt;li&gt;コードを書くことの楽しさより、プロダクトがエンドユーザーにどのように影響するかを考えることに時間を費やしている。&lt;/li&gt;
+&lt;li&gt;目の前のコードを書き上げるだけではなく、システム同士がどのように作用するかを考えている。&lt;/li&gt;
+&lt;li&gt;技術を選定する際、真新しさや流行、あるいは効率的であることより、何を達成するのかを基準にしている。&lt;/li&gt;
+&lt;li&gt;バグチケットが与えられた時に、それをチケットリストから取り除こうとするより、どういう影響を及ぼしているかを考える。&lt;/li&gt;
+&lt;li&gt;仕事を増やすから以外の理由で機能追加をするべきではないと考えている。&lt;/li&gt;
+&lt;li&gt;何のコードをどう書くべきかを単に言われるより、その意志決定のプロセスに携わりたい。&lt;/li&gt;
+&lt;li&gt;コードは目的を達成するためものであると捉えている。コードはデザイン思考を実現するためのツールである。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;当てはまりますか？そうであれば、あなたは単なるコーダーではありません。あなたはコーディングのスキルを持ったデザイナーです。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>HTTP2 for front-end web developers</title>
+      <link>http://article.enja.io/articles/http2-for-front-end-web-developers.html</link>
+      <pubDate>Fri, 06 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://article.enja.io/articles/http2-for-front-end-web-developers.html</guid>
+      <description>
+
+&lt;p&gt;HTTP2は我々開発者のWebサイト作成の常識を変えるだろう。HTTP1におけるベストプラクティスはHTTP2の世界では害になってしまう。&lt;/p&gt;
+
+&lt;h3 id=&#34;http1は今日におけるwebの大半において遅く非効率である:bdc571fae74cba78e39d70701b558a74&#34;&gt;HTTP1は今日におけるWebの大半において遅く非効率である&lt;/h3&gt;
+
+&lt;p&gt;HTTP1.xは私達が最も慣れ親しんでいるHTTPのバージョンだ。HTTP1.xは、ワールドワイドウェブがどのようになるか予想できなかったときに設計された古いプロトコルである。そして、設計以上に複雑なことを我々が求めている以上、その振る舞いは現在のWebにとってももはや充分なものではない。&lt;/p&gt;
+
+&lt;p&gt;HTTP1において、Webを閲覧者が許容できるロード時間で提供するために、この古いプロトコルに対しいくつかのハックとも言えるテクニックをパフォーマンスのために施してきた。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Spriting: 複数の画像を扱う場合はそれらを1つに結合し、CSSによって画像の特定の位置を表示する&lt;/li&gt;
+&lt;li&gt;Concatenating: 複数のCSSやJSファイルは、結合して1つの大きなファイルにする&lt;/li&gt;
+&lt;li&gt;クッキーを利用しないドメインからアセットを配信する&lt;/li&gt;
+&lt;li&gt;Sharding: 画像のようなアセットを複数のドメイン・サブドメインでホストする&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;はじめの2つのテクニックはHTTPリクエストを削減するためのものだ。HTTP1において、リクエストは高価である上に時間を要する。それぞれのリクエストは、リクエストの一部にクッキーが付与され、圧縮もされない。そのため、リクエストを1つにまとめてしまうほうが、異なるリソースを要求する上でより高速になる。&lt;/p&gt;
+
+&lt;p&gt;3つ目のテクニックは要求されたアセットを取得するための時間を短縮するためのものだ。クッキーが設定されていると、そのドメインへのリクエスト全てに付与されるので、貴重とも言えるネットワーク経路において無駄なスペースを占めてしまう。もしクッキーが使われないドメインでアセットを配信すれば、それらへのリクエストへクッキーが付与されず、少し高速になるということだ。&lt;/p&gt;
+
+&lt;p&gt;最後のシャーディングは、ブラウザがひとつのドメインに対しHTTPリクエストを2つしか実行できないという制限に対するテクニックだ。もし新しくドメインを作ってそこからも配信すれば、ブラウザがアセットを取得するときのコネクションは倍になる。そのため、コンテンツをより早く送り届けることが可能になるのだ。実際には、ブラウザがドメインにつき2コネクションという制限を捨てたため、ここ2年間でシャーディングは、さほど有用でなくなった。&lt;/p&gt;
+
+&lt;h3 id=&#34;http2で配信されるwebサイトに-http1におけるベストプラクティスは使ってはならない:bdc571fae74cba78e39d70701b558a74&#34;&gt;HTTP2で配信されるWebサイトに、HTTP1におけるベストプラクティスは使ってはならない&lt;/h3&gt;
+
+&lt;p&gt;HTTP2はもうすぐそこだ。HTTP2はSPDYがベースとなっていて、全てがより効率的になったプロトコルである。また、これはHTTP1において有効であったパフォーマンスのためのテクニックが害になることも意味している。それらのテクニックはHTTP2向けのWebサイトを遅くすることはあっても、速くすることにはならない。だから、HTTP2においては使わないことだ。&lt;/p&gt;
+
+&lt;p&gt;HTTP2は複数リクエストをプロトコルレベルで最適化し、発生するコストを小さなものにする。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HTTP2では開いたコネクションを再利用のために長い期間維持することが出来るため、HTTP1においてリクエストの度に必要だったハンドシェイクはなくなる&lt;/li&gt;
+&lt;li&gt;HTTP1とは異なり圧縮を使うので、リクエストのサイズがかなり小さくなる。結果、高速になる&lt;/li&gt;
+&lt;li&gt;HTTP2の多重送信では1つのコネクションで複数の送受信を行う&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;これらの意味するところはHTTP1におけるテクニックは必要なくなるということであり、むしろ遅くしてしまうということだ。（ファイルの結合やスプライトによって）閲覧中のページには不要なアセットをロードし、シャーディングはDNSルックアップを引き起こす（シャーディングもHTTP2ならその必要がないのにも関わらず、だ）。&lt;/p&gt;
+
+&lt;p&gt;これからWebサイトを構築する際にはHTTP2で配信していくことも検討しよう。そしてその時は、HTTP2においては害となってしまうHTTP1のパフォーマンスのテクニックは使わないようにしなければならない。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Give PNG a chance</title>
+      <link>http://article.enja.io/articles/give-png-a-chance.html</link>
+      <pubDate>Fri, 04 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://article.enja.io/articles/give-png-a-chance.html</guid>
+      <description>
+
+&lt;p&gt;みんな、「色んなブラウザで動かないから…」だとか「GIFよりファイルサイズが大きい」などと言ってPNGを選ばない。
+確かに多少の真実はそこにはあるけど、ほとんどが誤解なんだ。誤解に目を向ける前に、PNG8とは何なのか、どんなにクールなのか知ってほしい。&lt;/p&gt;
+
+&lt;h2 id=&#34;png8:d8f086ef2a3da505845123fc0b94d9bd&#34;&gt;PNG8&lt;/h2&gt;
+
+&lt;p&gt;PNGにもいくつか種類があり、次のどれかに分類できる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;アルファチャネルを持つことが可能なTrueColorのPNG。これらはPNG24、アルファチャネルのあるものはPNG32として知られている。&lt;/li&gt;
+&lt;li&gt;アルファチャネルを持つ、または持たないグレイスケールのPNG。&lt;/li&gt;
+&lt;li&gt;インデックスPNG、またはパレットPNG、あるいはPNG8&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;PNG8はGIFのようなものだ。256色のパレットを保持し、透過もサポートしている。
+しかし、GIFが1ピクセルに透明か不透明かを表現できるのに対し、PNG8は段階的な透過度もサポートしている。
+つまりGIFで出来ることはPNG8でもできるし、それ以上の表現をすることが可能だ。&lt;/p&gt;
+
+&lt;p&gt;IE6には欠陥があって、PNG8で半透明に表現している場所がIE6では完全に透明になってしまう。そう、GIFのように。
+だから、プログレッシブ・エンハンスメントとしてのオプションがある。
+同じ画像を利用していても、モダンブラウザでは完全に表現し、IE6ではGIFと同じように利用できるわけだ。&lt;/p&gt;
+
+&lt;p&gt;このサンプルを見て欲しい。&lt;a href=&#34;http://www.sitepoint.com/png8-the-clear-winner/&#34;&gt;こちらの素晴らしい記事&lt;/a&gt;からお借りしたものだ。
+モダンブラウザで見ると、電球は輝きを放っている。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://article.enja.io/images/give-png-a-chance/ie7.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;IE6以下で見た場合には適切に機能を制限し、輝きの部分は表現されない。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://article.enja.io/images/give-png-a-chance/ie6.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Photoshopがアルファチャネルを持ったPNG8を出力することができないのも辛いポイントだ。
+(彼らがPNG8という名前を思いついてくれたおかげでパレットPNGやインデックスPNGと呼ばずに済んだが)
+アルファチャネルを持つPNG8を出力できるのがFireworksだけ、というのもこの問題を少々難しくしてはいる。
+そして、このPNG8を取り巻く状況を理解し、モダンブラウザでも、そうでなくても画像がきちんと表示できるようにする、という問題に対して取り組むデザイナーも必要になる。&lt;/p&gt;
+
+&lt;p&gt;方法の1つとして、まずGIFのみを利用すると想定しておき、モダンブラウザの場合にのみ、
+きちんと分離した半透明のピクセル部分を表示するとアプローチもある。
+こうすることで、GIFのような挙動をするレイヤーと半透明の部分を表示するレイヤーとを分離することができるため、
+IE6でどんな見た目になるのかを簡単にプレビューすることができる。常に心に留めておくべきことは、最悪の状況(IE6)でもPNG8はGIFと同じ表現が可能であることだ。&lt;/p&gt;
+
+&lt;h2 id=&#34;png-doesn-t-work-in-browsers:d8f086ef2a3da505845123fc0b94d9bd&#34;&gt;PNG doesn’t work in browsers?&lt;/h2&gt;
+
+&lt;p&gt;2つのエッジケースを除いて、PNGはブラウザで正常に動作しつづけている。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;PNG8の半透明をIE6で(上記を参照)表現できないケース。しかし、GIFでもそれはできない。&lt;/li&gt;
+&lt;li&gt;IE6でtruecolorのPNGにおける透明部分がベタ一色(大抵はグレー)で表現されてしまうケース。GIFはそもそもアルファチャネルをサポートしていないので、ここでもGIFを代わりに利用することはできない。
+多くの人がこれらの問題を回避するのにGIFを利用しようとする(GIFを利用するということは減色する可能性があることを意味する)が、GIFを利用することで解決できる問題であれば、PNG8を利用する方がよりよい解決だ(ファイルサイズも小さくなる)。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;二番目の問題については、IEのAlphaImageLoader CSS Filter（と、これを自動で実行してくれるたくさんのスクリプト）を使うことだが、このフィルタは描画パフォーマンスに深刻な影響が出るため、最後の手段とするべきだろう。このAlphaImageLoaderを使う前に次の3つのことを検討して欲しい。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;プログレッシブ・エンハンスメントとしてPNG8を試してみよう&lt;/li&gt;
+&lt;li&gt;透過を使わないことを検討しよう - もし背景色がソリッドカラーなら画像をソリッドカラーに変換しよう。もしImageMagickが使えるなら、&lt;code&gt;-flatten&lt;/code&gt;オプションを付けることで可能だ。&lt;/li&gt;
+&lt;li&gt;IE6なんて忘れてしまおう :)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;それでもAlphaImageLoaderを使わざるを得ないのであれば、
+是非アンダースコアハックを使ってIE6ユーザーだけに適用されるようにして欲しい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;#some-element {
+    background: url(image.png);
+    _background: none;
+    _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;image.png&#39;, sizingMethod=&#39;crop&#39;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;pngs-are-bigger-than-gifs:d8f086ef2a3da505845123fc0b94d9bd&#34;&gt;PNGs are bigger than GIFs?&lt;/h2&gt;
+
+&lt;p&gt;この誤解は、数千色を保持するPNG24に対して256色のGIFというフェアではない比較から生まれている。
+Photoshopや他のソフトで画像を作る人はみんな、Web用にエクスポートするときに、
+まずPNG24で保存しようとして、サイズが大きくなるからという理由でGIFに切り替えるみたいだ。
+しかしGIFで保存する段階で多くの色を失っているわけで、それでもいいのなら、PNG8なら同等の表現を小さいファイルサイズで表現可能だ。
+（PhotoshopはPNG8で適切にエクスポートできないから、もし出力されたPNG8がおかしなことになっていてGIFで大丈夫であればそのときはGIFで出力し、&lt;code&gt;optipng&lt;/code&gt;のようなツールでPNGにコンバートして欲しい。）
+もう一度言おう。PNG8はGIFと同等の表現が可能であり、大抵の場合においてGIFよりファイルサイズの小さいフォーマットだ。&lt;/p&gt;
+
+&lt;h2 id=&#34;comparing-gif-vs-png-filesizes:d8f086ef2a3da505845123fc0b94d9bd&#34;&gt;Comparing GIF vs. PNG filesizes&lt;/h2&gt;
+
+&lt;p&gt;(次の実験は1年以上前に私が海のど真ん中に浮かぶカーニバルクルーズの船の中で退屈を極めていた際に行ったものだ。
+以来データを見返して来なかった。ここでようやく古いデータを捨て、20Gに及ぶ&amp;rdquo;もしかしたら、また使うかも知れない&amp;rdquo;テスト画像を整理するチャンスが来たわけだ :) )
+Yahoo!の画像検索でいくつかGIFを(「ロゴ」や「グラフ」にマッチしたもの)、1700枚程ダウンロードした。そして&lt;code&gt;optipng&lt;/code&gt;を使って全てpngに変換し結果を見た。オプションは特に指定していない。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ optipng *.gif
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;次の実験から&lt;code&gt;optipng&lt;/code&gt;と&lt;code&gt;pngout&lt;/code&gt;を利用することはよりよい結果となることだ。これらの結果から(画像をPNGに変換することで)、最低でもGIFを小さなファイルサイズにできることについて考えてみて欲しい。&lt;/p&gt;
+
+&lt;p&gt;実験から得た統計データから:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;平均して、実際には中央値だが、Web上のGIF画像(昨年の、この小さなサンプルからの判断だが)は 525x388の縦横サイズで、139色を使っている (半分役立たずのデータは大好きだ ;) )&lt;/li&gt;
+&lt;li&gt;ファイルサイズの中央値は24Kだった。&lt;/li&gt;
+&lt;li&gt;PNGに変換したあとの中央値は18Kだった。&lt;/li&gt;
+&lt;li&gt;全てのGIFをPNGに変換することで、約23%を削減できた。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;興味深いことに、画像の4%程はGIFと同程度のサイズになってしまった。これは非常に残念な結果だ（どうか誰にも言わないで欲しい）。なので、もう少し頑張らなければならなくなったわけだが、&lt;code&gt;OptiPNG&lt;/code&gt;を最高品質（&lt;code&gt;-o7&lt;/code&gt;オプション）で実行する代わりに&lt;code&gt;PNGOut&lt;/code&gt;を実行することにした。
+結果、1706枚中4枚を除いてGIFよりファイルサイズが小さくなった。もう少し頑張ってみたら(&lt;code&gt;PNGSlim&lt;/code&gt;を利用したら。昨日の記事を見て欲しい)、解決できるかもしれないが、1700枚のうちの4枚であれば、気にならない程度だ。
+ところで、&lt;code&gt;OptiPNG&lt;/code&gt;で小さなPNGを生成できなかった画像たちは、&lt;code&gt;PNGOut&lt;/code&gt;を使って中央値で21%ほどファイルサイズを縮小できた。ごくわずかなじゃじゃ馬GIFたちをならすのには悪くない手法だろう。&lt;/p&gt;
+
+&lt;p&gt;それに、100K以上無駄があったファイルもあったし、最大で600K程もセーブできたファイルがあった。そんなの見たことないでしょ？
+もし詳しい数字が見たかったら、&lt;code&gt;OptiPNG&lt;/code&gt;と&lt;code&gt;PNGOut&lt;/code&gt;を実行した結果の&lt;a href=&#34;http://www.phpied.com/files/pngchance/everything.csv&#34;&gt;CSV&lt;/a&gt;があるからそれを見て欲しい。
+今日覚えておいて欲しいのは「GIFをPNGにすることで、少なくとも20%はネットワーク上のデータを削減できる」ということだ。&lt;/p&gt;
+
+&lt;h2 id=&#34;comparing-png-optimizers:d8f086ef2a3da505845123fc0b94d9bd&#34;&gt;Comparing PNG optimizers&lt;/h2&gt;
+
+&lt;p&gt;この検証のために12000以上の画像をダウンロードして（もう一度言うけど、Yahoo!の検索APIを使ったよ）、
+それらにオプティマイザをまとめて実行したけど、いくつかはオプションを変えてある。
+これは想像だけど、有用な結果とはいえない。オプティマイザには、圧縮・圧縮前のフィルタリング、チャンクの除去など、それぞれの特性があるから、
+それらのツールを組み合わせてケースに応じて使うのが一番良いと思う。でも少なくとも、指標のひとつには違いない。&lt;/p&gt;
+
+&lt;p&gt;画像は、「baby」「background」「bkg」「flower」「graph」「graphic」「icon」「illustration」「kittens」（もちろん！）、「logo」「monkeys」「png」「transparency」などそれぞれ1000マッチした画像から、4xxエラーや5xxエラー、他のミスなどを除きながら10000個収集した。それらに対し、以下のツールを実行した。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;pngcrush – &lt;code&gt;pngcrush -rem alla -reduce before.png after.png&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;pngcrush-none – チャンクを維持する &lt;code&gt;pngcrush -rem none -reduce before.png after.png&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;pngcrush-brute – 更に多くのフィルタを試す &lt;code&gt;pngcrush -rem alla -brute -reduce before.png&lt;/code&gt; after.png&lt;/li&gt;
+&lt;li&gt;pngout – &lt;code&gt;pngout /q /y /force before.png after.png&lt;/code&gt;. PNGOutのデフォルトの圧縮レベルは“extreme”なので、2段階下げて試した。&lt;/li&gt;
+&lt;li&gt;pngout-match – &lt;code&gt;pngout /s2 /q /y /force before.png after.png&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;pngout-intense – &lt;code&gt;pngout /s1 /q /y /force before.png after.png&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;pngrewrite – &lt;code&gt;pngrewrite before.png after.png&lt;/code&gt; PNGRewriteはPNG8に対してのみ働き、truecolorからPNG8へコンバートする。&lt;/li&gt;
+&lt;li&gt;optipng – &lt;code&gt;optipng before.png -force -out after.png&lt;/code&gt;. OptiPNG’sのデフォルトは2 (7が最大)なのでその前後で実行した。&lt;/li&gt;
+&lt;li&gt;optipng1 – &lt;code&gt;optipng before.png -o1 -force -out after.png&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;optipng3 – &lt;code&gt;optipng before.png -o3 -force -out after.png&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;optipng7 – &lt;code&gt;optipng before.png -o7 -force -out after.png&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;advpng – &lt;code&gt;cp before.png after.png; advpng -z -f -q after.png&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;advpng-insane – “insane”というレベル4の圧縮 &lt;code&gt;cp before.png after.png; advpng -z4 -f -q after.png&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;deflopt – &lt;code&gt;cp before.png after.png; deflopt -s -f after.png&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;pngoptimizercl – &lt;code&gt;cp before.png after.png; pngoptimizercl -file:&amp;quot;after.png&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;以下が結果になる。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Tool&lt;/th&gt;
+&lt;th&gt;Median time to run&lt;/th&gt;
+&lt;th&gt;Median savings&lt;/th&gt;
+&lt;th&gt;Success rate&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;pngcrush&lt;/td&gt;
+&lt;td&gt;0.25s&lt;/td&gt;
+&lt;td&gt;6.06%&lt;/td&gt;
+&lt;td&gt;93.85%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;pngcrush-none&lt;/td&gt;
+&lt;td&gt;0.23s&lt;/td&gt;
+&lt;td&gt;5.58%&lt;/td&gt;
+&lt;td&gt;90.22%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;pngcrush-brute&lt;/td&gt;
+&lt;td&gt;3.08s&lt;/td&gt;
+&lt;td&gt;8.10%&lt;/td&gt;
+&lt;td&gt;96.31%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;pngout&lt;/td&gt;
+&lt;td&gt;1.89s&lt;/td&gt;
+&lt;td&gt;12.21%&lt;/td&gt;
+&lt;td&gt;94.35%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;pngout-match&lt;/td&gt;
+&lt;td&gt;0.22s&lt;/td&gt;
+&lt;td&gt;13.89%&lt;/td&gt;
+&lt;td&gt;44.57%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;pngout-intense&lt;/td&gt;
+&lt;td&gt;1.63s&lt;/td&gt;
+&lt;td&gt;12.10%&lt;/td&gt;
+&lt;td&gt;94.22%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;pngrewrite&lt;/td&gt;
+&lt;td&gt;0.07s&lt;/td&gt;
+&lt;td&gt;29.84%&lt;/td&gt;
+&lt;td&gt;22.37%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;optipng&lt;/td&gt;
+&lt;td&gt;0.23s&lt;/td&gt;
+&lt;td&gt;7.32%&lt;/td&gt;
+&lt;td&gt;93.21%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;optipng1&lt;/td&gt;
+&lt;td&gt;0.10s&lt;/td&gt;
+&lt;td&gt;4.24%&lt;/td&gt;
+&lt;td&gt;85.16%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;optipng3&lt;/td&gt;
+&lt;td&gt;0.66s&lt;/td&gt;
+&lt;td&gt;7.10%&lt;/td&gt;
+&lt;td&gt;94.26%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;optipng7&lt;/td&gt;
+&lt;td&gt;4.13s&lt;/td&gt;
+&lt;td&gt;7.57%&lt;/td&gt;
+&lt;td&gt;94.81%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;advpng&lt;/td&gt;
+&lt;td&gt;0.34s&lt;/td&gt;
+&lt;td&gt;11.55%&lt;/td&gt;
+&lt;td&gt;52.47%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;advpng-insane&lt;/td&gt;
+&lt;td&gt;0.76s 15.64%&lt;/td&gt;
+&lt;td&gt;56.09%&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;deflopt&lt;/td&gt;
+&lt;td&gt;0.34s&lt;/td&gt;
+&lt;td&gt;0.44%&lt;/td&gt;
+&lt;td&gt;96.94%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;pngoptimizercl&lt;/td&gt;
+&lt;td&gt;0.48s&lt;/td&gt;
+&lt;td&gt;9.71%&lt;/td&gt;
+&lt;td&gt;97.99%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Success rateは、ツールを使って、オリジナルよりどれだけ小さい結果を出せたかだ。
+例えば、PNGRewriteのSuccess rateはとても少ない。なぜならば256色までしか実行しないからだ。
+Median time to runは1つの画像を最適化するのにツールがかかった時間だ。&lt;/p&gt;
+
+&lt;p&gt;それでは皆さん、お待ちかねの&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;give-png-a-chance-com:d8f086ef2a3da505845123fc0b94d9bd&#34;&gt;Give PNG a chance (.com)&lt;/h2&gt;
+
+&lt;p&gt;もしこの結果を面白いと思ってくれたら私は嬉しい。少なくとも私は面白い結果だったと思っている。&lt;/p&gt;
+
+&lt;p&gt;私の隠れたゴールは、みんなが聞いたりビデオを見たりして、よく考えて、次回Photoshopを使うときにWebの為にセーブを実行してくれることだ。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.youtube.com/watch?v=bPdkWJe9XH0&#34;&gt;Link to Youtube Movie&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;音楽：ガレージバンドを使ったドラムと、私は2本のギターとベース（ギターにエフェクトをかけてある）とヴォーカルをやった。女の人の声が聴こえるかもしれないけど、ヘリウム効果をかけた私の声だ。MP3は&lt;a href=&#34;http://www.phpied.com/files/pngchance/give-png-a-chance.mp3&#34;&gt;ここ&lt;/a&gt;にある。もしこの曲を自分で試したかったらそれぞれ&lt;a href=&#34;http://www.phpied.com/files/pngchance/givePNGaChance.zip&#34;&gt;zipにしてある&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;映像：気に食わないかもしれないけど、全部Webでの開発だ。 :) 全部JavaScriptとCSSでできてる。ビデオはSafariのウィンドウをキャプチャしたものだ。画像は一切使っていなくて、HTMLで構成されている。&lt;code&gt;-webkit-&lt;/code&gt;のアニメーション・トランジションを多用している。実際のソースのバージョンは&lt;a href=&#34;http://www.phpied.com/files/pngchance/vid.html&#34;&gt;ここ&lt;/a&gt;にあるからSafariでみてくれ。スターウォーズのようなエフェクトは&lt;a href=&#34;http://esquevin.com/starwars.html&#34;&gt;ここ&lt;/a&gt;からお借りした。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;http://givepngachance.com&lt;/code&gt;というURLに、今は何もないけど、PNGについての記事などを載せていきたいと思う。&lt;/p&gt;
+
+&lt;h2 id=&#34;thanks:d8f086ef2a3da505845123fc0b94d9bd&#34;&gt;Thanks!&lt;/h2&gt;
+
+&lt;p&gt;読んでくれてありがとう。そして「PNGにチャンスを」 :)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CSS Architecture</title>
+      <link>http://article.enja.io/articles/css-architecture.html</link>
+      <pubDate>Sat, 06 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://article.enja.io/articles/css-architecture.html</guid>
+      <description>
+
+&lt;h2 id=&#34;cssアーキテクチャ:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;CSSアーキテクチャ&lt;/h2&gt;
+
+&lt;p&gt;多くのWebデベロッパとって、良いCSSとはビジュアルモックアップをコードで完全に再現できることを意味する。tableタグを使わず、また出来る限り画像を少なくすることに誇りを持つ。もしあなたが本当に優れたデベロッパであれば、メディアクエリ、Transitions、Transformといった最新で偉大な技術をも使うことだろう。
+これらすべてが良いCSSデベロッパに必要なすべてであることは確かではあるものの、スキルとして評価されるときにあまり言及されないCSSのまったく別の側面がある。&lt;/p&gt;
+
+&lt;p&gt;興味深いことに、私たちは通常他の言語においてはこのようなことを見過ごすことはない。Railsのデベロッパは仕様通りにコードが動くというだけでは良いコードを書いたとは考えない。それはあくまで基本的なことなのだ。もちろん仕様通りに動くことは必要であるが、気を使う部分は以下のようなことだろう。&lt;/p&gt;
+
+&lt;p&gt;そのコードは読みやすいか？変更・拡張しやすいか？アプリケーションのその他のパーツと分離できるか？拡張性があるか？といったことだ。&lt;/p&gt;
+
+&lt;p&gt;これらの問いは、コードそのもの以外を評価するときに自然に湧いてくるものであり、CSSでも同じであるべきだ。今時のWebアプリケーションはこれまでよりも規模が大きくなっているため、まともに考えられていないCSSアーキテクチャは開発を不便にする。&lt;br /&gt;
+CSSはすべてのWebアプリケーションの一部として他言語同様に評価する時がきている。ただの思いつきや、単にデザイナーの問題として終わらせるわけにはいかない。&lt;/p&gt;
+
+&lt;h2 id=&#34;良いcssアーキテクチャのゴール:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;良いCSSアーキテクチャのゴール&lt;/h2&gt;
+
+&lt;p&gt;CSSコミュニティにおいて、ベストプラクティスの合意を得るのは非常に難しい。純粋に&lt;a href=&#34;http://csslint.net/&#34;&gt;CSS Lint&lt;/a&gt;がリリースされたときの&lt;a href=&#34;https://news.ycombinator.com/item?id=2658948&#34;&gt;Hacker Newsでのコメント&lt;/a&gt;と、&lt;a href=&#34;http://2002-2012.mattwilcox.net/archive/entry/id/1054/&#34;&gt;デベロッパの反応&lt;/a&gt; から判断するかぎり、根幹的な事柄ですら、CSSを書く人がやるべきこと、やるべきでないことについて多くの人が同意しないのは明白だ。&lt;/p&gt;
+
+&lt;p&gt;ここでは私自身のベストプラクティスの議論を並べる代わりに、自分たちのゴールを定義することから始めるべきだと私は考えている。もしこれらのゴールについて同意することができるのであれば、先入観から得た良さからではなく、開発プロセスの阻害要因となりうる悪いCSSを指摘しはじめることができるようになることだろう。&lt;/p&gt;
+
+&lt;p&gt;良いCSSアーキテクチャのゴールは、すべての良いソフトウェアのゴールと異なるべきではないと確信している。CSSは予測、再利用、保守、拡張しやすいものであってほしい。&lt;/p&gt;
+
+&lt;h3 id=&#34;予測しやすい:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;予測しやすい&lt;/h3&gt;
+
+&lt;p&gt;予測しやすいCSSとはルールが期待通りに振る舞うことを意味する。ルールを追加・更新したとき、そのルールが意図せずサイトの一部に影響を与えるべきではない。滅多に変更されない小規模なサイトであれば、このことはあまり重要ではないが、数十、数百ページの大規模なサイトであれば、予測しやすいCSSは必須といえる。&lt;/p&gt;
+
+&lt;h3 id=&#34;再利用しやすい:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;再利用しやすい&lt;/h3&gt;
+
+&lt;p&gt;CSSのルールは抽象的で、十分に分離されているべきである。それはパターンとすでに解決した問題を書きなおす必要なく、既存のパーツから新しいコンポーネントを速くつくることができるということだ。&lt;/p&gt;
+
+&lt;h3 id=&#34;保守しやすい:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;保守しやすい&lt;/h3&gt;
+
+&lt;p&gt;サイトに新しいコンポーネントと機能が追加・更新されるか、再編される必要があるとき、既存のCSSのリファクタリングを必要とすべきではない。ページにコンポーネントXを追加するときに、そのわずかな存在によってコンポーネントYを壊すべきではない。&lt;/p&gt;
+
+&lt;h3 id=&#34;拡張しやすい:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;拡張しやすい&lt;/h3&gt;
+
+&lt;p&gt;サイトが大きく、複雑に成長していくにつれて、通常はたくさんのデベロッパがメンテナンスのために必要となる。
+拡張しやすいCSSとはひとりのデベロッパか、大きなエンジニアチームかを問わず、容易に管理できることを意味する。またそのサイトのCSSアーキテクチャに、巨大な学習曲線を必要することなく容易に近づけるという意味でもある。あなたが今日CSSを触る唯一のデベロッパだからといって、先々にも常にあなただけであるというわけではない。&lt;/p&gt;
+
+&lt;h2 id=&#34;よくあるバッドプラクティス:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;よくあるバッドプラクティス&lt;/h2&gt;
+
+&lt;p&gt;良いCSSアーキテクチャのゴールを達成するための方法を考える前に、ゴールの妨げとなるよくあるプラクティスを考えるのが有用だと考えている。それはしばしば過ちを繰り返すことによってのみ、代替手段の可能性について考えはじめることができるものだ。&lt;/p&gt;
+
+&lt;p&gt;以下の例はすべて私が実際に書いたことのあるコードを一般化したもので、技術的に正当であるものの、それぞれ災難や頭痛を招いた。細心の注意を払い、今回は違うと見込んでいたにも関わらず、それらのパターンは常に私を問題に巻き込んだ。&lt;/p&gt;
+
+&lt;h3 id=&#34;親に基づいてコンポーネントを修正する:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;親に基づいてコンポーネントを修正する&lt;/h3&gt;
+
+&lt;p&gt;ほとんどのWebサイトにおいて、たった一箇所を除いて、全く同じ見た目である特定のデザイン要素がある。そして、こうした単発なシチューエーションに直面したとき、ほとんどの新人CSSデベロッパは（経験豊富なデベロッパさえも）同じ方法で対処する。この特定の要素（または自身で作った要素）のユニークな親を見つけ出し、その特定の要素を操作するための新しいルールを書く。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.widget {
+  background: yellow;
+  border: 1px solid black;
+  color: black;
+  width: 50%;
+}
+
+#sidebar .widget {
+  width: 200px;
+}
+
+body.homepage .widget {
+  background: white;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;一見それほど害の無いものだと思えるが、前述のゴールに基づいて分析してみよう。&lt;/p&gt;
+
+&lt;p&gt;最初に、例にあるウィジェットは予測ができない。デベロッパは、誰かがつくったいくつかのウィジェットが同じような見た目であることを期待するも、それをサイドバーまたはホームページで使うとき、マークアップは一緒であるにもかからわず、見た目が異なるだろう。&lt;/p&gt;
+
+&lt;p&gt;また再利用性、または拡張性もほとんど無い。ホームと同じ見た目の要素を他のページにも求められた時どうなるだろうか？新しいルールを追加しなければならない。&lt;/p&gt;
+
+&lt;p&gt;最後に再利用性や保守性もない。なぜなら、もしそのウィジェットのデザインが変更されたら、あらゆるところにあるCSSを更新する必要があり、また例とは異なり、このアンチパターンとなるルールはめったにそれぞれのすぐ隣には現れることはないからだ。&lt;/p&gt;
+
+&lt;p&gt;他言語においてこのようなコーディングをする場合を想像してほしい。&lt;/p&gt;
+
+&lt;p&gt;クラス定義を一旦終えてから、特定のユースケースのためだけにそのクラス定義を変更していることになる。これはソフトウェア開発におけるオープン/クローズの原則に直接反する:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ソフトウェアの仕様（クラス、モジュール、関数、など）は拡張に対してオープンにあるべきで、修正に対してはクローズであるべきだ。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;本記事の後半で、どうやって親セレクタに頼らずにコンポーネントをどう修正するのかをみてみよう。&lt;/p&gt;
+
+&lt;h3 id=&#34;過剰に複雑なセレクタ:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;過剰に複雑なセレクタ&lt;/h3&gt;
+
+&lt;p&gt;時々、CSSセレクタの能力を紹介するのに、サイト全体でクラスまたはIDを使わずにスタイルしてみせるような、ショーケースサイトの記事がある。&lt;/p&gt;
+
+&lt;p&gt;技術的には正しいが、私はCSSの開発をすればするほど、複雑なセレクタを避けるようになってきた。セレクタが複雑になるほど、HTMLとの関係が密になる。HTMLタグそのものをキレイにしておくことは、CSSを粗く汚くする。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;#main-nav ul li ul li div { }
+#content article h1:first-child { }
+#sidebar &amp;gt; div &amp;gt; h3 + p { }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上記のコード例はすべて意味を成している。ひとつめはおそらくドロップダウン型メニューのスタイルであること、ふたつめは記事の主な見出しが他のh1要素とは異なる見た目であることを意味し、最後の例はサイドバーセクションにおいて、最初の段落に何らかの余白を加えたいように見える。&lt;/p&gt;
+
+&lt;p&gt;もしHTMLが今後まったく変わらないのであればメリットはありえるが、果たして現実的にHTMLが変わらないことを前提にできるだろうか。過剰に複雑なセレクタは目を引くかもしれないし、見た目のフックとなるHTMLを取り除くことができるが、良いCSS設計のゴールを成し遂げる手助けにはほとんどならない。&lt;/p&gt;
+
+&lt;p&gt;上記の例はすべて再利用しづらい。セレクタがマークアップの非常に特定な場所を指していたら、どうやって異なるHTML構造にある他のコンポーネントでこれらのスタイルを再利用できるだろうか？例にある（ドロップダウンの）最初のセレクタを取りあげると、もし同じ見た目のドロップダウンは違うページで、#main-nav要素の中になければどうだろうか？まったく同じスタイルを再度つくることになるだろう。&lt;/p&gt;
+
+&lt;p&gt;また、もしHTMLを変更する必要がある場合、これらのセレクタは非常に予測しづらい。デベロッパが3つ目の例にあるdivタグをHTMLのsectionタグに変更したいと思ったときを想像すると、すべてのルールが破綻するだろう。&lt;/p&gt;
+
+&lt;p&gt;最後に、HTMLが一定に保たれている時にだけセレクタが機能するので、当然保守性や拡張性もない。&lt;/p&gt;
+
+&lt;p&gt;大規模なアプリケーションにおいて、妥協や譲歩は必須となる。
+複雑なセレクタの壊れやすさは、HTMLを&amp;rdquo;クリーン&amp;rdquo;に保つということの価値とほとんど見合わない。&lt;/p&gt;
+
+&lt;h4 id=&#34;過剰に一般的なクラス名:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;過剰に一般的なクラス名&lt;/h4&gt;
+
+&lt;p&gt;再利用しやすいデザインのコンポーネントを作るとき、コンポーネントのクラス名の中のコンポーネントの副要素を（いわば）スコープにするのはとてもよくあることだ。&lt;/p&gt;
+
+&lt;p&gt;例を見てみよう:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div class=&amp;quot;widget&amp;quot;&amp;gt;
+  &amp;lt;h3 class=&amp;quot;title&amp;quot;&amp;gt;...&amp;lt;/h3&amp;gt;
+  &amp;lt;div class=&amp;quot;contents&amp;quot;&amp;gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    In condimentum justo et est dapibus sit amet euismod ligula ornare.
+    Vivamus elementum accumsan dignissim.
+    &amp;lt;button class=&amp;quot;action&amp;quot;&amp;gt;Click Me!&amp;lt;/button&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.widget {}
+.widget .title {}
+.widget .contents {}
+.widget .action {}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;アイデアとしてはtitle、.contents、.actionといった副要素が、同じクラス名を持つその他の要素に広がるという心配をする必要もなく、安全にスタイルできるというものだ。これは正しいが、そのコンポーネント内で同じ名前のクラスをスタイルすることを防ぐことができない。&lt;/p&gt;
+
+&lt;p&gt;大規模なプロジェクトにおいて、&lt;code&gt;.title&lt;/code&gt;のような名前のクラスはその他の文脈やそれ自身としても使われる可能性が高い。そうすると、ウェジェットのタイトルが突然意図とは異なる見た目になる。&lt;/p&gt;
+
+&lt;p&gt;過剰に一般的なクラス名は、非常に予測しづらいCSSにしてしまうことがある。&lt;/p&gt;
+
+&lt;h4 id=&#34;1つのルールで過剰にスタイルする:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;1つのルールで過剰にスタイルする&lt;/h4&gt;
+
+&lt;p&gt;時々、サイト内のセクション左上の角から20pxに配置する必要があるというような見た目のコンポーネントをつくることがある。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.widget {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: red;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;やがて、異なる場所でまったく同じ名前のコンポーネントを使う必要があるときがある。前述のCSSは、異なるコンテキストでは再利用しづらいので機能しない。&lt;/p&gt;
+
+&lt;p&gt;この問題は、ひとつのセレクタに多くのことをやらせようとしていることにある。同じルールに見た目もレイアウト・配置も定義している。見た目は再利用できるが、レイアウト・配置は再利用しづらい。一緒に使ってしまうことで、ルールすべてが信用できなくなる。&lt;/p&gt;
+
+&lt;p&gt;はじめは害がないように見えても、時々CSSの経験が少ないデベロッパがコピー＆ペーストしてしまうのを誘発してしまう。もし新しいメンバーが特定のコンポーネントと同じ見た目のものが欲しいと思った場合、例えば.infoboxというようなものであれば、まず彼らはたぶんそのクラスを試みることから始めるだろう。ところが、新しいinfoboxは望まない形で配置されるため機能しない。次に彼らはどのようにするだろうか？私の経験上、ほとんどの新しいデベロッパは、それらのルールを再利用しやすいパーツに分けることはしない。その代わりに、単純に特定のインスタンスに必要なコードの数行を新しいセレクタにコピー&amp;amp;ペーストし、不要なコードを複製することになる。&lt;/p&gt;
+
+&lt;h3 id=&#34;原因:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;原因&lt;/h3&gt;
+
+&lt;p&gt;前述のすべてのバッドプラクティスは類似しており、これらはCSSに過剰な負担をかけている。&lt;/p&gt;
+
+&lt;p&gt;少々奇妙に思える言葉かもしれない。スタイルシートなのだから、(すべてではないにしろ)スタイルについての負担に耐えるべきではないか？それこそが私達が望んでいることではないのか？&lt;/p&gt;
+
+&lt;p&gt;この問いへの単純な答えは&amp;rdquo;イエス&amp;rdquo;だが、いつもの通り、物事はいつもそんなに単純ではない。見た目からコンテンツを切り離すのは良いことだが、CSSをHTMLから切り離したというだけで、見た目からコンテンツを切り離したということにはならない。&lt;/p&gt;
+
+&lt;p&gt;言い換えれば、HTMLからすべての見た目に関するコードをはがすことで、CSSにHTML構造に関する深い知識を要したとしたら、ゴールを果たすことにはならないだろう。&lt;/p&gt;
+
+&lt;p&gt;さらに、HTMLがただのコンテンツであるということはめったになく、たいていは構造でもあるのだ。また、構造内にCSSで他の要素グループと分離するためだけの目的をもつコンテイナとなる要素も存在しうる。見た目用のクラスが無かったとしても、HTML内に見た目が混ざっていることはまだ明白だ。しかし、コンテンツと見た目が混ざることは必要なのだろうか？&lt;/p&gt;
+
+&lt;p&gt;現在の状態のHTMLとCSSでは、それは必要だ。&lt;/p&gt;
+
+&lt;p&gt;HTMLとCSSを見た目のレイヤーとして機能させることは必要であり、多くの場合賢い選択だといえる。
+コンテンツレイヤーはテンプレートとパーシャルから抽象化できる。&lt;/p&gt;
+
+&lt;h3 id=&#34;解決方法:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;解決方法&lt;/h3&gt;
+
+&lt;p&gt;もしHTMLとCSSがWebアプリケーションのプレゼンテーションレイヤーとして機能するとすれば、良いCSS設計の原則を形成するすべての方法を必要とする。&lt;/p&gt;
+
+&lt;p&gt;CSSに対して可能な限り小さなHTML構造を持たせることこそ、ベストアプローチだと考えている。&lt;/p&gt;
+
+&lt;p&gt;CSSはビジュアル要素の見た目のセットを定義するべきで、（HTMLとの連結を極力小さくするために）HTMLがどこに出現するかに関わらず定義されたように見えなければいけない。もし特定のコンポーネントが異なるシナリオの中で異なる見た目である必要がある場合、それは異なって呼び出されるべきだし、それこそがHTML側の責務でもあるべきだ。&lt;/p&gt;
+
+&lt;p&gt;例をあげると、CSSはボタンコンポーネントを&amp;rsquo;.button&amp;rsquo;クラスとして定義するだろう。もしHTMLがボタンのような見た目の特定の要素を求める場合、そのクラスを使うべきだ。もしそうしたシチュエーションで異なる見た目（たぶん大きなものや、幅がいっぱいのもの）のボタンを必要とした場合、新しくクラスを使ってその見た目を定義してやるべきだ。そしてHTMLはその新しい見た目の役割をする新しいクラスを活用すればいい。&lt;/p&gt;
+
+&lt;p&gt;CSSがコンポーネントがどういう見た目であるかを定義し、HTMLがページ上の要素に見た目のCSSを割り当てる。CSSはHTML構造との関連が少なければすくないほどよい。&lt;/p&gt;
+
+&lt;p&gt;HTMLが何を求めているかを明確に宣言することの大きな利益は、他のデベロッパがマークアップから見つけ、要素がどのような見た目になるかを明確に知ることを許容することだ。&lt;/p&gt;
+
+&lt;p&gt;その目的は明白だ。&lt;/p&gt;
+
+&lt;p&gt;このプラクティスが無ければ、もしある要素の見た目が意図的か偶発的を伝えることは不可能で、チームを混乱に導く。&lt;/p&gt;
+
+&lt;p&gt;マークアップに多くのクラスを置くことに対するよくある異論は、そうすることに余分な努力を必要とすることだ。単一クラスルールはある特定のコンポーネントのたくさんのインスタンスを対象とすることができる。マークアップ上でクラスを何千回も明示的に宣言することは本当に価値があるのだろうか。&lt;/p&gt;
+
+&lt;p&gt;その懸念は明らかに正当であるものの、誤解を招きかねない。この意味あいは、CSSで親セレクタを使うか、それともHTMLに1000回クラスを手で書くかということであるが、代替案があることは明白だ。Railsのビューレベルの抽象概念かその他のフレームワークは、同じクラスを何度も書く必要無く、HTMLで明確に宣言された見た目を維持する目的で大いに役立つ。&lt;/p&gt;
+
+&lt;h3 id=&#34;ベストプラクティス:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;ベストプラクティス&lt;/h3&gt;
+
+&lt;p&gt;これらの過ちを何度も繰り返し、すこし後でその結果に苦しんだ後に、ちょっとしたアドバイスを思いついた。決して総合的であるとはいえないが、私の経験でこれらの原則に忠実であることが良いCSSアーキテクチャのゴールを成し遂げる手助けになるということを説明しよう。&lt;/p&gt;
+
+&lt;h4 id=&#34;意図的であれ:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;意図的であれ&lt;/h4&gt;
+
+&lt;p&gt;セレクタが望んでいない要素にスタイルしないようにする確実な方法は、その機会をセレクタに与えないことだ。&amp;rsquo;#main-nav ul li ul li div&amp;rsquo;のようなセレクタは非常に容易に、将来的にマークアップが変わったとしても望まない要素にスタイルを適用しやすい。一方で、&amp;rsquo;.subnav&amp;rsquo;のような形式であれば、望まない要素に偶然にもスタイルが適用される機会はほとんどありえない。スタイルを適用させたい要素に直接クラスを適用することは、予測しやすいCSSを維持する一番の方法だ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;/* Grenade */
+#main-nav ul li ul { }
+
+/* Sniper Rifle */
+.subnav { }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上の2つの例を見て欲しい。1つ目は手榴弾のように、2つ目をスナイパーライフルだと考えてほしい。この手榴弾は今は思っている通りに機能するが、いつか無実な市民がその爆発圏内に入ってくるかは知りようがない。&lt;/p&gt;
+
+&lt;h4 id=&#34;関心を分離せよ:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;関心を分離せよ&lt;/h4&gt;
+
+&lt;p&gt;すでに言及したが、よく構造化されたコンポーネントレイヤーはCSSの中のHTML構造との関係をゆるめるのを手助けすることができる。付け加えると、CSSコンポーネント自身もモジュールであるべきだ。コンポーネントはそれ自身がどのようなスタイルで、どのように振る舞うかを知っておくべきであるが、それらのレイアウトや配置や、周りの要素との関係からどう引き離されるかについての多すぎる仮説の責任を持つべきではない。&lt;/p&gt;
+
+&lt;p&gt;一般的に、コンポーネントはそれらがどのように見えるかを定義すべきで、レイアウトや配置については定義するべきではない。&amp;rsquo;background&amp;rsquo;、&amp;rsquo;color&amp;rsquo;、&amp;rsquo;font&amp;rsquo;のようなプロパティと、&amp;rsquo;position&amp;rsquo;、&amp;rsquo;width&amp;rsquo;、&amp;rsquo;height&amp;rsquo;、&amp;rsquo;margin&amp;rsquo;といったプロパティが同じルールにある場合には注意しよう。&lt;/p&gt;
+
+&lt;p&gt;レイアウトや配置は他の分離されたレイアウト用のクラスや、コンテナ要素によって制御されるべきだ。（プレゼンテーションとコンテンツを効果的に分離することは、大抵コンテナとコンテンツを分離するために不可欠であることを思い出してほしい。）&lt;/p&gt;
+
+&lt;h4 id=&#34;クラスの名前空間:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;クラスの名前空間&lt;/h4&gt;
+
+&lt;p&gt;なぜ親セレクタの利用だけがカプセル化や相互汚染の予防に100%効果的でないことは、すでに調べた通りだ。より良いアプローチはクラス自身に名前空間を持たせる方法だ。もし、ある要素がビジュアルコンポーネントの1つである場合、そのサブ要素となるクラスすべてが、コンポーネントのべースクラス名を名前空間として使用すべきだ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;/* 相互汚染のリスクが高い */
+.widget { }
+.widget .title { }
+
+/* 相互汚染のリスクが低い */
+.widget { }
+.widget-title { }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;クラスに名前空間を持たせることで、コンポーネントを独立、モジュールとして維持させることができる。これは既存のクラスが衝突する可能性を最小限にし、子要素にスタイルを適用するセレクタの詳細度を低く抑えることができる。&lt;/p&gt;
+
+&lt;h4 id=&#34;コンポーネントはモディファイアクラスで拡張する:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;コンポーネントはモディファイアクラスで拡張する&lt;/h4&gt;
+
+&lt;p&gt;既存のコンポーネントが、あるコンテキストにおいてわずかに異なる見た目である必要があるとき、その拡張をするためのモディファイアクラスをつくる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;/* Bad */
+.widget { }
+#sidebar .widget { }
+
+/* Good */
+.widget { }
+.widget-sidebar { }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;親要素のひとつに基づいて修正されたコンポーネントのマイナス面についてはすでに分かっているが、繰り返そう: モディファイアクラスはどこでも使うことができる。場所を軸にしたクラスは、特定の場所でしか使えない。モディファイアクラスは必要なだけ何度も再利用することができる。最後に、モディファイアクラスはデベロッパの意図をHTML上で表現する。一方で場所を軸にしたクラスの場合、そのデベロッパしかHTML上で判別できないよう完全に隠蔽し、見落とされる可能性を非常に高めてしまう。&lt;/p&gt;
+
+&lt;h4 id=&#34;cssをロジカルに体系化せよ:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;CSSをロジカルに体系化せよ&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://snook.ca/&#34;&gt;Jonathan Snook&lt;/a&gt;氏の素晴らしい書籍、&lt;a href=&#34;http://smacss.com/&#34;&gt;SMACSS&lt;/a&gt;では、CSSルールを4つに分類されたカテゴリで体系化することを唱えている。それはベース、レイアウト、モジュール、ステートの4つだ。ベースはルールのリセットと要素のデフォルトスタイルの定義で構成される。レイアウトはsite-wideな要素の配置や、グリッドシステムのような一般的なレイアウトヘルパーとなる。モジュールは再利用しやすいビジュアル要素で、ステートはJavaScriptでオン・オフを切り替えるスタイルを指す。&lt;/p&gt;
+
+&lt;p&gt;SMACSSのシステムでは、モジュール（私がコンポーネントと呼んでいるものと同等のもの）は、すべてのCSSルールの大部分を形成するため、私はもっと抽象的なテンプレートに分類する必要があるルールによく出くわす。&lt;/p&gt;
+
+&lt;p&gt;コンポーネントは独立したビジュアル要素だ。一方、テンプレートは構成要素だ。テンプレートは自立せず、見た目を表現することは滅多にない。
+テンプレートは単独でコンポーネントを形成するためにまとめられた繰り返しやすいパターンである。&lt;/p&gt;
+
+&lt;p&gt;具体的な例を挙げると、モーダルダイアログがコンポーネントのひとつだ。このモーダルはサイトの特徴的なグラデーション背景をヘッダーに持ち、周辺にドロップシャドウ、右上の角にモーダルを閉じるボタン、天地中央に固定配置されるとしよう。これら4つのパターンがそれぞれサイト全体で繰り返して使われるとしたら、その度にこれらのパターンを残そうとは思わないだろう。そのように、これらはすべてのテンプレートに存在し、一緒にモーダルコンポーネントから成る。&lt;/p&gt;
+
+&lt;p&gt;例によって私は、特別な理由がない限り、HTML上でテンプレートのクラスを使うことはない。代わりにコンポーネント定義にあるテンプレートのスタイルを含めるためにプリプロセッサを使う。この点と私が合理的にどうするかについては後ほど解説しよう。&lt;/p&gt;
+
+&lt;h4 id=&#34;クラスをスタイルのために使い-スタイルのためだけに使う:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;クラスをスタイルのために使い、スタイルのためだけに使う&lt;/h4&gt;
+
+&lt;p&gt;大きなプロジェクトに関わったことのある誰しもが、目的がまったく不明なクラスがあるHTMLの要素に出くわすことがあるだろう。それを取り除きたいと思っても、自分が知らないところで何かの目的をもって存在しているかもしれない、とためらってしまう。このようなことが何度も起こると、そのうちHTMLはただ単にチームメンバーはそれらのクラスを削除することを恐れているというだけで、何の目的も持たないクラスで溢れることになる。&lt;/p&gt;
+
+&lt;p&gt;この問題はフロントエンドWeb開発において、クラスに対して大抵の場合責任を多く与えすぎることにある。クラスはHTMLの要素のスタイルをつくる、JavaScriptのフックとして機能させる、特徴検出（フィーチャーディテクション）のためにHTMLに追加される、自動テストで使われる、などだ。&lt;/p&gt;
+
+&lt;p&gt;これは問題である。クラスがアプリケーションの大部分で使われる時、HTMLからクラスを取り除くのを非常に恐れてしまう。&lt;/p&gt;
+
+&lt;p&gt;しかしながら定着した慣習で、この問題を完全に避けることができる。HTML上でクラスを見つけたら、その目的が何であるかをすぐに伝えるべきだ。私のおすすめはスタイルを持たないすべてのクラスに接頭辞をつけることだ。私は、JavaScriptのためにjs-を、Modernizrのためには.supports-を使う。接頭辞がないクラス以外のすべてはスタイルを持ち、スタイルだけをする。&lt;/p&gt;
+
+&lt;p&gt;この方法は使われていないクラスの発見や、スタイルシートのディレクトリから検索するように、HTMLから取り除くことができるようになる。JavaScriptを用いてHTMLと&lt;code&gt;document.styleSheets&lt;/code&gt;オブジェクトを相互参照して、このプロセスを自動化することもできる。&lt;/p&gt;
+
+&lt;p&gt;一般的に、見た目からコンテンツを分離することがベストプラクティスであるのと同じように、機能性から見た目を分離するのもまた重要である。見方によれば、スタイルを持つクラスをJavaScriptのフックとして使うことはCSSとJavaScriptを深く結合することになり、機能性を失わずに特定の要素の見た目を更新することが難しい、または不可能な状態にしてしまう。&lt;/p&gt;
+
+&lt;h4 id=&#34;論理的な構造でクラスの命名をする:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;論理的な構造でクラスの命名をする&lt;/h4&gt;
+
+&lt;p&gt;最近では多くのデベロッパがCSSを書くときにハイフンを単語の区切りとして使う。しかしハイフン単独では普通十分にクラスのタイプの違いの区別がつかない。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://nicolasgallagher.com/&#34;&gt;Nicolas Gallagher&lt;/a&gt;は、私も（わずかな変更で）より大きな成果のために導入した&lt;a href=&#34;http://nicolasgallagher.com/about-html-semantics-front-end-architecture/&#34;&gt;彼のこの問題への解決方法&lt;/a&gt;について記事を書いている。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;/* A component */
+/* コンポーネント */
+.button-group { }
+
+/* コンポーネントの修飾子(`.button`の修飾) */
+.button-primary { }
+
+/* コンポーネントのサブオブジェクト (`.button`の中で有効なオブジェクト) */
+.button-icon { }
+
+/* これはコンポーネントクラスなのか、レイアウトクラスなのか */
+.header { }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;前述のクラスを見ると、それぞれがどういうルールが適用されるのかを伝えることは不可能だ。これは開発中の混乱を増やすだけでなく、CSSとHTMLを自動的にテストすることを困難にしてしまう。構造化された命名規則はクラス名のみでヒントを与え、他のクラスとはどういう関係か、HTMLのどこに現れるのかが、はっきりと分かる。あらかじめ命名規則があれば、命名をより容易に、テストも可能にしてくれる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;/* テンプレートルール (Sass プレースホルダセレクタ) */
+%template-name
+%template-name--modifier-name
+%template-name__sub-object
+%template-name__sub-object--modifier-name
+
+/* コンポーネントルール */
+.component-name
+.component-name--modifier-name
+.component-name__sub-object
+.component-name__sub-object--modifier-name
+
+/* レイアウトルール */
+.l-layout-method
+.grid
+
+/* ステートルール */
+.is-state-type
+
+/* スタイルの無いJavaScriptのフック */
+.js-action-name
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最初の例を見直すと、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;/* A component */
+/* コンポーネント */
+.button-group { }
+
+/* コンポーネントの修飾子(`.button`の修飾) */
+.button--primary { }
+
+/* コンポーネントのサブオブジェクト (`.button`の中で有効なオブジェクト) */
+.button__icon { }
+
+/* レイアウトクラス */
+.l-header { }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;ツール:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;ツール&lt;/h3&gt;
+
+&lt;p&gt;効果的でよくまとまったCSS設計の保守は非常にむずかしく、特に大きなチームであるほどそうだ。あちこちにあるいくつかの悪いルールはすぐにごちゃごちゃになり、さらに雪だるま式に増えていき、管理できなくなる。
+そうなり始めるとアプリケーションのCSSは詳細度の戦いや、!importantの切り札を使いはじめる&lt;/p&gt;
+
+&lt;p&gt;幸運なことにサイトのCSS設計をより容易に制御できるツールはある。&lt;/p&gt;
+
+&lt;h4 id=&#34;プリプロセッサ:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;プリプロセッサ&lt;/h4&gt;
+
+&lt;p&gt;最近はプリプロセッサの話題を抜きにして、CSSツールについての話をすることはできず、本記事も例外ではない。しかしそれらの便利さを称賛する前に、いくつかの注意点について提案するべきだろう。&lt;/p&gt;
+
+&lt;p&gt;プリプロセッサはCSSをより速く書く手助けをしてくれるが、より良くしてくれるわけではない。結局のところ、プリプロセッサはプレーンなCSSになり、同じルールが適用される。もしプリプロセッサがCSSコーディングを速くするとしたら、それは悪いCSSコーディングを早くするともいえるので、プリプロセッサが問題を解決してくれるかもしれないということを考える以前に、良いCSS設計を理解することが重要だ。&lt;/p&gt;
+
+&lt;p&gt;プリプロセッサの特徴として多く挙げられていることは、実際にはCSS設計を非常に悪くしてしまう。下記に挙げるのは、私が避けているコストととしてのいくつかの特徴だ。（これらはの考えは全般的にすべてのプリプロセッサ言語に当てはめることができるが、これらのガイドラインは特にSassに対してのものとなる）&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ネストを単にコードをまとめるために使ってはいけない。ネストは出力されたCSSで必要なときにだけ使う。&lt;/li&gt;
+&lt;li&gt;引数を渡さないミックスインを使ってはいけない。引数を持たないミックスインは、拡張することを前提としたテンプレートとして使われるのが好ましい。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;@extend&lt;/code&gt;は単一クラスセレクタではないセレクタに使ってはいけない。設計視点からみてつじつまが合わないし、コンパイルされたCSSを膨れ上がらせる。&lt;/li&gt;
+&lt;li&gt;コンポーネント修飾子ルールの中のUIコンポーネントのために&lt;code&gt;@extend&lt;/code&gt;を使ってはいけない、なぜなら継承チェーンを失うからだ。（詳しくは後述）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;プリプロセッサの優れた機能は&lt;a href=&#34;http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#extend&#34;&gt;@extend&lt;/a&gt; と &lt;a href=&#34;http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#placeholder_selectors_&#34;&gt;%placeholder&lt;/a&gt;だ。両者とも、CSSにルールを追加してCSSを膨らませたり、HTMLに管理が難しくなるほどの膨大な量のベースクラスで溢れさせることなく、容易にCSSを管理できるようにしてくれる。&lt;/p&gt;
+
+&lt;p&gt;@extendは注意して使われるべきにも関わらず、そのうちHTMLにそれらのクラスを求めてしまう。例えば、はじめて@extendを覚えたとき、それを次のように修飾子クラスのすべてに使いたいと思うかもしれない。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.button {
+  /* button styles */
+}
+
+/* Bad */
+.button--primary {
+  @extend .button;
+  /* modification styles */
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;このように書くことの問題は、HTML上の継承チェーンを失ってしまうことだ。すぐにこれはJavaScriptでボタンインスタンスを選択することを非常に難しくする。&lt;/p&gt;
+
+&lt;p&gt;全般的なルールとして、私はUIコンポーネントや、後でどういうタイプかを知りたいと思う何かに対して拡張することはしない。
+これはテンプレートがどういうものであるか、テンプレートとコンポーネントを区別するための別の方法である。
+テンプレートは、アプリケーションロジックにおいて今後ターゲットにする必要が無い何かであるから、安全にプリプロセッサで拡張することができるのだ。&lt;/p&gt;
+
+&lt;p&gt;ここでモーダルウィンドウをどのような見た目で作られるかの例を下記に挙げると、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.modal {
+  @extend %dialog;
+  @extend %drop-shadow;
+  @extend %statically-centered;
+  /* other modal styles */
+  /* その他モーダルウィンドウのスタイル */
+}
+
+.modal__close {
+  @extend %dialog__close;
+  /* other close button styles */
+  /* その他閉じるボタンのスタイル */
+}
+
+.modal__header {
+  @extend %background-gradient;
+  /* other modal header styles */
+  /* その他モーダルウィンドウのヘッダーのスタイル */
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;css-lint:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;CSS LINT&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.stubbornella.org/content/&#34;&gt;Nicole Sullivan&lt;/a&gt; と &lt;a href=&#34;http://www.nczonline.net/&#34;&gt;Nicholas Zakas&lt;/a&gt; は、デベロッパがCSSの中にあるバッドプラクティスを見つける手助けをする、コードの品質ツール &lt;a href=&#34;http://csslint.net/&#34;&gt;CSS Lint&lt;/a&gt;を作った。彼らのサイトではこのように述べられている。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;CSS Lintの特徴はCSSコードから問題を露見させることにある。基本的な構文チェックも、問題のあるパターンまたは非効率の予兆を探すためのルールセットをコードに適用することをおこなう。CSS Lintのルールはすべてプラグイン的に使えるので、容易に自分用のルールにすることや、望まないルールを省略することもできる。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;CSS Lint全般のルールセットは、多くのプロジェクトにおいておおよそ完璧に当てはまるものではないものの、CSS Lintで最も特徴的といえるのは、欲しいルールで厳密にカスタマイズできる能力にある。これはデフォルトで用意されているルールから欲しいルールを選別できるも、自身でルールを書けることを意味する。&lt;/p&gt;
+
+&lt;p&gt;CSS Lintのようなツールは、いくらか大きなチームにおいて、少なくとも一貫性、規則の順守の基準を保証するために欠かせない。そして私が先にヒントを出したように、規則を持つことの大きな理由のひとつは、規則を壊す何かの特定を容易にするためのCSS Lintのようなツールを考慮することだ。&lt;/p&gt;
+
+&lt;p&gt;先に提案したように、規則に基づくことによって、特定のアンチパターンを調べるためのルールを書くことが非常に容易になる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;IDセレクタを許可しない&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;div&lt;/code&gt;、&lt;code&gt;span&lt;/code&gt;といった意味を持たないセレクタを複数のルール上で使わない&lt;/li&gt;
+&lt;li&gt;2つ以上の結合子をセレクタで使わない&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;js-&lt;/code&gt;から始めるクラス名にすることを許可しない&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;l-&lt;/code&gt;接頭辞がついていないルールでレイアウト・配置のスタイルが頻繁に使われるようであれば注意する&lt;/li&gt;
+&lt;li&gt;自身によって定義されたクラスが、その他の何かの子要素として後に再定義されるようになったら注意する&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;これらはただの提案であることは明白だが、自身のプロジェクトで、あなたが望む標準化をどのように強制するか、を考えるのを目的としている。&lt;/p&gt;
+
+&lt;h4 id=&#34;html-inspector:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;HTML INSPECTOR&lt;/h4&gt;
+
+&lt;p&gt;前に私が提案したHTML上のクラスと、リンクしたすべてのスタイルシートを容易に調査できる方法で、もし、どのスタイルシートでも定義されていないのに、HTML上で使われているクラスがあれば注意しよう。現在私が開発している&lt;a href=&#34;https://github.com/philipwalton/html-inspector&#34;&gt;HTML Inspector&lt;/a&gt; と呼ばれるツールは、このプロセスをより簡単にしてくれる。&lt;/p&gt;
+
+&lt;p&gt;HTML Inspectorは（CSS Lintのように）HTMLを横断し、自身で書いたルールで、規則が守られていない時にエラーと注意を返してくれる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;同じIDがページ上で2つ以上使われていれば注意する&lt;/li&gt;
+&lt;li&gt;どのスタイルシートでも使われていなかったり、（接頭辞に&lt;code&gt;js-&lt;/code&gt;がある、というような）ホワイトリストをパスしていないクラスは使わない&lt;/li&gt;
+&lt;li&gt;修飾子クラスはベースクラス無しで使われるべきではない&lt;/li&gt;
+&lt;li&gt;サブオブジェクトクラスは祖先にベースクラスを含んでいないときに使われるべきではない&lt;/li&gt;
+&lt;li&gt;クラスが適用されていない、プレーンな&lt;code&gt;div&lt;/code&gt;や&lt;code&gt;span&lt;/code&gt;要素はHTML上で使ってはいけない&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;まとめ:7fbbe2be112ad5f55355a50dfc5bf47c&#34;&gt;まとめ&lt;/h3&gt;
+
+&lt;p&gt;CSSは単純にビジュアルデザインをつくるためのものではない。CSSを書いているからといって、プログラミングのベストプラクティスをないがしろにしてはいけない。それは、OOP（オブジェクト指向プログラミング）、DRY（Don&amp;rsquo;t Repeat Yourself）、開放/閉鎖原則、関心の分離、などの概念だ。これらはCSSにも適用できる余地がある。&lt;/p&gt;
+
+&lt;p&gt;要するにどんなにコードをうまくまとめるために、その手法が正確に開発をより容易にすることを手助けしたり、長期間に渡ってより保守しやすいかどうかで判断するということを確かめてほしい。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Oh, I’m not a...</title>
+      <link>http://article.enja.io/articles/oh-i-am-not-a.html</link>
+      <pubDate>Mon, 22 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://article.enja.io/articles/oh-i-am-not-a.html</guid>
+      <description>
+
+&lt;h2 id=&#34;oh-i-m-not-a:74e1cb126b0f321b3b800c309366d790&#34;&gt;Oh, I’m not a…&lt;/h2&gt;
+
+&lt;p&gt;『私はデザイナーではない』、『僕はデベロッパーではない』、『俺はコードが書けない』といったことを耳にするが、それらすべての発言に対して言いたい。&lt;/p&gt;
+
+&lt;p&gt;それは正しくない！&lt;/p&gt;
+
+&lt;p&gt;自分ができないことに対して1週間の時間を与えたら、1週間後、自分が『xができない』と言わなくなることを保証しよう。&lt;/p&gt;
+
+&lt;p&gt;まじめに言うと、あるデベロッパーが『やべ、俺デザインできねーわ！』と言ったのならば、それは逃げであると私は解釈している。『デザイナー』も『デベロッパー』も元は同じ人間である。彼（女）らを分け隔てているものは、彼（女）らが自ら定義したラベルでしかない。また技術というのはその技術を求める誰もが習得できるものである。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://benhowdle.im/&#34;&gt;私のサイト&lt;/a&gt;を訪れてみれば、“Ben Howdle - Developer &amp;amp; Designer”と名乗っていることが確認できるだろう。私が主にデザインの仕事をしていることは知られていないので、数週間ばかり、この『デザイナー』の単語に対してモヤモヤしたし、また自分自身のキャッチフレーズとして『デザイナー』とサイトに掲載することは若干詐欺めいたものと感じていた。しかし、私がデザイナーと名乗ったところで、私に対して攻撃してくる人や、抗議文を送ってくる人、またはDMCA（訳注：デジタルミレニアム著作権法。米国の法律）に触れることもないので安心してほしい。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://article.enja.io/img/not-sure-if-real-designer.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+（サイトにデザイナーと掲載しようとしないと本物のデザイナーかどうかは分からない）&lt;/p&gt;
+
+&lt;p&gt;四の五の言わず私はデザイナーと名乗ることを決断したので、それからはデザインをより見るようになったり、前に進めるようになった。また、私のスキルの他の分野、つまりJavaScriptを書くことに対しても影響するようになった。私はコードの設計や最適化だけでなく実際のユーザーエクスペリエンスに関してもよく考慮するようになったのだ。&lt;/p&gt;
+
+&lt;p&gt;それは開発段階のようなより細かいレベルまで影響してくるようになる。例えば、君の夢の仕事への求人広告を見かけたとしよう。しかし応募条件には&lt;a href=&#34;http://d3js.org/&#34;&gt;D3.js&lt;/a&gt;の知識が必須だ。もし、D3を知らなかったとしても、面接にいくべきだろうか？答えは、完全にイエスだ！&lt;a href=&#34;http://benhowdle.im/2012/07/03/say-yes-to-everything/&#34;&gt;すべてに対してイエス&lt;/a&gt;と答えるべきだ。そして、面接の日程まで1週間ある。D3を習得するには十分な時間だし、D3の技術を磨きにかけるための多くの手頃なプロジェクトも探せばある。&lt;/p&gt;
+
+&lt;p&gt;そして、次は誰かのデザインに対して『私はデザイナーではないんですけども』という接尾辞つきの批評をするかもしれないが、そんなものは捨てなさい。もし君が本当に望むのであれば、短期間でそのほとんどを習得できる自身の適応能力と素質が十分であると自信を持て！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Code smells in CSS</title>
+      <link>http://article.enja.io/articles/code-smells-in-css.html</link>
+      <pubDate>Sat, 23 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://article.enja.io/articles/code-smells-in-css.html</guid>
+      <description>
+
+&lt;h2 id=&#34;code-smells-in-css:11444bab6ebdfda57f8551ef40f46bc7&#34;&gt;Code smells in CSS&lt;/h2&gt;
+
+&lt;p&gt;Chris Coyierが&lt;a href=&#34;http://coding.smashingmagazine.com/2012/07/13/coding-qa-with-chris-coyier-code-smell-type-grid/&#34;&gt;回答した&lt;/a&gt;とある問いがある:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;CSSコードが「臭い」かどうかをどう知ることができるのか？コードがいまいち、あるいはデベロッパがいまいちかどうかの兆候はどんなものか？コードの中でどんな部分を見て、善し悪しを決定づけるのか？&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Chrisの素晴らしい回答にいくつか追加して私なりに回答してみようと思う。&lt;/p&gt;
+
+&lt;p&gt;私はBSkyBでインハウスデベロッパとして働く毎日を送っている。私は最近のサイトではフロントエンドに1年以上もかけ(まだ作業中)て制作が必要なほどの大きなウェブサイトに携わっている。その私にとって、悪いCSSとはとても具体的で厄介な代物だ。1つのサイトの制作に数ヶ月にも渡ってかかるような場合、CSSであろうとそうでなかろうと、質の悪いコードの存在が許される余裕はなく、悪いコードは改善する必要性がある。&lt;/p&gt;
+
+&lt;p&gt;私がCSSのクオリティ、メンテナンス性、そして品位のようなものに対して注意していることを少しだけ(もちろん疑いの余地もなく言及していないこともある)共有しよう。&lt;/p&gt;
+
+&lt;h2 id=&#34;スタイルの取り消し:11444bab6ebdfda57f8551ef40f46bc7&#34;&gt;スタイルの取り消し&lt;/h2&gt;
+
+&lt;p&gt;スタイルを取り消すスタイル(リセット以外で)はすぐに注意が必要であるとわかる。CSSの本質からしてスタイルは、もちろん、カスケードするし、以前に定義したものから継承される。ルールセットは常に継承のみを行うべきで、以前のものに追加するべきであり、取り消しをするべきではない。&lt;/p&gt;
+
+&lt;p&gt;以下のようなCSSの宣言は:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;    border-bottom:none;
+    padding:0;
+    float:none;
+    margin-left:0;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;…は &lt;em&gt;往々にして&lt;/em&gt; 悪い知らせだ。もしボーダーを削除しなければならないとしたら、それを適用するのが少し早すぎたのだ。非常に説明するのが難しいので簡単な例を見ていこう:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;    h2{
+        font-size:2em;
+        margin-bottom:0.5em;
+        padding-bottom:0.5em;
+        border-bottom:1px solid #ccc;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ここですべての&lt;code&gt;h2&lt;/code&gt;にいつものように&lt;code&gt;font-size&lt;/code&gt;やスペースのための&lt;code&gt;margin&lt;/code&gt;、ほんの少しの&lt;code&gt;padding&lt;/code&gt;、そしてページ上で次の要素と見た目上の区別を付けやすくするため、ラインを下部に追加した。しかし、場合によってはこのラインが &lt;strong&gt;必要なくなる&lt;/strong&gt; ことも考えられるかも知れない。あるいは&lt;code&gt;h2&lt;/code&gt;に&lt;code&gt;border&lt;/code&gt;も&lt;code&gt;padding&lt;/code&gt;を追加しない場面もあるかも知れない。そうなると以下のようなことになりがちだ:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;    h2{
+        font-size:2em;
+        margin-bottom:0.5em;
+        padding-bottom:0.5em;
+        border-bottom:1px solid #ccc;
+    }
+    .no-border{
+        padding-bottom:0;
+        border-bottom:none;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;10行のCSSに1つの醜いクラス名がある。より良い方法としては:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;    h2{
+        font-size:2em;
+        margin-bottom:0.5em;
+    }
+    .headline{
+        padding-bottom:0.5em;
+        border-bottom:1px solid #ccc;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;8行のCSS、取り消しはなく、すばらしく合理的なクラス名となった。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;スタイルシートを書き進めるに従って、スタイルを追加するのみにし、削除しないこと。&lt;/strong&gt; もしもスタイルの取り消しをしている自分に出会ってしまったら、多くの場合、多くのスタイルをすこし早めに追加しすぎているということになる。&lt;/p&gt;
+
+&lt;p&gt;この例は非常に遠慮がちな例ではあるが、私が伝えたいことを完璧に表現したよい例だ。こんなCSSが数万行に及ぶことを想像してみて欲しい。とてつもない無駄だし、とてつもなく必要のない取り消しだ。スタイルするものの前にあるシンプルなものを見破ること。複雑すぎる部分から初めて、あとで取り消し作業をするリスクを冒すべきではない。最終的に &lt;strong&gt;多くのCSSを書くはめになるのに、少ないスタイルになってしまうことになる&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;以前のスタイルを取り消しをしているCSSを見ればすぐに何かしらが質の悪い設計がなされたことと、その何かは修正されるべきであることもわかる。&lt;/p&gt;
+
+&lt;h2 id=&#34;マジックナンバー:11444bab6ebdfda57f8551ef40f46bc7&#34;&gt;マジックナンバー&lt;/h2&gt;
+
+&lt;p&gt;これらは私にとっての特に悩みの種である。私はマジックナンバーが大嫌いだ。&lt;/p&gt;
+
+&lt;p&gt;マジックナンバーとは(理由もなく)「動作するから」というだけで使われている値を指す。以下の例を見てほしい:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;    .site-nav{
+        [styles]
+    }
+        .site-nav &amp;gt; li:hover .dropdown{
+            position:absolute;
+            top:37px;
+            left:0;
+        }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;top:37px;&lt;/code&gt; これがマジックナンバーだ。この値が正しい振る舞い(らしい)をするたった1つの理由は&lt;code&gt;li&lt;/code&gt;内の&lt;code&gt;.site-nav&lt;/code&gt;が &lt;em&gt;運良く&lt;/em&gt; 37pxの高さを持っているからで、&lt;code&gt;.dropdown&lt;/code&gt;のフライアウトメニューはその下に出現する必要があるからだ。&lt;/p&gt;
+
+&lt;p&gt;ここで問題にしているのは37pxが &lt;em&gt;完璧に&lt;/em&gt; 状況に依存している点であり、だからこそ、その数字を信用することができない。もし誰かが&lt;code&gt;.site-nav&lt;/code&gt;の&lt;code&gt;font-size&lt;/code&gt;を変更し、29pxの高さになったとしたらどうなるか？この数字からは妥当性は失われ、他のデベロッパもこの数字をアップデートすることを知っておく必要がある。&lt;/p&gt;
+
+&lt;p&gt;もしChromeは &lt;em&gt;確かに&lt;/em&gt; &lt;code&gt;li&lt;/code&gt;を37pxとして描画したとして、IEが36pxだったらどうなるのか？この数字はある1つの条件でしか動作しないのだ。&lt;/p&gt;
+
+&lt;p&gt;絶対に、 &lt;em&gt;絶対にだ&lt;/em&gt; 、なんとなく動作するからという理由で数字を使ってはいけない。このシチュエーションでは、&lt;code&gt;top:37px;&lt;/code&gt;を&lt;code&gt;top:100%;&lt;/code&gt;、これは基本的にはトップからすべてという意味になる、に差し替えたほうがはるかにいい。&lt;/p&gt;
+
+&lt;p&gt;マジックナンバーにはそれらにまつわるいくつかの問題がある。上に挙げた通り、依存できるものではないということに加えて、それらの「なんとなく動いたから」という性質から、他のデベロッパにその数字がどこからやってきたのかという情報を伝達しづらい。もしも、より複雑なマジックナンバーを使った例があったとして、そのマジックナンバーが無効になった場合、以下の1つ以上の問題に出くわすことだろう:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;次にアサインされたデベロッパがそのマジックナンバーがどこからやってきたか分からずに削除、そして最初からやり直し。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;次にアサインされたデベロッパは注意深い人で、マジックナンバーがどこからやってきたかわからないので、その番号に触れずに問題を修正しようとする。古くて、期限切れの、ハックっぽいマジックナンバーはコードに残ったままとなり、その次のデベロッパもその上からハックをし、あなた自身がその上からハックする羽目になる。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;マジックナンバーは悪い知らせだ。すぐに期限切れになるし、他のデベロッパを混乱させる上、説明もすることもできず、信用もできない。&lt;/p&gt;
+
+&lt;p&gt;他人のコードで説明なしの番号に出会うことほど酷いものはない。一体その番号が何をするのか、何のために必要なのか、それに触れるべきなのか否か悩むことになる。&lt;/p&gt;
+
+&lt;p&gt;CSSにマジックナンバーを見かけたら私はすぐに質問をしはじめる。どうしてここにあるのか、何をするものなのか、どうやってこの番号は動作するのか、マジックナンバーを使わずに同じ結果を得ることは可能なのか？&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;厄災から逃れるつもりでマジックナンバーは避けるべき。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;制限されたセレクタ:11444bab6ebdfda57f8551ef40f46bc7&#34;&gt;制限されたセレクタ&lt;/h2&gt;
+
+&lt;p&gt;制限されたセレクタとは以下のようなセレクタだ:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;    ul.nav{}
+    a.button{}
+    div.header{}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;基本は例のように不必要に要素が追加されたセレクタだ。&lt;br /&gt;
+これらが悪い知らせである理由は:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;他の要素への再利用性を完璧に阻害してしまう。&lt;/li&gt;
+&lt;li&gt;詳細度を上げてしまう。&lt;/li&gt;
+&lt;li&gt;ブラウザの作業負荷を上げてしまう(パフォーマンスは低下する)。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;これらはすべて悪い特徴である。このセレクタは以下の様にできるし、そうするべきだ:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;    .nav{}
+    .button{}
+    .header{}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こうすることで、&lt;code&gt;.nav&lt;/code&gt;を&lt;code&gt;ol&lt;/code&gt;に適用することができるし、&lt;code&gt;.button&lt;/code&gt;を&lt;code&gt;input&lt;/code&gt;に適用することもできる。そしてサイトがHTML5に対応できるようになったら、ヘッダの&lt;code&gt;div&lt;/code&gt;を&lt;code&gt;header&lt;/code&gt;要素に変更してもスタイルが無効になる心配をしなくても済む。&lt;/p&gt;
+
+&lt;p&gt;パフォーマンスに関しては小さな問題にしかならないが、それでもやはり問題ではある。どうしてブラウザに対して、クラス&lt;code&gt;.button&lt;/code&gt;が&lt;code&gt;a&lt;/code&gt;にあるかどうかを探して貰う必要があるのか、&lt;code&gt;.button&lt;/code&gt;を探して貰えば済む場合は特にだ。セレクタを制限することでブラウザの作業負荷を上げてしまうことになるわけだ。&lt;/p&gt;
+
+&lt;p&gt;より過剰な例としては:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;    ul.nav li.active a{}
+    div.header a.logo img{}
+    .content ul.features a.button{}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これらセレクタは以下のように大規模に削減するか、完全に書き直すことができる:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;    .nav .active a{}
+    .logo &amp;gt; img {}
+    .features-button{}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;こうすることで:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;コードそのものの量を抑え、&lt;/li&gt;
+&lt;li&gt;パフォーマンスを向上し、&lt;/li&gt;
+&lt;li&gt;可搬性を向上させ、&lt;/li&gt;
+&lt;li&gt;詳細度をへらすこと&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ができる。&lt;/p&gt;
+
+&lt;p&gt;スタイルシートを見ている際、制限しすぎたセレクタを見かけ次第、どうしてそんな冗長に書く必要があったのかを知りたくなるし、どうやったら最も短くなるように削減できるかを考える。&lt;/p&gt;
+
+&lt;h2 id=&#34;ハードコード-絶対値:11444bab6ebdfda57f8551ef40f46bc7&#34;&gt;ハードコード/絶対値&lt;/h2&gt;
+
+&lt;p&gt;マジックナンバーと同じように、ハードコード値も悪い知らせだ。ハードコード値とは以下の様なものを指す:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;    h1{
+        font-size:24px;
+        line-height:32px;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;line-height:32px;&lt;/code&gt; ここがよろしくない。&lt;code&gt;line-height:1.333&lt;/code&gt;とするべきだろう。&lt;/p&gt;
+
+&lt;p&gt;行間はより寛大で、柔軟になるように常に相対値で設定するべきだ。&lt;code&gt;h1&lt;/code&gt;の&lt;code&gt;font-size&lt;/code&gt;を変更する際に、&lt;code&gt;line-height&lt;/code&gt;にもその変更を追従させたいはずだ。相対値の&lt;code&gt;line-height&lt;/code&gt;がないと、&lt;code&gt;h1&lt;/code&gt;を変更する場合に以下のようになってしまう:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;    h1{
+        font-size:24px;
+        line-height:32px;
+    }
+    
+    /**
+     * Main site `h1`
+     */
+    .site-title{
+        font-size:36px;
+        line-height:48px;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;この例のように初期値が柔軟でないため、固定の&lt;code&gt;line-height&lt;/code&gt;を無制限に追加しつづけることになってしまう。単位なし、そして相対の&lt;code&gt;line-height&lt;/code&gt;があれば、単純に以下のようにするだけで済む:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;    h1{
+        font-size:24px;
+        line-height:1.333;
+    }
+    
+    /**
+     * Main site `h1`
+     */
+    .site-title{
+        font-size:36px;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;大きな違いのように思えないかもしれないが、大規模プロジェクトのテキスト要素を考えてみれば非常に大きなインパクトになる。&lt;/p&gt;
+
+&lt;p&gt;注意: &lt;code&gt;line-height&lt;/code&gt;以外にも &lt;em&gt;多くの&lt;/em&gt; 場面に当てはめられる。基本的には、&lt;em&gt;どんな&lt;/em&gt; スタイルシート内のハードコード値には注意と嫌疑が必要である。&lt;/p&gt;
+
+&lt;p&gt;ハードコード値には将来性がなく、柔軟でもなく、寛大でもないため避けるべきである。ハードコード値が &lt;em&gt;本当に&lt;/em&gt; 必要になる場面はスプライトくらいで、スプライトはどんな場合でも &lt;em&gt;常に&lt;/em&gt; 特定のサイズである必要がある。&lt;/p&gt;
+
+&lt;p&gt;ハードコード値をスタイルシートで見かけたら、なぜそれが必要なのか、どう回避できるかを知りたいと私なら思う。&lt;/p&gt;
+
+&lt;h2 id=&#34;力ずくでやる:11444bab6ebdfda57f8551ef40f46bc7&#34;&gt;力ずくでやる&lt;/h2&gt;
+
+&lt;p&gt;ハードコード値と似た流れではあるが、もう少しだけ詳細だ。CSSを力ずくで書くということはハードコードされたマジックナンバーや様々な手段を用いて、力ずくでレイアウトをすることを意味する。例を見てほしい:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;    .foo{
+        margin-left:-3px;
+        position:relative;
+        z-index:99999;
+        height:59px;
+        float:left;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;この例は &lt;em&gt;酷い&lt;/em&gt; CSSだ。すべての宣言はハードコード値で、力ずくで、レイアウトに影響する宣言となっていて、 &lt;em&gt;明確に&lt;/em&gt; 強制的に何かを描画させたいところに描画させるためだけに利用されている。&lt;/p&gt;
+
+&lt;p&gt;この手のCSSが示しているのは、このような操作が必要な貧弱にコーディングがされているか、ボックスモデルへの理解が足りないか、またはその両方だ。&lt;/p&gt;
+
+&lt;p&gt;上手にコーディングされたレイアウトは力ずくで行う必要は一切なく、 &lt;em&gt;きちんと&lt;/em&gt; ボックスモデル、レイアウトを理解し、算出済みのスタイルをより頻繁に見るということでこのような状況になることは稀なはずだ。&lt;/p&gt;
+
+&lt;p&gt;力ずくのCSSを発見しだい、どうしてそれが発生したのか、どれくらい前の段階に戻ればレイアウトをより合理的に行うことができるかを知りたくなる。&lt;/p&gt;
+
+&lt;h2 id=&#34;危険なセレクタ:11444bab6ebdfda57f8551ef40f46bc7&#34;&gt;危険なセレクタ&lt;/h2&gt;
+
+&lt;p&gt;「危険なセレクタ」とは影響が広範囲にわたるセレクタを意味する。非常にわかりやすく単純な危険なセレクタの例は:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;    div{
+       background-color:#ffc;
+       padding:1em;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;この例はどんなデベロッパに対してでもすぐにその叫びが聞こえるだろう。一体どうしてサイト上のすべての&lt;code&gt;div&lt;/code&gt;に対して絨毯攻撃をしかけたいのか？これはいい質問だ。だとしたら、なぜ&lt;code&gt;aside{}&lt;/code&gt;や&lt;code&gt;header{}&lt;/code&gt;または&lt;code&gt;ul{}&lt;/code&gt;というようなセレクタを使うのだろうか？このようなセレクタは、それはもう、 &lt;em&gt;とてつもなく&lt;/em&gt; 影響範囲が広く、最終的には前段で書いたようにCSSの取り消しを行うはめになる。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;header{}&lt;/code&gt;の例を詳しく見ていこう…&lt;/p&gt;
+
+&lt;p&gt;多くの人が&lt;code&gt;header&lt;/code&gt;要素を使ってサイトのメインとなるヘッダをマークアップする、それ自体はなんら問題はないが、もしサイト全体のヘッダを以下のようにスタイルしたとしたら:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;    header{
+        padding:1em;
+        background-color:#BADA55;
+        color:#fff;
+        margin-bottom:20px;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;…この場合は問題がないとは言えない。&lt;code&gt;header&lt;/code&gt;要素は「あなたのサイトのメインヘッダ」という意味には &lt;strong&gt;ならない&lt;/strong&gt;。仕様によれば&lt;code&gt;header&lt;/code&gt;要素は複数のコンテキスト内で複数回利用することができる。この場合は&lt;code&gt;.site-header{}&lt;/code&gt;のようなセレクタでターゲットするべきだ。&lt;/p&gt;
+
+&lt;p&gt;このように具体的なスタイルを一般的なセレクタにあてるのは危険だ。そのスタイルはその要素を再度利用する場合に、適用するべきではないエリアにスタイルが漏れてしまい、結果スタイルを取り除く作業(スタイルを取り除くのに
+コードを追加する)で対抗するしかなくなってしまう。&lt;/p&gt;
+
+&lt;p&gt;セレクタはよい&lt;a href=&#34;http://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/&#34;&gt;セレクタの目的&lt;/a&gt;をもたせるようにすること。&lt;/p&gt;
+
+&lt;p&gt;以下を見てほしい:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;    ul{
+        font-weight:bold;
+    }
+    header .media{
+        float:left;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;セレクタがタイプセレクタか、上記のような非常にベーシックな抽象化をされたセレクタを見かけると、私はパニックになる。これらのセレクタは影響力が大きすぎるし、すぐに問題に直面することになるからだ。これらの要素を再利用したらすぐに必要のないスタイルを継承しているのを見ることになる。なぜなら、どこかで大きな影響力を持つセレクタがその要素にも影響を与えてしまっているからだ。&lt;/p&gt;
+
+&lt;h2 id=&#34;受動的な-important:11444bab6ebdfda57f8551ef40f46bc7&#34;&gt;受動的な&lt;code&gt;!important&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;!important&lt;/code&gt;には問題はない。なんの問題もないし、当然、&lt;em&gt;重要な&lt;/em&gt; ツールである。しかし、&lt;code&gt;!important&lt;/code&gt;は特定の状況下で利用するべきである。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;!important&lt;/code&gt;は能動的にのみ利用するべきで、受動的に使ってはならない。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;どういう意味かというと、絶対に &lt;em&gt;常に&lt;/em&gt; スタイルを優先させたいということがあり、かつそのことが初めからわかっているというタイミングがあるということだ。&lt;/p&gt;
+
+&lt;p&gt;例えば、 &lt;em&gt;常に&lt;/em&gt; エラー状態は赤くなる場合に以下のように記述することにはまったく問題がない:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;    .error-text{
+        color:#c00!important;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;もしエラーが常にテキストが青くなる&lt;code&gt;div&lt;/code&gt;で発生したとして、エラー時にそのルールを変更することに対して自信を持てる。エラーは &lt;em&gt;常に&lt;/em&gt; 赤で表現される、なぜならそれはエラーだからで、ユーザに対するメッセージは常に一定に表現するべきだからだ。常にエラーが赤であるべきだから、ここでは能動的に&lt;code&gt;!important&lt;/code&gt;を追加している。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;!important&lt;/code&gt;が悪さをし始めるのは、それらを受動的に使う場合だ。誰かを詳細度の問題から逃がしたい時に使われた場合とも言える。またはちょっとした苦境にいて、&lt;code&gt;!important&lt;/code&gt;を使って強制的に動作させるような場合だ。これらのケースは&lt;code&gt;!important&lt;/code&gt;を受動的に利用している場合で、これは悪い知らせとなる。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;!important&lt;/code&gt;を受動的に利用するということは、よろしくないCSSにより発生した問題を回避するためだけに利用したということになる。根源的な問題は一切解決できず、症状を抑えたにすぎない。問題そのものは存在しつづける上に、強力な詳細度を携えたレイヤを追加し、また1つ余計な詳細度問題を追加したにすぎない。&lt;/p&gt;
+
+&lt;p&gt;私は能動的に使っている限りでは、&lt;code&gt;!important&lt;/code&gt;に気がとがめることはない。受動的に&lt;code&gt;!important&lt;/code&gt;が使われていれば、すぐに質の悪い構造のCSSのせいだとわかるし、問題の解決にはリファクタが必要であり、性急な詳細度の追加などではないこともわかる。&lt;/p&gt;
+
+&lt;h2 id=&#34;id:11444bab6ebdfda57f8551ef40f46bc7&#34;&gt;ID&lt;/h2&gt;
+
+&lt;p&gt;これは私の場合と、大きなチームの場合に特化している。&lt;a href=&#34;http://csswizardry.com/2011/09/when-using-ids-can-be-a-pain-in-the-class/&#34;&gt;以前にどうしてIDが悪いアイデアであることについて&lt;/a&gt;は書いたとおり、IDは詳細度を引き上げ、誰も利用しないし、&lt;strong&gt;CSSで利用するべきではない&lt;/strong&gt;。IDはHTML上のフラグメント識別子とJSのフックとして利用し、CSSでは利用しない。&lt;/p&gt;
+
+&lt;p&gt;利用は単純だ:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;IDはページ内で1度 &lt;em&gt;しか&lt;/em&gt; 利用できない。&lt;/li&gt;
+&lt;li&gt;クラスはページ内で1度しか使わなくても、100万回使うこともできる。&lt;/li&gt;
+&lt;li&gt;IDは多くの場合、再利用できるクラスに抽象化できる特徴を持っている。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://codepen.io/chriscoyier/pen/lzjqh&#34;&gt;IDは クラスの &lt;strong&gt;255倍&lt;/strong&gt; 詳細度が高い&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;つまり、&lt;strong&gt;256の連結クラスを使ってやっと1つのIDを上書きできる&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;もし最後のポイントを読んでもIDを使うことを辞めないとしたら、私にはどうしていいかもはやわからない…&lt;/p&gt;
+
+&lt;p&gt;IDがスタイルシートにあれば、クラスと差し替えたくなる。詳細度こそが、プロジェクトが悪循環を始めるきっかけだ。だからこそ、小さく止めることが大切だ。&lt;/p&gt;
+
+&lt;p&gt;楽しいエクササイズ: &lt;a href=&#34;http://jsfiddle.net/csswizardry/9wGac/&#34;&gt;この問題&lt;/a&gt;を &lt;em&gt;華麗に&lt;/em&gt; 解決してほしい。ヒント: &lt;a href=&#34;http://jsfiddle.net/csswizardry/9wGac/1/&#34;&gt;これは華麗とはいえない&lt;/a&gt;、または&lt;a href=&#34;http://jsfiddle.net/csswizardry/9wGac/2/&#34;&gt;こちらも&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;#8251;訳注: IDがクラスの255倍詳細度が高い〜という記述、およびクラスを256個連結してIDを上書きできる〜という記述について、現時点では特定のブラウザ上のバグであり、仕様としてそのように定義されているわけではありません。&lt;br /&gt;
+それくらい詳細度が高いのがIDである、という風に思ってください。&lt;/p&gt;
+
+&lt;h2 id=&#34;ルーズなクラス名:11444bab6ebdfda57f8551ef40f46bc7&#34;&gt;ルーズなクラス名&lt;/h2&gt;
+
+&lt;p&gt;「ルーズな」クラス名とはその目的を表現するのに十分な説明ができていないクラス名のことを指す。例えば&lt;code&gt;.card&lt;/code&gt;というクラスを想像してほしい。一体このクラスは何をするものだろうか？&lt;/p&gt;
+
+&lt;p&gt;このクラス名は非常にルーズだ、ルーズなクラス名は以下の主要な2つの理由で非常に悪いものだと言える:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;クラス名のみだけでその目的を探り出すことができない。&lt;/li&gt;
+&lt;li&gt;あまりにも漠然としているため、他のデベロッパが過失により再定義してしまうのが簡単にできてしまう。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;初めのポイントはすごく単純だ。&lt;code&gt;.card&lt;/code&gt;は何を意味するのか？なにをスタイルしているのか、Trelloっぽいコンセプトでカードがコンポーネントになっているのか？ポーカーのウェブサイトでトランプに追加したクラスなのか？クレジットカードの画像を指しているのか？ルーズすぎるため、知るよしもない。クレジットカードを意味するものだとしよう、そうするとクラスは&lt;code&gt;.credit-card-image{}&lt;/code&gt;であればよりわかりやすい。長くなった？ そうだ。がより良くもなった？ もちろん！&lt;/p&gt;
+
+&lt;p&gt;ルーズなクラス名における2つ目の問題が(過失により)簡単に再配置/再定義されてしまうことだ。ショッピングサイトで&lt;code&gt;.card&lt;/code&gt;を使ったとして、ユーザアカウントに紐づくユーザのクレジットカードのことを示しているとしよう。そして、他のデベロッパがやってきて、他人にメッセージカードを贈るオプションが付いたプレゼントが買える機能を追加するのを想像してほしい。きっとどこかで&lt;code&gt;.card&lt;/code&gt;を使いたくなるはずだ、(それは &lt;em&gt;間違い&lt;/em&gt; だが) そうなったらまず間違いなく(そんな状況がそもそも考えにくいが)、&lt;code&gt;.card&lt;/code&gt;クラスは再定義され、上書きされてしまう。&lt;/p&gt;
+
+&lt;p&gt;これらすべてはより厳密なクラス名を用いることで回避できる。&lt;code&gt;.card&lt;/code&gt;や&lt;code&gt;.user&lt;/code&gt;などのようなクラス名はルーズすぎて、理解するのが難しく、過失による再利用/上書きが発生しやすい。&lt;/p&gt;
+
+&lt;p&gt;ルーズなクラスを見かけたら、私ならいったい何を意味するのかを探し出し、名前を変更できるか聞くことだろう。&lt;br /&gt;
+クラス名は十分に明細なものにするべきだ。&lt;/p&gt;
+
+&lt;h2 id=&#34;最後に:11444bab6ebdfda57f8551ef40f46bc7&#34;&gt;最後に&lt;/h2&gt;
+
+&lt;p&gt;そういうわけで、これらが私がCSSにおけるコードが「臭い」と感じる、&lt;em&gt;多くの&lt;/em&gt; 条件のうちの少しだ。これらは私が毎日のようにどんな犠牲を払ってでもさける努力をしている事柄だ。何ヶ月におよぶ(最終的には何年も)大きなプロジェクトの場合、統制をとることは &lt;em&gt;必要不可欠&lt;/em&gt; であり、上にあげたような事柄、もちろん他の事柄も、に注意しておくことは最優先されるべきだ。(これらがどれほど小さなサブセットであるかについていくら強調しても足りない。&lt;em&gt;もっと&lt;/em&gt; もっと多くの事柄について注意している。)&lt;/p&gt;
+
+&lt;p&gt;もちろんどんなルールにでもかならず例外は &lt;em&gt;ある&lt;/em&gt; 。しかしそれらはケースバイケースで評価する必要がある。多くの場合、これらは私が苦労して避けている事柄であり、遠くからでもCSSに見つけることができるものばかりだ。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Dribbblisation of Design</title>
+      <link>http://article.enja.io/articles/the-dribbblisation-of-design.html</link>
+      <pubDate>Sat, 05 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://article.enja.io/articles/the-dribbblisation-of-design.html</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;http://article.enja.io/images/the-dribbblisation-of-design/DribbblePostHeader.png&#34; alt=&#34;DribbblePostHeader.png&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;これらの天気アプリのうち1つだけが本質的な問題の解決をしようとしている。&lt;/p&gt;
+
+&lt;p&gt;プロダクト/インタラクションデザインコミュニティでは分岐が起ころうとしている。&lt;a href=&#34;http://feltpresence.com/&#34;&gt;Ryan Singer&lt;/a&gt;氏や&lt;a href=&#34;https://medium.com/the-year-of-the-looking-glass&#34;&gt;Julie Zhuo&lt;/a&gt;氏が書くような素晴らしい記事達が我々の生み出すものをよりよくし続けている一方で、多くの人が&lt;a href=&#34;http://www.dribbble.com&#34;&gt;Dribbble&lt;/a&gt;に自身の作品を投稿し、議論をしている。それらを集約した結果は我々の生み出すものを後退させている。この記事はDribbbleそのものについてではなく、コミュニティ全体から見たDribbbleの価値がなんなのかについてである。ここで私は『プロダクトデザイン』という用語を使うが、この語にはUXやインタラクションデザインも含めていると考えて欲しい。&lt;/p&gt;
+
+&lt;h2 id=&#34;かっこいい-dribbbleコミュニティにおける表面的なデザイン-ワークへの見返り:16bfd239c87cb40c5d6bc97c5b5b6add&#34;&gt;『かっこいい!』Dribbbleコミュニティにおける表面的なデザイン・ワークへの見返り&lt;/h2&gt;
+
+&lt;p&gt;私は昨年、Facebook、そして現在はIntercomにて、求職者から提出されたたくさんのプロダクトデザインのレビューを行ってきたが、あまりよくないパターンに気がついた。デザイナの多くが本質的なビジネスの問題を解決するためにではなく、自分の仲間の関心をひくためにデザインをしているのだ。この問題はクリエイティブ広告業界で長らく問題視されてきていて(クリエイティブそのものがクライアントのビジネス目標のためではなく、賞を取るためのものになってしまう)、プロダクト、インタラクションデザインにも目立つようになってきている。&lt;/p&gt;
+
+&lt;p&gt;私が最近レビューしてきた求職者からのプロダクトデザインは表面的な、Dribbbleに目を向けたものがほとんどだ。見た目は美しいが、うまくは機能しない。ピクセル単位で完璧なフラットデザインなのかもしれないが、ビジネスゴールについて取り組んだものではなく、人々が毎日抱えている問題の解決にもならず、ビジネスのエコシステムについてほとんど考えられてはいないのだ。カラーパレットやUIの中で突出した見た目上のディテールという部分についてDribbbleは確かにコミュニケーションを形作ってはいる。人は見て、そして模倣する。Dribbble内のプロダクトデザインの大多数はよく似ている。ソーシャル・ソフトウェアであろうと、アカウント・ソフトウェアでも、マーケティングサイトでも、天気のアプリでも、同じスタイルが適応されている。目を細めてそれらを見て違いを見つけ出して欲しい。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://article.enja.io/images/the-dribbblisation-of-design/DribbblePostImage1.png&#34; alt=&#34;&#34; title=&#34;DribbblePostImage1&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;最も重要なプロダクトデザインワークは大抵は最も醜いもの:16bfd239c87cb40c5d6bc97c5b5b6add&#34;&gt;最も重要なプロダクトデザインワークは大抵は最も醜いもの&lt;/h2&gt;
+
+&lt;p&gt;対照的に、もっとも優れた求職者たちは彼ら自身の思慮課程そのものを送ってきた人たちだ。スケッチ。ダイヤグラム。賛否両論の議論。現実的な問題。妥協と解決。インタラクションやアニメーションを説明するプロトタイプ。実際に動き、変化し、アニメーションするもの。実際のデータを利用したもの。&lt;/p&gt;
+
+&lt;p&gt;もっともひどかったのが平面的なPNGファイルを送ってきた人たちだ。ワイヤフレームであふれたPDF。明確な問題の解決も見えず、ビジネスや技術の制限への解決も示さない。コンテキストが存在しないものだ。これらのピクセルパーフェクトで、Retinaディスプレイにすら対応している成果物はDribbble上では素晴らしい作品に見えるのだろうが、現実のプロダクト製作環境において、主要なデザインツールとしての価値は低下しつつある。&lt;/p&gt;
+
+&lt;p&gt;この事こそが、他者のデザインをリデザインすることが愚行である理由だ。例えば、新しいYahooのロゴ、iOS7、Facebook、新・新Twitter、アメリカン・エアラインのリブランディングなどがそうだ。他者はこれらのプロジェクトにおける意思決定においてなに一つのコンテキストも知らない。要求や制限、あるいは組織のポリシーもだ。&lt;/p&gt;
+
+&lt;p&gt;プロダクトデザインがある特定のビジネスにおける制限の問題解決であるとするなら、プロダクト/UXデザイナと自らを呼ぶ人たちの多くが、実際にはデジタル・アートを実践しているに過ぎない。彼らはアーティストなのだ。彼らはスタイリストなのだ。美しい見た目のものを創作することは重要なスキルに違いない、しかし、それとプロダクトデザインを行うこととは別だ。&lt;/p&gt;
+
+&lt;h2 id=&#34;プロダクトデザインとは-ミッション-ビジョン-そしてアーキテクチャ:16bfd239c87cb40c5d6bc97c5b5b6add&#34;&gt;プロダクトデザインとは: ミッション、ビジョン、そしてアーキテクチャ&lt;/h2&gt;
+
+&lt;p&gt;広義の概念からピクセルレベルでのディテールにおいて、常にデザイナは自身の会社のミッション、ビジョン、そしてプロダクトのアーキテクチャについて考え続ける必要がある。デザイナがやること全てはこのフィルタを通さなければならない。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://article.enja.io/images/the-dribbblisation-of-design/DribbblePostImage4.png&#34; alt=&#34;&#34; title=&#34;DribbblePostImage4&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;デザインは会社のミッションとともに、会社のトップに立つ人から始まる。それから会社のビジョンが続く。明確で、実行可能なミッションとビジョンなしに、組織内で優れたデザインを生み出すのは非常に難しい。この重要性を過小評価してはならない。もし会社そのものが明確なミッションを持たないとすれば、それを作ることを促進することを自分のタスクとするべきだ。&lt;/p&gt;
+
+&lt;p&gt;ミッションとビジョンの後に続くのがプロダクトのアーキテクチャである。これは技術的なアーキテクチャではなく、プロダクトのコンポーネントとそれらがどうお互いに関連し合うのかについてであり、システムそのものである。Facebookでの初日の朝、Chris Cox(プロダクト統括責任者)は素晴らしい導入スピーチを行う(&lt;a href=&#34;http://www.youtube.com/watch?v=R2kkaDMAJmA&#34;&gt;ここからその本の一部を見ることができる&lt;/a&gt;)。様々な職務の人たちの前で、どんなトピックについて話すこともできるのに、彼はプロダクトアーキテクチャとそれらが社のミッションとどう関わり合いがあるのかについて話すのだ。&lt;/p&gt;
+
+&lt;p&gt;Facebookにおいては、そのアーキテクチャは人とその友達のディレクトリ、そして彼らの興味関心か、グローバルブランドから地元のお店を含む、ビジネスのディレクトリを意味する。そのディレクトリ上にすべての関係性を示すマップが存在している。ミッションとプロダクトとの関係は直接的で誰が見ても明らかなものだ。私個人の経験から、わかりやすく定義されたプロダクトアーキテクチャなしに素晴らしいデザインを生み出すことは非常に難しいものであると考えている。そして多くの場合、ミッションと同じように、そのアーキテクチャを理解し、発展させていく手助けをすることはデザイナとタスクなのだ。私はFacebookを外部のパートナに説明する際には、以下のようなダイアグラムをホワイトボードに書いている:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://article.enja.io/images/the-dribbblisation-of-design/Screen-Shot-2013-09-18-at-17.23.431.png&#34; alt=&#34;&#34; title=&#34;Screen Shot 2013-09-18 at 17.23.43&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;プロダクトアーキテクチャはインフォーメーションアーキテクチャとは別ものだ。ページ郡がどんな風にリンクしあうのかということではなく、あるいはモーダルウィンドウを表示して、ボタンが何をするのかを説明するものでもない。プロトタイプを利用する方がそれらの説明をするのにはいつだって適している。プロダクトアーキテクチャはもうすこし深いレベルにある話なのだ。それは構造であり、構成単位であり、システム内のオブジェクトとそれらの関係性である。Intercomにおいても、我々はデザインをプロダクトアーキテクチャという文脈で考慮している:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://article.enja.io/images/the-dribbblisation-of-design/Screen-Shot-2013-09-18-at-17.36.04.png&#34; alt=&#34;&#34; title=&#34;Screen Shot 2013-09-18 at 17.36.04&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Dribbbleでプロダクトアーキテクチャについて説明されていたことは一度もないと記憶している。デザイナが自身の成果物がどのようにミッションと関連するのか、ビジョンを前進させるのか、そしてプロダクトアーキテクチャ内で必要な重要度でどのように位置づけられるのかについて話すことは非常にまれだ。そうすることは例外ではなく、基準であるべきである。&lt;/p&gt;
+
+&lt;p&gt;明確なミッションやビジョン、そしてプロダクトデザインを持ってから、ようやく他のディテールについて考え始めることができるのだ。ディテールとは、ユーザの目的と何が彼らを幸せにし、充足させることができ、成功させることができるのかであり、自身のプロダクトがどんな役割を持っているのか、どこがよくて、どこが悪いのかである。&lt;/p&gt;
+
+&lt;p&gt;荒く汚いスケッチや落書きでも、それらについて説明することはDribbbleにアップロードされるようなPNGよりも遙かに重要だ。プロジェクト開始から実働するプロダクトを作るまでのプロセスにおいて、PhotoshopのファイルやPNGは私にとってはもっとも興味を引かず、重要でもない側面だ。もっと大切なのはどこに妥協点を設けるかの議論であり、賛否両論の比較がどこでなされたかであり、どこで我々が会社のビジョンとアイデアを紐づけるのか、プロダクトアーキテクチャをベースに何を前進させるべきなのかである。ホワイトボードに書いたスケッチや手書きの絵、ナプキンの裏に書かれた問題解決の方法こそ、デザイナがDribbbleにポストするべきものなのだ。それらを私に見せて欲しい。何を作るのかについて&lt;a href=&#34;https://twitter.com/JZ/status/364882720914026496&#34;&gt;文字で説明&lt;/a&gt;することのほうが、PNGやPDFよりも重要なのだ。&lt;/p&gt;
+
+&lt;h2 id=&#34;デザインにおける4つのレイヤとはなにか:16bfd239c87cb40c5d6bc97c5b5b6add&#34;&gt;デザインにおける4つのレイヤとはなにか&lt;/h2&gt;
+
+&lt;p&gt;デザインとは複数のレイヤに渡るプロセスである。私の経験ではそれらのレイヤをどの順番で進めるのが最適なのかについての答えはあると考えている。もっとも単純なバージョンは以下の4つのレイヤで考えることだろう:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://article.enja.io/images/the-dribbblisation-of-design/DribbblePostImage7.png&#34; alt=&#34;&#34; title=&#34;DribbblePostImage7&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;デザイナというデザイナは他のレイヤについて熟慮せず、4つ目のレイヤについてのみフォーカスしているのをよく見る。上から順に、ではなく下から上に順を追っているのだ。グリッドやフォント、色、そして見た目のスタイルは他の3つのレイヤにおける問題が解決していなければ、意味をなさない。多くのデザイナは上から順を追っていると言うが、実際には実行されていない。なぜなら、複雑なビジネス的な決定や異なる意見を持つ人たちの応対をするよりは、きれいな絵を描いたり、ピクセルに身を任せた方が楽な場合もあるからだ。それはそれでいいだろう。4つ目のレイヤにだけ止まっていればいい。しかし、それらはアートでありデザインではない。あなたはデジタルアーティストであって、デザイナではないのだ。&lt;/p&gt;
+
+&lt;h2 id=&#34;webが浸透していくにつれ-システムをデザインすることは重要になっていく:16bfd239c87cb40c5d6bc97c5b5b6add&#34;&gt;Webが浸透していくにつれ、システムをデザインすることは重要になっていく&lt;/h2&gt;
+
+&lt;p&gt;Webの発明は産業革命以来の大きな変更を社会に与えることだろう。Webはすべてに浸透し始めている。我々の家にも、仕事場にも、寝ているときにベットのそばにも、そしてどこへ行くのにもポケットの中にあるものだ。Webは常に我々と共にある。すでに車の中にも、服の中にも、持っているものの中にも、我々の健康をモニタするものにも存在する。2020年までには(もっと前でなければ)、全てのビジネスはWebビジネスになるだろう。Charles Eames氏がかつて言ったとおりに『&lt;a href=&#34;http://af-design.com/blog/wp-content/uploads/2011/09/eventually_everything_connects-507x640.jpg&#34;&gt;いずれ全てのものはつながり合う&lt;/a&gt;』のだ。&lt;/p&gt;
+
+&lt;p&gt;静的でリンクされたウェブページをデザインすることは死に行く職業だ。モバイルテクノロジやAPI、SDK、そしてプラットフォームとプロダクトのオープンな関係性の素晴らしい発展は、我々全員がシステムをデザインしている未来図を明確に描いている。ワイヤーフレームで溢れかえったPDFは死に行く提出物となり、Photoshopはプロダクトデザインツールとしてはその命を終える。デザイナは自らの制作物をスケッチやホワイトボード、そしてプロトタイプツール(Quartz Composer、After Effects、Keynote、CSS/HTML)を使って前進させるだろう。&lt;/p&gt;
+
+&lt;p&gt;このことが多くの人がデザイナはコードを書くべきであるという理由の1つでもある。コードを書くべきか否かについて賛否はあるだろうが、デザイナはピクセル上ではなく、システムにおけるコンポーネント間で何が起こるのかという部分について問題と解決を説明する必要が確実にある。だからこそ、プロトタイプを作成し、コードを書き始め、実際のデータが必然的に導くであろう予測できなかった、あるいは見落としていた事柄などのディテールを詰めていくのだ。実際のデータを使ってインタラクションを製作することで、よりよい感覚を得ることができるはずだ。&lt;/p&gt;
+
+&lt;h2 id=&#34;ジョブを中心にデザインをしていく:16bfd239c87cb40c5d6bc97c5b5b6add&#34;&gt;ジョブを中心にデザインをしていく&lt;/h2&gt;
+
+&lt;p&gt;Intercomでは、&lt;a href=&#34;http://www.youtube.com/watch?v=f84LymEs67Y&#34;&gt;Clay Christensen氏によるジョブ・フレームワーク&lt;/a&gt;をプロダクトデザインに活かしている。我々はすべてのデザインの問題に対してジョブという枠組みを作って、イベントの発生や状況、モチベーションと目的、そして狙っている結果にフォーカスしている:&lt;/p&gt;
+
+&lt;p&gt;_____ する時、私は _____ したい、そうすれば、_____ ができるようになる。&lt;/p&gt;
+
+&lt;p&gt;例として: &lt;strong&gt;新しいユーザがサインアップしたら&lt;/strong&gt;、&lt;strong&gt;お知らせを届けて&lt;/strong&gt; 欲しい。そうすれば、&lt;strong&gt;彼らに話しかけることができる&lt;/strong&gt; 。&lt;/p&gt;
+
+&lt;p&gt;こうすることでより物事が明確になってくる。このジョブとミッションを関係付け、重要度を適切に判断することが可能になる。こうすることで常にデザインにおける4つのレイヤすべてについて考えることが必須になるのだ。システム内において、どのコンポーネントがジョブ内のパーツの部品となるのか、そして、そららとの必要な関係性とインタラクションを促進することができるようになる。デザインをレイヤの上から下へ進めていけるようになり、ビジュアルデザインに入る前に、効果やシステム、インタラクションについて考えることができるようになる。&lt;/p&gt;
+
+&lt;p&gt;ジョブを利用するとともに、現在我々はシステム起源であるデザインを反映させるためにパターン・ライブラリの制作をしている。Photoshopを使うことなく、多くのデザインをこのライブラリ・コードから製作している最中だ。これは完璧なプロセスではない。これから我々も常に反復して修正していく。&lt;/p&gt;
+
+&lt;h2 id=&#34;アップデート:16bfd239c87cb40c5d6bc97c5b5b6add&#34;&gt;アップデート&lt;/h2&gt;
+
+&lt;p&gt;TwitterやHacker Newsにて、何人かが私がビジュアルデザインとUXデザインを融合させているという指摘をしていたが、私はそうは思わない。システムデザインとインタラクションについて考えることなく、インタラクティブなビジュアルデザインを考えることができないというのが私の意見だ。我々はグラフィックデザインをしているのではない。我々はポスターをデザインしているのでも、標識をデザインしているのでもないのだ。&lt;/p&gt;
+
+&lt;h2 id=&#34;ノート:16bfd239c87cb40c5d6bc97c5b5b6add&#34;&gt;ノート&lt;/h2&gt;
+
+&lt;p&gt;本記事のタイトルについては&lt;a href=&#34;https://twitter.com/destraynor&#34;&gt;Des&lt;/a&gt;に感謝したい。&lt;/p&gt;
+
+&lt;p&gt;Intercomでは現在&lt;a href=&#34;https://www.intercom.io/jobs/design&#34;&gt;プロダクトデザイナを募集中&lt;/a&gt;! :)&lt;/p&gt;
+
+&lt;p&gt;4つのレイヤは7、8年前に&lt;a href=&#34;http://flow-interactive.com/&#34;&gt;Flow&lt;/a&gt;というUXコンサルティング会社で利用していた&lt;a href=&#34;http://farm1.static.flickr.com/159/405938069_385407fdd0.jpg&#34;&gt;6レイヤモデル&lt;/a&gt;の改作で、それ自体、&lt;a href=&#34;http://creativebeatle.files.wordpress.com/2010/12/elements_of_user_experience_design.jpg&#34;&gt;Jesse James Garrett氏による独創的なダイアグラム&lt;/a&gt;の改作である。&lt;/p&gt;
+
+&lt;p&gt;Dribbbleはそのものは素晴らしいプロダクトであり、記事は本質的には彼らについての話ではない。彼らはもしかしたら、表面的な美しさから離れて、より実質的な問題解決に向けた方向になればより良くなるかも知れない(もちろん、Dribbbleがデジタル・アート用の場であれば、話は別だ。:)&lt;/p&gt;
+
+&lt;p&gt;ヘッダのDribbbleデザインは: &lt;a href=&#34;http://dribbble.com/bwaddington&#34;&gt;bwaddington&lt;/a&gt;&amp;nbsp;&lt;a href=&#34;http://dribbble.com/kolage&#34;&gt;kolage&lt;/a&gt;&amp;nbsp;&lt;a href=&#34;http://dribbble.com/claudioguglieri&#34;&gt;claudioguglieri&lt;/a&gt;&amp;nbsp;&lt;a href=&#34;http://dribbble.com/alden&#34;&gt;alden&lt;/a&gt;&amp;nbsp;&lt;a href=&#34;http://dribbble.com/BillSKenney&#34;&gt;BillSKenney&lt;/a&gt;&amp;nbsp;&lt;a href=&#34;http://dribbble.com/dash&#34;&gt;dash&lt;/a&gt;&amp;nbsp;から、または&lt;a href=&#34;http://umbrellatoday.com/pages/iphone&#34;&gt;umbrellaアプリはこちらから&lt;/a&gt; :)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Baseline for Front-End Developers</title>
+      <link>http://article.enja.io/articles/a-baseline-for-front-end-developers.html</link>
+      <pubDate>Sat, 01 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://article.enja.io/articles/a-baseline-for-front-end-developers.html</guid>
+      <description>
+
+&lt;h2 id=&#34;a-baseline-for-front-end-developers:298b6eb8db33c32012e76ab710bf1362&#34;&gt;A Baseline for Front-End Developers&lt;/h2&gt;
+
+&lt;p&gt;先日、ほかのデベロッパ達に見て、学んで欲しいと思っていたプロジェクト用にREADMEを書いている際、あることに気がついた。それは書いてあることが数年前の私にとっては驚異でしかないはずのNode, npm、Homebrew、git、テスト、開発用とプロダクション用のビルドについて、いかにもカジュアルに触れているということだ。&lt;/p&gt;
+
+&lt;p&gt;その昔、フロントエンド開発者にとって必須のワークフローと言えば、ファイルを編集し、ローカル環境でテスト(可能な限り)し、サーバにFTPでそれらをアップロードする、というものだった。私たちは自らの能力を、IE6を説き伏せて従わせることかあるいは、クロスブラウザでピクセルパーフェクトさを達成することで計っていた。私自身を含め、コミュニティの多くの人はきちんとしたプログラミングの経験がなかった。HTML、CSS、そしてJavaScript、普通はjQueryという形で、などは独習して得た技術だった。&lt;/p&gt;
+
+&lt;p&gt;この数年で何かが変わった。おそらくそれは人々がフロントエンド開発に対してまじめに取り組み始めた結果か、ブラウザベンダが彼らがやるべきことの多くをやり切り始めた結果なのか、あるいは私自身を含めたフロントエンド開発者達がいくらかは安定したソフトウェア開発のプロセスについて学び始めた結果かもしれない。&lt;/p&gt;
+
+&lt;p&gt;それがなんであれ、我々はトリビアに価値を見いだすことよりも、ツールに価値を見いだすことに重点をおき始めているのだと思う。フロントエンド開発者として成功するための新しいベースラインとなるスキルセットが現れはじめていて、そのベースラインを満たすことができない開発者達は、特定の事柄についていちいち触れなくてもすでに知っている人達から置き去りにされていると感じ始めているだろう。&lt;/p&gt;
+
+&lt;p&gt;ここでは*私*が考える、開発者達が慣れておくべきと考える事柄と、もしそれらについて素早く覚えたい場合に利用できるリソースについて触れていこう。(Paul Irish、Mike Taylor、Angus Croll、そしてVlad Filippovの助言に感謝したい。)&lt;/p&gt;
+
+&lt;h3 id=&#34;javascript:298b6eb8db33c32012e76ab710bf1362&#34;&gt;JavaScript&lt;/h3&gt;
+
+&lt;p&gt;もはや言わずもがなかも知れないが、単にJavaScriptのライブラリについて知っている、というだけでは十分とは言えない。それらライブラリにある機能をすべて素のJavaScriptで実装する方法を知っていなければならない、という意味ではなく、実際にいつライブラリが必要となるのか、そして必要としないと判断した場合に素のJavaScriptだけでも実装できるようになっておくべきだ。&lt;/p&gt;
+
+&lt;p&gt;つまり&lt;a href=&#34;http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742&#34;&gt;JavaScipt: The Good Parts&lt;/a&gt;をできれば1回以上は読んだことがあるということになるだろう。オブジェクトや配列のようなデータ構造について理解し、関数、&lt;code&gt;call&lt;/code&gt;や&lt;code&gt;apply&lt;/code&gt;をどうして、そしてどのように使うかを理解し、プロトタイプ継承を利用し、そして非同期性をどのように管理するかを理解しているということになる。&lt;/p&gt;
+
+&lt;p&gt;素のJavaScript力が弱いと感じたら、以下のリソースは理解の手助けとなるだろう:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://eloquentjavascript.net/&#34;&gt;Eloquent JavaScript&lt;/a&gt;: JavaScriptの基本についての素晴らしい本(紙の本としても読める)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/rmurphey/js-assessment&#34;&gt;A Test-Driven JS Assessment&lt;/a&gt;: JavaScriptの様々なトピックに触れる失敗しているテストのセット。テストをパスできるコードを書くことができるかやってみて欲しい&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://paulirish.com/2010/10-things-i-learned-from-the-jquery-source/&#34;&gt;10 things I learned from the jQuery Source&lt;/a&gt;: Paul Irish氏による少し古いが素晴らしいリソース。他者が書いたコードから何を学び取れるかについて触れている&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;git-とgithubのアカウント:298b6eb8db33c32012e76ab710bf1362&#34;&gt;Git(とgithubのアカウント)&lt;/h3&gt;
+
+&lt;p&gt;もしGithubを利用していないということは基本的にフロントエンド開発に関する技術周りで立ち上がり始めたリッチなオープンソースコミュニティに参加できないことと同じことだ。レポジトリをクローンし、試してみる、は習性となっているべきで、&lt;a href=&#34;http://nvie.com/posts/a-successful-git-branching-model/&#34;&gt;プロジェクトにおけるブランチを使ったコラボレーションの方法&lt;/a&gt;についても知っておくべきだ。&lt;/p&gt;
+
+&lt;p&gt;gitのスキルを高めたい？&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://help.github.com/&#34;&gt;help.github.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cheat.errtheblog.com/s/git&#34;&gt;Github git cheat sheet&lt;/a&gt; &amp;#8251;訳注: リンク先は現在利用できません。代わりに&lt;a href=&#34;https://github.com/AlexZeitler/gitcheatsheet/blob/master/gitcheatsheet.pdf?raw=true&#34;&gt;こちら&lt;/a&gt;が比較的近しいリソースとなります。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cheat.errtheblog.com/s/git&#34;&gt;More cheat sheet&lt;/a&gt; &amp;#8251;訳注: リンク先は現在利用できません。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://pinboard.in/u:rmurphey/t:git/&#34;&gt;More git links&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;モジュール方式-依存関係の管理-そしてプロダクションビルド:298b6eb8db33c32012e76ab710bf1362&#34;&gt;モジュール方式、依存関係の管理、そしてプロダクションビルド&lt;/h3&gt;
+
+&lt;p&gt;依存関係の管理をページに対してスクリプトやスタイルタグを追加していく方法で行う時代は終わった。もし&lt;a href=&#34;http://requirejs.org/&#34;&gt;RequireJS&lt;/a&gt;のような素晴らしいツールを会社内のワークフローとして組み込めないとしても、得られる利益は非常に大きいため、個人プロジェクト内や&lt;a href=&#34;https://github.com/tbranyen/backbone-boilerplate&#34;&gt;Backbone Boilerplate&lt;/a&gt;の様なプロジェクトで、詳しく調査する時間を作るべきだ。特にRequireJSは小さなモジュール方式を使ってJSとCSSを開発でき、RequireJSの最適化ツールを使って、プロダクション用にファイルを結合し、ミニファイも行ってくれる。&lt;/p&gt;
+
+&lt;p&gt;AMDについて懐疑的? 何もしないことへの言い訳にはならない。最低でも&lt;a href=&#34;https://github.com/mishoo/UglifyJS&#34;&gt;UglifyJS&lt;/a&gt;や&lt;a href=&#34;https://developers.google.com/closure/compiler/&#34;&gt;Closure Compiler&lt;/a&gt;のような効率的にミニファイを行ってくれるツールについて知っておくべきだ。そしてミニファイされたファイルをプロダクション前に結合しておこう。&lt;/p&gt;
+
+&lt;p&gt;もし素のCSSを書いている場合でも、つまりSassやStylusのようなCSSプリプロセッサを使っていない場合でも、RequireJSはCSSファイルをモジュール方式にすることを手助けしてくれる。&lt;code&gt;@import&lt;/code&gt;宣言をベースファイル内で使って、開発中は依存するファイルを読み込み、RequireJSの&lt;a href=&#34;http://requirejs.org/docs/optimization.html#onecss&#34;&gt;最適化ツール&lt;/a&gt;を使ってプロダクション用のファイルを生成することができる。&lt;/p&gt;
+
+&lt;h3 id=&#34;インブラウザ開発ツール:298b6eb8db33c32012e76ab710bf1362&#34;&gt;インブラウザ開発ツール&lt;/h3&gt;
+
+&lt;p&gt;ブラウザベースの開発ツールはこの数年で驚異的な改良がなされてきている。そしてそれらの使い方をを知っていれば、開発に対する体験を驚くほど改善することができるだろう。(ヒント: もし&lt;code&gt;alert&lt;/code&gt;を使ってコードのデバッグを行っているなら、多くの時間を無駄にしている。)&lt;/p&gt;
+
+&lt;p&gt;自分が主に利用するブラウザに搭載されている開発ツールを使うべきだが、私は最近では&lt;a href=&#34;https://developers.google.com/chrome-developer-tools/&#34;&gt;Google Chromeの開発ツール&lt;/a&gt;を偏愛しているが、ユーザからのフィードバックを元に定期的に便利な機能を追加しているため、ほかのブラウザに搭載されている開発ツールを無視するのもよくない。例えばOperaの&lt;a href=&#34;http://my.opera.com/dragonfly/blog/&#34;&gt;Dragonfly&lt;/a&gt;には、特筆するべきいくつかの機能が搭載されている。例えば、(実験的な)CSSのプロファイラ、カスタマイズ可能なキーボードショートカット、USB接続を必要としないリモートデバッグ、そしてカスタムカラーパレットを保存し利用できる機能などだ。&lt;/p&gt;
+
+&lt;p&gt;もしブラウザ開発ツールに対する理解が浅い場合は&lt;a href=&#34;http://fixingthesejquery.com/#slide1&#34;&gt;Fixing these jQuery&lt;/a&gt;は&lt;a href=&#34;https://developers.google.com/chrome-developer-tools/docs/scripts-breakpoints&#34;&gt;ステップデバッグ&lt;/a&gt;を含むデバッグ手法について素晴らしい(そして特にjQuery中心というわけでもない)まとめとなっている。もし既知でなければ、これまでの人生を変えるようなことを学ぶことになるだろう。&lt;/p&gt;
+
+&lt;h3 id=&#34;コマンドライン:298b6eb8db33c32012e76ab710bf1362&#34;&gt;コマンドライン&lt;/h3&gt;
+
+&lt;p&gt;コマンドラインに関して言うと、使うことに不快ではないというだけではもはや十分ではない。もしターミナルウィンドウに向かって手を動かしていないようでは、多くのことを見逃しすぎていると言える。ターミナルを使って何から何までやらなければならないとは言ってはいない。gitのGUIツールを奪いとりたいのではなく(そのうち利用しない方がよいとは思うが)、どんなプロジェクトをしていようと、いつでもターミナルウィンドウを開いた状態であるべきだ。いくつかのコマンドラインのタスクは考える必要もなくできるようになっているべきだ:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ssh&lt;/code&gt;を使ってほかのマシンやサーバにログインする&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;scp&lt;/code&gt;でほかのマシンやサーバにファイルをコピーする&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ack&lt;/code&gt;や&lt;code&gt;grep&lt;/code&gt;でプロジェクト内のファイルを文字列やパターンを使って検索する&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;find&lt;/code&gt;でパターンにあったファイルを取得する&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git&lt;/code&gt;で&lt;code&gt;add&lt;/code&gt;、&lt;code&gt;commit&lt;/code&gt;、&lt;code&gt;status&lt;/code&gt;や&lt;code&gt;pull&lt;/code&gt;などの基本的なことをする&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;brew&lt;/code&gt;でHomebrewを使ってパッケージをインストールする&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npm&lt;/code&gt;でNodeのパッケージをインストールする&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gem&lt;/code&gt;でRubyのパッケージをインストールする&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;もし何度も使うコマンドがあるなら、&lt;code&gt;.bashrc&lt;/code&gt;か&lt;code&gt;.profile&lt;/code&gt;か、&lt;code&gt;.zshrc&lt;/code&gt;か何でもいいので、&lt;a href=&#34;http://tldp.org/LDP/abs/html/aliases.html&#34;&gt;エイリアス&lt;/a&gt;を作って、コマンドのタイピングを省略できるようにしておこう。&lt;code&gt;~/.gitconfig&lt;/code&gt;に対してもエイリアスを追加することもできる。Gianni Chiappettaの&lt;a href=&#34;https://github.com/gf3/dotfiles&#34;&gt;dotfiles&lt;/a&gt;は何が可能なのかについて素晴らしいインスピレーションになるだろう。&lt;/p&gt;
+
+&lt;p&gt;注意: もしWindows環境の場合は、&lt;a href=&#34;http://www.cygwin.com/&#34;&gt;Cygwin&lt;/a&gt;を推薦する以外、私にはどうしていいかもわからない。いいか悪いかはさておき、Windows環境でオープンソースのフロントエンド開発者のコミュニティに参加することは実質的に難しくなりつつある。よい点はMacBook Airは非常に安価で、強力で、馬鹿げているくらいポータブルで、もちろんいつだってUbuntuやほかのLinux達も存在している。&lt;/p&gt;
+
+&lt;h3 id=&#34;クライアントサイドテンプレート:298b6eb8db33c32012e76ab710bf1362&#34;&gt;クライアントサイドテンプレート&lt;/h3&gt;
+
+&lt;p&gt;サーバがXHRに対してHTMLのスニペットを返すことが当たり前だったことはそれほど前のことではない。しかし、この12ヶ月から18ヶ月の間に、フロントエンド開発者コミュニティはサーバから純粋にデータを返すように要求しはじめた。それらのデータをDOMに挿入できるHTMLに変換するのはコード内で直接行うと乱雑でメンテナンスが難しいプロセスだ。&lt;br /&gt;
+そこで&lt;a href=&#34;http://www.slideshare.net/garann/using-templates-to-achieve-awesomer-architecture&#34;&gt;クライアントサイドテンプレートライブラリ&lt;/a&gt;が登場する。テンプレートライブラリ達はデータと結合してテンプレートをHTML文字列にしてくれる。どのテンプレートツールがいいかわからない? Garann Meansの&lt;a href=&#34;http://garann.github.com/template-chooser/&#34;&gt;Template Chooser&lt;/a&gt;は正しい方向に導いてくれることだろう。&lt;/p&gt;
+
+&lt;h3 id=&#34;cssプリプロセッサ:298b6eb8db33c32012e76ab710bf1362&#34;&gt;CSSプリプロセッサ&lt;/h3&gt;
+
+&lt;p&gt;Paul Irishが以前&lt;a href=&#34;https://twitter.com/paul_irish/status/188329390822801409&#34;&gt;述べたように&lt;/a&gt;、フロントエンド開発者達が書いたコードがプロダクション時には全く異なっているというような状況が見られるようになってきた。CSSプリプロセッサで書いたコードこそそれらの例と言える。まだピュアなCSSを書くことが唯一の方法だとする人達もいるが、&lt;a href=&#34;http://www.stuffandnonsense.co.uk/blog/about/less&#34;&gt;彼らも変わり始めている&lt;/a&gt;。これらのツールはCSSのデフォルトとしてすでにあるべき変数や、計算、ロジック、ミックスインなどの機能を提供している。そしてCSSのプロパティにつけるベンダープリフィックス達をきれいにすることもできる。&lt;/p&gt;
+
+&lt;h3 id=&#34;テスト:298b6eb8db33c32012e76ab710bf1362&#34;&gt;テスト&lt;/h3&gt;
+
+&lt;p&gt;モジュール方式で、疎結合なコードを書くことの楽しみの1つが、書いたコードがテストするのに簡単なコードとなることだ。そして&lt;a href=&#34;https://github.com/cowboy/grunt&#34;&gt;Grunt&lt;/a&gt;のようなツールを使えば、テストを含んだプロジェクトを設定するのは簡単にできる。GruntはQUnit連携をデフォルトとしているが、テストフレームワークの中から(&lt;a href=&#34;https://github.com/pivotal/jasmine/wiki&#34;&gt;Jasmine&lt;/a&gt;や&lt;a href=&#34;http://visionmedia.github.com/mocha/&#34;&gt;Mocha&lt;/a&gt;が私の今のお気に入りだ)自分の好みにあうスタイルから選ぶことができるし、ほかの連携するツールも多く提供されている。&lt;/p&gt;
+
+&lt;p&gt;コードがモジュール方式で疎結合であればテストは楽しいものだが、そうでもないコードに対してテストを行うことは難しいか不可能の間のどこかにある状態となる。裏を返すと、テストを書くことを強制することで(もしかしたらコードを書き始める前から)、考え方とコード自体を体系化する手助けとなるということになる。将来コードをリファクタする際に自信を持ってできるようにもしてくれる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;私がjQueryで書いたコードをJasmineを使ってテストすることについて説明している短い&lt;a href=&#34;http://vimeo.com/20457625&#34;&gt;スクリーンキャスト&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;jquery-bbqプラグインの&lt;a href=&#34;https://github.com/cowboy/jquery-bbq/blob/master/unit/unit.js&#34;&gt;ユニットテスト&lt;/a&gt;例&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;自動化プロセス-rake-make-gruntなど:298b6eb8db33c32012e76ab710bf1362&#34;&gt;自動化プロセス(rake/make/gruntなど)&lt;/h3&gt;
+
+&lt;p&gt;Gruntが持つユニットテストをセットアップするビルトインのサポートが自動化プロセスの例だ。非常に多くの繰り返しの作業が存在するのがフロントエンド開発の実情だ。しかし以前私の友人が言ったとおり、よい開発者はめんどくさがりな開発者だ。大まかなルールとして、もし3回同じことを繰り返すようであれば、自動化するべきだ。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;make&lt;/code&gt;のようなツールは長い間自動化プロセスの手助けをするために存在しきた。ほかにも&lt;code&gt;rake&lt;/code&gt;や&lt;code&gt;grunt&lt;/code&gt;などもそうだ。ファイルシステムに関連するようなタスクを自動化する場合はJavaScript以外の言語を学ぶことは非常に役に立つ。Nodeの非同期性はファイルを操作するのに重荷になるからだ。ほかにもタスク中心の自動化ツール、例えば、デプロイのためのツール、ビルド生成のツール、コードクオリティチェックなど、はたくさん存在している。&lt;/p&gt;
+
+&lt;h3 id=&#34;コードのクオリティ:298b6eb8db33c32012e76ab710bf1362&#34;&gt;コードのクオリティ&lt;/h3&gt;
+
+&lt;p&gt;もしこれまでセミコロンの抜け漏れや余計なカンマで嫌な思いをしたことがあるなら、コード内の小さなミスによる時間の無駄がどれほどのものかわかるだろう。だからこそ、&lt;a href=&#34;http://www.jshint.com/&#34;&gt;JSHint&lt;/a&gt;のようなツールを使っているわけだ。JSHintは&lt;a href=&#34;http://www.jshint.com/options/&#34;&gt;設定&lt;/a&gt;を変更でき、&lt;a href=&#34;http://www.jshint.com/platforms/&#34;&gt;エディタやビルドプロセスに連携する&lt;/a&gt;ための多くの手段も提供している。&lt;/p&gt;
+
+&lt;h3 id=&#34;よいマニュアル:298b6eb8db33c32012e76ab710bf1362&#34;&gt;よいマニュアル&lt;/h3&gt;
+
+&lt;p&gt;そう、フロントエンド開発にマニュアルは存在しないが、&lt;a href=&#34;https://developer.mozilla.org/en-US/&#34;&gt;MDN&lt;/a&gt;は非常に近い存在だ。よいフロントエンド開発者は&lt;code&gt;mdn&lt;/code&gt;のプリフィックスを付けて検索エンジンで検索を行う。例えば、&lt;code&gt;mdn javascript arrays&lt;/code&gt;のようにしてw3schoolsの利益重視の厄災から身を守るのだ。&lt;/p&gt;
+
+&lt;h3 id=&#34;最後に:298b6eb8db33c32012e76ab710bf1362&#34;&gt;最後に&lt;/h3&gt;
+
+&lt;p&gt;どんなものでもそうであるように、ただ読むだけではエキスパートにはなれないし、中級者にもなれない。物事において唯一上達する方法は&lt;a href=&#34;http://rmurphey.com/blog/2011/05/20/getting-better-at-javascript/&#34;&gt;とにかく実行すること&lt;/a&gt;だけだ。グッドラック。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SOLID CSS</title>
+      <link>http://article.enja.io/articles/solid-css.html</link>
+      <pubDate>Mon, 17 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://article.enja.io/articles/solid-css.html</guid>
+      <description>
+
+&lt;h2 id=&#34;solid-css:49fcbce1f4686866c4b5c8b0fbb880ae&#34;&gt;SOLID CSS&lt;/h2&gt;
+
+&lt;p&gt;CSSはそもそもアカデミック文書やシンプル、カスケードや子孫セレクタの存在が納得いくようなサイト(例: wikiやブログ)をスタイルするために作られた。しかし我々が今現在作るサイトはより複雑で、シンプルなサイトでうまくいっていた実装が通用しなくなっている。CSSを実装するにあたってよくある問題を解決するよりよい実装方法を見つけ出す必要があるし、これまでの実装とは異なるアプローチを生み出す必要がある。ほかの分野での経験、例えば、関心の分離、モジュラー、カプセル化、DRYなどは大規模なCSSプロジェクトにも適応することができる。主な問題はCSSが得意な人がコンピュータサイエンスのバックグランドを持っているわけではないこと、多くの場合デザイナーとしてキャリアをスタートし、CSSを独学で覚えてきた(少なくとも私の場合はそうだ)。この記事を書いた理由がそこにある。&lt;/p&gt;
+
+&lt;p&gt;ここでは詳細や例について多くは書かず、それぞれのコンセプトについて可能な限り簡潔に説明していく。いくつかのSOLID原則はCSSにおいて複数の解釈があるため(コンセプトを無理矢理詰め込んでいるので)、詳細の例は書かないことにした。それに加え、固定の実装方法に捕われずにアイデアを理解する方が重要だと考えているからだ。&lt;/p&gt;
+
+&lt;h3 id=&#34;大規模なcssプロジェクトとは何か:49fcbce1f4686866c4b5c8b0fbb880ae&#34;&gt;大規模なCSSプロジェクトとは何か？&lt;/h3&gt;
+
+&lt;p&gt;大規模プロジェクトに対するイメージは人それぞれだろう、一時期には2,000行以上のになるプロジェクトは大きいと思っていたが、今では4,000行以上のCSSがほとんどで、私はそれでもそれほど大きいとは思っていない。プロジェクトの構造や組織によってアプリケーションの“認識上のサイズ”は大きく異なるだろうが、4,000行以上の無駄のないCSSが必要なアプリケーションやサイトは些細なサイズだとしないこととする。プロジェクトが1,000〜2,000行以下であればどれだけカオスな状態であろうと、なんとかなる。しかしどうにもならない状態に陥るのは往々にして始めは小さな規模だ。始めからしっかりとした構造を作っておくことは、書き直すよりははるかにましだろう。&lt;/p&gt;
+
+&lt;p&gt;これから紹介するテクニックの利点に気がつくのはアプリが一定のサイズに達してからになるだろう。そしてプロジェクトが大きくなるにつれ飛躍的に利点を感じやすくなる。プロジェクトによって利点は異なるので、実利的に考えてほしい。まずは理由を理解し、自分のプロジェクトに適応できるかを判断してほしい。(私自身もすべてのプロジェクトにこれらのルールを当てはめていはいない。)&lt;/p&gt;
+
+&lt;h3 id=&#34;solid:49fcbce1f4686866c4b5c8b0fbb880ae&#34;&gt;SOLID&lt;/h3&gt;
+
+&lt;p&gt;SOLIDとは5つのオブジェクト指向プログラミングの原則とデザインパターンの短縮系のことを指す。その5つを適応させることでシステムのメンテナンス性を向上し、長期で拡張していくことを簡単にすることができる。&lt;br /&gt;
+この言葉はUncle Bob(訳注: Robert Cecil Martin氏のこと)が生み出したもので、彼がこの原則がCSSにも当てはまると考えているとは思えない(彼に聞いたわけではないが)。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;S&lt;/strong&gt;ingle Responsibility Principle / 単一責任の原則&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;O&lt;/strong&gt;pen/Closed Principle / オープン・クローズドの原則&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;L&lt;/strong&gt;iskov Substitution Principle / リスコフの置換原則&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;I&lt;/strong&gt;nterface Segregation Principle / 依存関係逆転の原則&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;D&lt;/strong&gt;ependency Inversion Principle / インターフェイス分離の原則&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;single-responsibility-principle-単一責任の原則:49fcbce1f4686866c4b5c8b0fbb880ae&#34;&gt;Single Responsibility Principle / 単一責任の原則&lt;/h4&gt;
+
+&lt;p&gt;この原則ではオブジェクトは1つの責任のみを負うべきで、その責任はそのオブジェクトで完全にカプセル化されるべきであるとしている。CSSに当てはめて考えると、構造とプレゼンテーションを分離する、例えば、その両方を行う1つのクラスや要素を作るのではなく、それぞれを分離し、構造に影響を与えることなくコンポーネントのスキン(訳注: 見た目)を変更できるようにする、という意味になる。&lt;/p&gt;
+
+&lt;p&gt;グリッドシステム(複数クラスを要素に追加するか、プリプロセッサを使ってベースクラスを拡張するか)に要素のサイズの指定を委譲するか、親要素にサイズを指定する方法が考えられる。&lt;/p&gt;
+
+&lt;p&gt;CSSのルールは高い凝集度(訳注: &lt;a href=&#34;https://ja.wikipedia.org/wiki/%E5%87%9D%E9%9B%86%E5%BA%A6&#34;&gt;コヒージョン&lt;/a&gt;)を持つべきで、多種多様なルールをグループ化したものであってはならない。テキストスタイル、ボーダー、カラーなどをサイズやポジション、フロートを同じグループにするべきではない。&lt;/p&gt;
+
+&lt;p&gt;こうすることで同じモジュールを別のコンテイナ内で再利用でき、再利用の可能性を高めることができる。さらに構造に影響を与えることなくスキンを変更できることによりメンテナンス性は向上し、ヴィジュアルをコンテキストに応じて変更しやすくもなる(例: 同じ構造の要素で別の色など)。&lt;/p&gt;
+
+&lt;p&gt;更なるコツとしてコードを別のファイルに分割し(それぞれのファイルが単一責任を持つ)、そうすることでチームで開発するのを簡単にし(衝突が少ない)、コンテキストによってグループ化することでより理解しやすくなる。&lt;/p&gt;
+
+&lt;h4 id=&#34;open-closed-principle-オープン-クローズドの原則:49fcbce1f4686866c4b5c8b0fbb880ae&#34;&gt;Open/Closed Principle / オープン・クローズドの原則&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ソストウェアのエンティティ(クラス、モジュール、関数など)は拡張に対してオープンであるべきで、変更に対して閉鎖的であるべき。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;どういう意味かというと、ベースとなるルールは上書き/拡張しやすく記述し、可能な限り変更するべきではないということだ。&lt;/p&gt;
+
+&lt;p&gt;ベースクラスを修正するのはエラーを修正する場合のみとし、新しい振る舞いを追加しない。そうでなければ衝突が生まれる可能性が高くなる。具体的にはプロジェクトが安定期となったら&lt;code&gt;reset.css&lt;/code&gt;や複数要素に影響を与えるルールを変更するべきではない。その代わりに新しいクラスを使って拡張するべきだ。&lt;/p&gt;
+
+&lt;p&gt;多くのプロジェクトで私はベースとなるスタイルをタグそのものに設定することを可能な限り避けている。デザインが明確なセマンティック構造に沿わない場合は特にだ。20以上のフォントスタイルが必要で、コンテキストに応じて同じ要素で異なるスペース、色、ウェイトを持っている場合などが例となる。もしグローバルな要素に影響を及ぼすルールを減らすことができれば、オープン・クローズドの原則を破る機会を減らすことができる。&lt;/p&gt;
+
+&lt;p&gt;ベーススタイルを持たないほかの理由としてはデフォルトを上書きする機会が減ることがあげられる(しかしより多くのスタイルを設定する必要があるかもしれない)。&lt;/p&gt;
+
+&lt;h4 id=&#34;liskov-substitution-principle-リスコフの置換原則:49fcbce1f4686866c4b5c8b0fbb880ae&#34;&gt;Liskov Substitution Principle / リスコフの置換原則&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;プログラムにおけるオブジェクトはそのサブタイプと置換してもプログラムの正当性を変更するべきではない。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ほかのクラスを&lt;code&gt;@extend&lt;/code&gt;するクラスはベースクラスと異なる振る舞いをしてはならない。それぞれのクラスを入れ替えてもアプリの正当性に影響を与えてはならない。&lt;/p&gt;
+
+&lt;p&gt;システムをより簡単に、より柔軟にするために、親クラスと子クラスを置き換えても求めていない副作用を起こさないようにするべきである、というのがこの原則の存在意義だ。プロジェクトの開始時の未来を予測できない場合にもコードの再利用のチャンスを増やすことができる。&lt;/p&gt;
+
+&lt;p&gt;モディファイヤは出来る限りレイアウトを壊さないように設定するべきで、ベースクラスが固定の高さを持たないのであれば、子クラスも高さを指定するべきではなく、表示や位置も変更するべきではない。&lt;/p&gt;
+
+&lt;p&gt;一般的に&lt;strong&gt;組成は継承よりも優先されるべき&lt;/strong&gt;であると覚えておこう。&lt;/p&gt;
+
+&lt;p&gt;PS: この原則について私は盲目的に守ることはしない。特に私はモディファイヤを子クラスというよりはデコレータとして利用することが多いからだ。しかし大きなプロジェクトでプリプロセッサを利用している場合に、&lt;code&gt;@extend&lt;/code&gt;の機能を利用し(使い過ぎ)ている場合はこの原則についてよく考えるべきだろう。&lt;/p&gt;
+
+&lt;h4 id=&#34;interface-segregation-principle-依存関係逆転の原則:49fcbce1f4686866c4b5c8b0fbb880ae&#34;&gt;Interface Segregation Principle / 依存関係逆転の原則&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;たくさんのクライアント専用インターフェイスは1つの一般目的のインターフェイスより優れている。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;複数の特別なベースのモジュールを作るほうが、1つの一般的なものを作るよりもよいと解釈できる。モジュールの凝集度を向上させることができるし、コードのリファクタ、変更、メンテナンスを簡単にできる(密接な結合を減らすから)。&lt;/p&gt;
+
+&lt;p&gt;コードの再利用性を高めるために複数の状況でも利用出来るベースモジュールを作りたい衝動に駆られることもあるだろう。正直に言って、最近では私はコードの再利用の全てがよいことだと考えていない。もし再利用性のためだけにそうしているのであれば(特にCSSでは)、モジュール間の関係性を必要性がないのにも関わらず高めてしまうことになる。こうなると変更の必要のないモジュールにまで変更が及んでしまうため将来的に実装が難しくなる(例: ホームページにある記事の周りのマージンの変更が、下層ページのブログ記事のマージンを変更してしまう)。&lt;/p&gt;
+
+&lt;p&gt;この問題は見つけ出すのが難しく、プロジェクトに対して変更がされない(もちろん変更のないプロジェクトはない)と再現しづらい。特定のクラスの拡張を行う場合に多くのプロパティを再定義しているのであれば、ベーススタイルは一般的過ぎると言えるだろう。&lt;/p&gt;
+
+&lt;h4 id=&#34;dependency-inversion-principle-インターフェイス分離の原則:49fcbce1f4686866c4b5c8b0fbb880ae&#34;&gt;Dependency Inversion Principle / インターフェイス分離の原則&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;ハイレベルのモジュルはローレベルのモジュールに依存するべきではなく、両者は抽象概念に依存するべき。&lt;/li&gt;
+&lt;li&gt;抽象概念はディテールに依存するべきではなく、ディテールが抽象概念に依存するべき。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;CSSの分野におけるこのルールは、コンテイナは期待する振る舞いをする限り、子要素の存在やビジュアル要素に対して無関心であるべきだと捉えることができる。&lt;code&gt;.article&lt;/code&gt;コンポーネントにとってはレイアウトを壊さない限り&lt;code&gt;.title&lt;/code&gt;がどうスタイルされているかを知る必要がない。子コンポーネントのスタイルはそれぞれのモジュールに委譲するべきで、それらのモジュールの小要素同士は交換しても親要素に影響を与えないように設計されているべきである。これがOOCSSの基礎だ。&lt;/p&gt;
+
+&lt;p&gt;入れ子のセレクタの存在がこのルールを破っているという目印になるだろう。&lt;code&gt;#sidebar .group &amp;gt; h3&lt;/code&gt;というような入れ子セレクタの代わりに&lt;code&gt;.group-title&lt;/code&gt;という新しいクラスを作るべきだろう。こうすることで&lt;code&gt;&amp;lt;h3&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;でもほかの要素でも利用することが可能になる。若干のスタイル、振振る舞いが異なる新しいモジュールは依存(子要素)を交換するだけで作ることができるようになり、継承よりも組成を優先することにもつながる。&lt;/p&gt;
+
+&lt;h3 id=&#34;最後に:49fcbce1f4686866c4b5c8b0fbb880ae&#34;&gt;最後に&lt;/h3&gt;
+
+&lt;p&gt;ほとんどのコンセプトは複数の分野に当てはめることができるだろう。これらが解決しようとしている問題を理解することで、正しく適応することができるようになる。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;賢い人は自分の失敗から学ぶ。しかし本当に優れた人はほかの人の失敗からも学ぶ。- Brandon Mull&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;自分のコードをよく整理することで勢いを失わずに済む。きちんとモジュールが緩やかな関係性を保って、それぞれが邪魔をし合わなければ、つまり、メンテナンスが簡単になっていれば、CSSに対する変更を恐れる必要はない。&lt;/p&gt;
+
+&lt;h3 id=&#34;おすすめのリソース:49fcbce1f4686866c4b5c8b0fbb880ae&#34;&gt;おすすめのリソース&lt;/h3&gt;
+
+&lt;p&gt;コードサンプルを見たい場合、あるいはこれらのコンセプトを適応したい場合には以下のリンクが参考になるだろう。問題とそれらに対する解決に対してより詳しく記述している。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/necolas/idiomatic-css&#34;&gt;Idiomatic CSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.stubbornella.org/content/2011/04/28/our-best-practices-are-killing-us/&#34;&gt;Our (CSS) Best Practices Are Killing US&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://smacss.com/&#34;&gt;Scalable and Modular Architecture for CSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://csswizardry.com/2012/05/keep-your-css-selectors-short/&#34;&gt;Keep your CSS selectors short&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://snook.ca/archives/html_and_css/one-module-or-two&#34;&gt;One Module or Two&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://csswizardry.com/2012/04/the-single-responsibility-principle-applied-to-css/&#34;&gt;The single responsibility principle applied to CSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/&#34;&gt;The open/closed principle applied to CSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://oli.jp/2011/ids/&#34;&gt;Don’t use IDs in CSS selectors?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About HTML semantics and front-end architecture</title>
+      <link>http://article.enja.io/articles/about-html-semantics-and-front-end-architecture.html</link>
+      <pubDate>Tue, 20 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://article.enja.io/articles/about-html-semantics-and-front-end-architecture.html</guid>
+      <description>
+
+&lt;h2 id=&#34;htmlのセマンティックとフロントエンド構造について:2d5b85172b7cfeb32fd766976e16227b&#34;&gt;HTMLのセマンティックとフロントエンド構造について&lt;/h2&gt;
+
+&lt;p&gt;私自身が気に入っている考え、体験、アイデアのコレクションでありかつ、１年間実験しつづけているアイデアのコレクション。&lt;br /&gt;
+記事はHTMLのセマンティックについて、コンポーネントについて、フロントエンドの構造についてのアプローチ、クラスの命名パターン、そしてHTTPの圧縮について。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;We shall not cease from exploration
+And the end of all our exploring
+Will be to arrive where we started
+And know the place for the first time.
+via T.S. Eliot - “Little Gidding”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;セマンティックについて:2d5b85172b7cfeb32fd766976e16227b&#34;&gt;セマンティックについて&lt;/h2&gt;
+
+&lt;p&gt;セマンティックとはサインとシンボルの関係性とそれらが何を意味するかについての研究。言語学では主として言語におけるサイン(単語、フレーズ、音など)の意味を探る研究であり、フロントエンドウェブ開発においてはHTMLの要素、属性、属性値(マイクロデータなどの拡張を含む)についての合意された意味と大きな関係を持っている。それらの合意されたセマンティックはたいていの場合は仕様により形式づけられ、ウェブサイトの情報をプログラム(そして人間にとって)側でより理解しやすくするために利用されている。&lt;br /&gt;
+しかし、形式化された後でも要素、属性、属性値のセマンティックはデベロッパに依存する形で適応され、また吸収されている。このことは合意されたセマンティックの変容につながることがある(&lt;a href=&#34;http://www.w3.org/TR/html-design-principles/#pave-the-cowpaths&#34;&gt;HTMLのデザイン原則&lt;/a&gt;でもある)&lt;/p&gt;
+
+&lt;h2 id=&#34;htmlセマンティックのタイプの違いを見分ける:2d5b85172b7cfeb32fd766976e16227b&#34;&gt;HTMLセマンティックのタイプの違いを見分ける&lt;/h2&gt;
+
+&lt;p&gt;“セマンティックHTML”を書くという原則は現在のプロフェッショナルなフロントエンド開発の基礎の1部になっている。ほとんどのセマンティックはすでに存在する、あるいは予期出来るコンテンツの特性に関連している(例えば、h1やlang属性、type属性におけるemail値など)&lt;/p&gt;
+
+&lt;p&gt;しかし、&lt;strong&gt;全てのセマンティックがコンテンツ派生である必要はない&lt;/strong&gt;。クラス名は“セマンティックではない”という状態にはならない。どんな名前が使われようと意味があり目的がある。クラス名のセマンティックはHTMLエレメントのセマンティックとは異なることがあるわけだ。HTML要素、いくつかの属性、マイクロデータのような同意された“グローバル”なセマンティックを、クラス属性などに含まれる事が多いウェブサイトやアプリケーション単体に属する“ローカル”なセマンティックと混在させずに活かすことができる。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://dev.w3.org/html5/spec/global-attributes.html#classes&#34;&gt;HTML5仕様のクラスについてのセクション&lt;/a&gt;で繰り返される仮定された“ベストプラクティス”:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;…著者はクラス属性をコンテンツに求める見た目を説明する値ではなく、
+コンテンツ自体の特性を説明する値を利用すること。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;を実践することに固有の理由がない。それどころか大規模ウェブサイト、アプリケーションの開発においては障害になることが多い。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;コンテンツレイヤでのセマンティックはHTML要素と属性によってすでに提供されている。&lt;/li&gt;
+&lt;li&gt;クラス名は、マイクロフォーマットのようなマシンリーダブルであり合意された小さな単位での名称でなければ、ほとんど機械または人にに対して有用な情報を与えない。&lt;/li&gt;
+&lt;li&gt;クラス名の目的の第一はCSSやJavaScriptへのフックになること。もし見た目や動作をウェブ文書に追加する必要がないのであれば、HTMLにクラス名は必要ないのではないか。&lt;/li&gt;
+&lt;li&gt;クラス名はデベロッパに対して有用な情報を伝達するべき。DOMのスニペットを読む際、特定のクラス名が何を行うのか理解できることは便利、複数のデベロッパチーム、フロントエンダのみがHTMLを制作する場合でない時には特に。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;以下のシンプルな例を見てほしい:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;div class=&amp;quot;news&amp;quot;&amp;gt;
+  &amp;lt;h2&amp;gt;News&amp;lt;/h2&amp;gt;
+  [news content]
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;クラス名&lt;code&gt;news&lt;/code&gt;はコンテンツから明白な部分以外のことを伝達しない。コンポーネントの構造上の仕組みについての情報もないし、“news”以外のコンテンツには利用出来ない。コンテンツの特性に対して厳しくクラス名にセマンティック性を求めたために構造の規模を縮小させただけではなく、ほかのデベロッパにとって使いづらいものにしてしまっている。&lt;/p&gt;
+
+&lt;h2 id=&#34;コンテンツから独立したクラス名:2d5b85172b7cfeb32fd766976e16227b&#34;&gt;コンテンツから独立したクラス名&lt;/h2&gt;
+
+&lt;p&gt;代替手段としてデザイン内の機能的な、構造的なパターンからクラス名のセマンティックを派生させる方法がある。&lt;strong&gt;最も再利用しやすいコンポーネントはコンテンツから独立したクラス名を持っている。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;クラス名が特定のコンテンツを厳格に反映した値ではなく、レイヤ同士の関係を明確にすることを恐れるベきではない。&lt;br /&gt;
+そうすることでクラス名が“セマンティックではない”状態にはならない。単にセマンティックがコンテンツから派生していないだけだ。コンポーネントを再利用性が高く、柔軟で、強固にできるのであればHTML要素を追加することを恐れるべきではない。またそうすることでHTMLが“セマンティックでない”ということにはならない。単にコンテンツをマークアップするのに最低限以上の要素が必要になったというだけにすぎない。&lt;/p&gt;
+
+&lt;h2 id=&#34;フロントエンド構造:2d5b85172b7cfeb32fd766976e16227b&#34;&gt;フロントエンド構造&lt;/h2&gt;
+
+&lt;p&gt;コンポーネント、テンプレート、オブジェクト指向の構造の目的は、限定数の再利用可能で、様々なコンテンツタイプを内包できるコンポーネントを開発することだ。クラス名のセマンティックにおいて重要なのは実用主義に則って、主目的つまり、デベロッパが利用するにあたって意味があり、柔軟で、再利用可能な見た目/動作のフックとなることだ。&lt;/p&gt;
+
+&lt;h3 id=&#34;再利用-結合できるコンポーネント:2d5b85172b7cfeb32fd766976e16227b&#34;&gt;再利用、結合できるコンポーネント&lt;/h3&gt;
+
+&lt;p&gt;柔軟なHTML/CSSは大概の場合、再利用できるコンポーネントの構築をするためにHTMLに対するクラスに頼ることになる。柔軟で再利用できるコンポーネントは特定の要素タイプや存在するDOMツリーに依存しない。容易に見た目の方向性や異なるコンテナに適応することが求められる。必要であれば追加のHTML要素(コンテンツをマークアップする以上に必要な)を用いてコンポーネントをより強固にする必要がある。このよい例が&lt;a href=&#34;http://www.stubbornella.org/content/&#34;&gt;Nicole Sullivan&lt;/a&gt;が言うところの&lt;a href=&#34;http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/&#34;&gt;mediaオブジェクト&lt;/a&gt;だ。&lt;/p&gt;
+
+&lt;p&gt;簡単に結合できるコンポーネントは&lt;a href=&#34;http://www.w3.org/TR/CSS2/selector.html#type-selectors&#34;&gt;タイプセレクタ&lt;/a&gt;を使わずにクラスだけを利用することでつくることができる。以下は&lt;code&gt;btn&lt;/code&gt;コンポーネントと&lt;code&gt;uilist&lt;/code&gt;コンポーネントの結合を難しくしている例。問題は&lt;code&gt;.btn&lt;/code&gt;の詳細度は&lt;code&gt;.uilist a&lt;/code&gt;よりも少なく(そのため共通のプロパティを上書きする)、&lt;code&gt;uilist&lt;/code&gt;コンポーネントがアンカーを子ノードに持たなければならない点にある。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.btn { /* styles */ }
+.uilist { /* styles */ }
+.uilist a { /* styles */ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;nav class=&amp;quot;uilist&amp;quot;&amp;gt;
+  &amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;
+  &amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;About&amp;lt;/a&amp;gt;
+  &amp;lt;a class=&amp;quot;btn&amp;quot; href=&amp;quot;#&amp;quot;&amp;gt;Login&amp;lt;/a&amp;gt;
+&amp;lt;/nav&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;uilist&lt;/code&gt;とほかのコンポーネントとより簡単に結合するためのアプローチとしては、クラスを利用してサブオブジェクトをスタイルする方法がある。ルールの詳細度を減らせるだけではなく、子ノードがなんであれ構造的なスタイルを追加することができることが主な利点となる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.btn { /* styles */ }
+.uilist { /* styles */ }
+.uilist-item { /* styles */ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;nav class=&amp;quot;uilist&amp;quot;&amp;gt;
+  &amp;lt;a class=&amp;quot;uilist-item&amp;quot; href=&amp;quot;#&amp;quot;&amp;gt;Home&amp;lt;/a&amp;gt;
+  &amp;lt;a class=&amp;quot;uilist-item&amp;quot; href=&amp;quot;#&amp;quot;&amp;gt;About&amp;lt;/a&amp;gt;
+  &amp;lt;span class=&amp;quot;uilist-item&amp;quot;&amp;gt;
+    &amp;lt;a class=&amp;quot;btn&amp;quot; href=&amp;quot;#&amp;quot;&amp;gt;Login&amp;lt;/a&amp;gt;
+  &amp;lt;/span&amp;gt;
+&amp;lt;/nav&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;javascript用クラス:2d5b85172b7cfeb32fd766976e16227b&#34;&gt;JavaScript用クラス&lt;/h3&gt;
+
+&lt;p&gt;JavaScript用クラスの利用は見た目や構造上の変更から適用したJavaScriptの動作を守ることができる。私自身が便利だと感じているアプローチはJavaScriptフックとして特定のクラス、&lt;code&gt;js-*&lt;/code&gt;を利用する方法で、このクラスに対して見た目のスタイルを行わない。&lt;/p&gt;
+
+&lt;p&gt;{% highlight html %}
+&lt;a href=&#34;http://article.enja.io/login&#34; class=&#34;btn btn-primary js-login&#34;&gt;&lt;/a&gt;
+{% endhighlight %}&lt;/p&gt;
+
+&lt;p&gt;こうすることでJavaScriptで定義した動作や機能を見た目は構造の変化の影響を受けづらくすることができる。&lt;/p&gt;
+
+&lt;h3 id=&#34;コンポーネント修飾子:2d5b85172b7cfeb32fd766976e16227b&#34;&gt;コンポーネント修飾子&lt;/h3&gt;
+
+&lt;p&gt;大体の場合コンポーネントは元にしているコンポーネントから若干見た目がことなる種類を持つことが多い(例えば異なる背景色やボーダー色)。このコンポーネント種類をつくるために主に2つのパターンがある。ここでは“単一クラスパターン”と“マルチクラスパターン”と呼ぶことにする。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;単一クラスパターン&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.btn, .btn-primary { /* button template styles */ }
+.btn-primary { /* styles specific to save button */ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;button class=&amp;quot;btn&amp;quot;&amp;gt;Default&amp;lt;/button&amp;gt;
+&amp;lt;button class=&amp;quot;btn-primary&amp;quot;&amp;gt;Login&amp;lt;/button&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;マルチクラスパターン&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.btn { /* button template styles */ }
+.btn-primary { /* styles specific to primary button */ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;button class=&amp;quot;btn&amp;quot;&amp;gt;Default&amp;lt;/button&amp;gt;
+&amp;lt;button class=&amp;quot;btn btn-primary&amp;quot;&amp;gt;Login&amp;lt;/button&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;プリプロセッサを利用しているなら、単一クラスパターンのメンテナンスをSassの&lt;code&gt;@extend&lt;/code&gt;機能を使って削減できる。しかしプリプロセッサの手助けがあったとしても私は“マルチクラスパターン”を利用する方がよいと考えている。&lt;/p&gt;
+
+&lt;p&gt;このアプローチの方がより柔軟なパターンだからだ。ベースオブジェクトである&lt;code&gt;btn&lt;/code&gt;を例にして、5つのタイプのボタンと3つのサイズを拡張したとしよう。“マルチクラスパターン”を利用すると9つの混ぜ合わせることができるクラスを作るだけにたいして、“単一クラスパターン”では24クラス必要になる。&lt;/p&gt;
+
+&lt;p&gt;もし絶対に必要なのであればコンポーネントレベルの変更をオブジェクトで行うことも“マルチクラスパターン”のほうが簡単にできる。また別のコンポーネント内で利用する&lt;code&gt;btn&lt;/code&gt;の調整を行うことも容易に可能だ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;/* &amp;quot;multi-class&amp;quot; adjustment */
+.thing .btn { /* adjustments */ }
+
+/* &amp;quot;single-class&amp;quot; adjustment */
+.thing .btn,
+.thing .btn-primary,
+.thing .btn-danger,
+.thing .btn-etc { /* adjustments */ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;“マルチクラスパターン”ではコンポーネント内のベースオブジェクト&lt;code&gt;btn&lt;/code&gt;の派生系をたった1つのセレクタで指定することが可能になる。“単一クラスパターン”では新しいボタンの種類が作られるたびにすべてのボタンのタイプに対して調整を行う必要がある。&lt;/p&gt;
+
+&lt;h2 id=&#34;構造的なクラス名:2d5b85172b7cfeb32fd766976e16227b&#34;&gt;構造的なクラス名&lt;/h2&gt;
+
+&lt;p&gt;コンポーネント、そしてそれをベースに“見た目”を作る際、いくつかのクラスは修飾子として使われ、いくつかはコンポーネントの境界として使われ、またいくつかはコンポーネントのサブオブジェクトなどに使われる。&lt;/p&gt;
+
+&lt;p&gt;クラスの名前にクラス自体の目的が明確に現れていないため、&lt;code&gt;btn&lt;/code&gt;(コンポーネント)、&lt;code&gt;btn-primary&lt;/code&gt;(修飾子)、&lt;code&gt;btn-group&lt;/code&gt;(コンポーネント)、btn-group-item(サブオブジェクト)の関係性を薄めることは難しい。&lt;br /&gt;
+これに対して一致したパターンが存在しない。&lt;/p&gt;
+
+&lt;p&gt;昨年から、私はサイト構造をHTML、CSS、JavaScriptのファイルを行き来して理解するのではなく、DOMスニペットからノードと見た目上の関連性をより素早く理解するための&lt;a href=&#34;https://gist.github.com/1309546&#34;&gt;命名規則の実験&lt;/a&gt;をしている。パターンは&lt;a href=&#34;http://bem.github.com/bem-method/html/all.en.html&#34;&gt;BEMシステム&lt;/a&gt;のアプローチをベースに私自身がスキャンしやすいように変更を加えている。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;t-template-name
+t-template-name--modifier-name
+t-template-name__sub-object
+t-template-name__sub-object--modifier-name
+
+component-name
+component-name--modifier-name
+component-name__sub-object
+component-name__sub-object--modifier-name
+
+is-state-type
+
+js-action-name
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;いくつかの構造を抽象的な“テンプレート”として扱い、いくつかをより明確なコンポーネント(通常は“テンプレート”上に作られる)として扱った。しかしこの差異がいつも必要だとは限らない。&lt;/p&gt;
+
+&lt;p&gt;これは現時点で私自身が便利だと感じている命名規則でしかない。どんな規則であろうとかまわない。しかし、(1つの)ハイフン、アンダースコア、キャメルケースなどに頼るよりはクラス名の曖昧さを解消する点は利点としてあげられる。&lt;/p&gt;
+
+&lt;h2 id=&#34;ファイルサイズとhttp圧縮について:2d5b85172b7cfeb32fd766976e16227b&#34;&gt;ファイルサイズとHTTP圧縮について&lt;/h2&gt;
+
+&lt;p&gt;モジュラー、柔軟な、オブジェクト指向のCSSにはどんな場合でもファイルサイズとその肥大化についての議論がついて回る。&lt;a href=&#34;http://sliwww.slideshare.net/stubbornella/our-best-practices-are-killing-us&#34;&gt;Nicole Sullivanの話では&lt;/a&gt;、このアプローチを採用したことでFacebookのような会社で実際にファイルサイズを減少(メンテナンス性の向上も)ができたことについてよく触れられる。これに加えてHTTPによる圧縮がプリプロセッサのアウトプットとHTMLクラスの広域利用にどう影響を与えるかについて共有したい。&lt;/p&gt;
+
+&lt;p&gt;Twitter Bootstrapがはじめリリースされた際、コンパイルされたCSSを私ならどう書くかを反映した形に書き直しファイルサイズを比較した。両ファイルを圧縮した後、私が手作業で作成したCSSはプリプロセッサのアウトプットファイルより10%ほどサイズが小さかった。しかし両方のファイルをgzipするとプリプロセッサのアウトプットファイルの方が手作業で作成したCSSより5%ほど小さかった。&lt;/p&gt;
+
+&lt;p&gt;このことは単に圧縮されたファイルだけではなんの意味もなく、&lt;strong&gt;HTTPによる圧縮した後でファイルサイズを比較する&lt;/strong&gt;ことがどれだけ大事であるかを示している。また十分な経験を積んだCSSデベロッパがプリプロセッサを利用している場合、HTTPによる圧縮によりファイルサイズの小さなファイルを作ることができるため、必要以上にコンパイル後のCSSの繰り返し部分に対して心配する必要がないことを意味している。プリプロセッサを利用することでよりメンテナンスしやすくなった“CSS”コードは、圧縮されただけのアウトプットCSSのサイズや見栄えをしのぐ利点がある。&lt;/p&gt;
+
+&lt;p&gt;ほかの実験では60KBのHTMLをライブサイト(すでにたくさんの再利用可能なコンポーネントが存在する)からすべてのクラス属性を削除した。これによりHTMLのファイルサイズを25KBに減らすことができた。しかしgzipされたオリジナルとクラスを削除したファイルのファイルサイズを比べると順番に7.6KBと6KBとなり、1.6KBの違いしかない。実質的なファイルサイズは進歩的なクラスの利用に関わらず心配するに値しないサイズとなるわけだ。&lt;/p&gt;
+
+&lt;h2 id=&#34;心配しすぎない方法:2d5b85172b7cfeb32fd766976e16227b&#34;&gt;心配しすぎない方法&lt;/h2&gt;
+
+&lt;p&gt;何年にもおよぶ多くの熟練したデベロッパたちの経験はどう大規模ウェブサイト、アプリケーションを開発するかに対して変革を生み出している。それにも関わらず、“セマンティックHTML”はコンテンツ派生のクラス名を意味するという観念から離れられない個人に対して、大規模アプリケーションを構築する際にそのアプローチがいかに実践的ではないかに気づく機会を与えない。昔のアイデアを捨て、別の方法を探し、以前あきらめた方法にすら機会を与える用意が必要だ。&lt;/p&gt;
+
+&lt;p&gt;1度でも、自分、あるいは他者がメンテナンスするだけではなく、積極的に何度も変更を加えるようなウェブサイトやアプリケーションを開発し始めると、どれだけ苦労しようとコードはメンテナンスしづらくなっていくことに気がつくだろう(Nicole Sullivanが何年も言っているように)。この問題に対しての解決を提案している人たちのアプローチを探索してみることは決して時間の無駄にはならない。例えばNicole Sullivanのブログ、&lt;a href=&#34;https://github.com/stubbornella/oocss/wiki&#34;&gt;Object Oriented CSS&lt;/a&gt;プロジェクト、Jonathan Snookの&lt;a href=&#34;http://smacss.com/book/&#34;&gt;Scalable Modular Architecture CSS&lt;/a&gt;またYandexが開発した&lt;a href=&#34;http://bem.github.com/bem-method/pages/beginning/beginning.en.html&#34;&gt;Block Element Modifiler&lt;/a&gt;などがある。&lt;/p&gt;
+
+&lt;p&gt;HTML/CSSにおいてCSSを書いたり、編集したりする時間を減らす方法を見つけるためには、スタイルを変更するのにHTML要素のクラス名を変更する時間を割くことになる。この方法はフロントエンドにもバックエンドにも、または事前に作られた“レゴブロック”を再アレンジする人にとっても実用的だ。どうやらCSS錬金術はいまだ誰も実践できていないというわけだ。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
